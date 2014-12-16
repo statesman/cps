@@ -1,0 +1,12 @@
+<div class="sider panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{#if title}}{{title}}{{else}}Related stories{{/if}}</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="fa-ul">
+      {{#each links}}
+        <li><i class="fa-li fa fa-angle-right"></i><a href="{{url}}">{{name}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

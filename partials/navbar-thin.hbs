@@ -1,0 +1,25 @@
+<nav class="navbar navbar-thin" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://www.statesman.com/" target="_blank">
+        <img width="103" height="26" src="assets/logo-short-black.png" />
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right social">
+      <li>{{{share 'facebook'}}}</li>
+      <li>{{{share 'twitter'}}}</li>
+      <li>{{{share 'gplus'}}}</li>
+    </ul>
+
+    <div class="navbar-expand" data-target="#secondary-navbar-chapters">
+      <i class="fa fa-angle-double-down"></i> <a>Chapters</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul id="secondary-navbar-chapters" class="nav navbar-nav hidden-navbar-collapsed">
+        {{{navLinks}}}
+      </ul>
+    </div>
+  </div>
+</nav>

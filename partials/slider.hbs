@@ -1,0 +1,21 @@
+<div class="photo-block">
+  <div class="slider">
+    <div class="slider-controls clearfix">
+      <p>Image <span class="slider-pos">1</span> of {{images.length}}</p>
+      <ul class="list-inline pull-right">
+        <li class="previous"><i class="fa fa-chevron-left"></i></li>
+        <li class="next"><i class="fa fa-chevron-right"></i></li>
+      </ul>
+    </div>
+    <div class="slider-content">
+      <span class="hidden slidesjs-next slidesjs-navigation">N</span>
+      <span class="hidden slidesjs-previous slidesjs-navigation">P</span>
+      {{#each images}}
+        <div>
+          <img src="{{url}}">
+          {{{cutline caption credit}}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

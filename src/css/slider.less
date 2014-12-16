@@ -1,0 +1,39 @@
+.slider {
+  background-color: #f9f9f9;
+  border: 1px solid @gray-lighter;
+  .slider-controls {
+    font-family: @font-family-sans-serif;
+    // Slideshow overline (image X of X)
+    p {
+      font-size: 12px;
+      display: inline-block;
+      padding: 6px 10px;
+      margin-bottom: 0;
+      .slider-pos {
+        font-weight: inherit;
+      }
+    }
+    // Prev/next buttons
+    ul {
+      font-size: 13px;
+      margin-bottom: 0;
+      border-left: 1px solid @gray-lighter;
+      li {
+        cursor: pointer;
+        padding: 6px 10px;
+        &:hover {
+          background: @gray-lighter;
+        }
+      }
+    }
+  }
+  .slider-content {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      padding: 6px 10px;
+    }
+  }
+}

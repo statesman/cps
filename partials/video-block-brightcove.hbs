@@ -1,0 +1,36 @@
+<div class="photo-block">
+  <div class="embed-responsive embed-responsive-16by9">
+    {{!-- Start of Brightcove Player --}}
+    <div style="display:none">JANUS-1086 chromeless player template</div>
+
+    {{!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C
+    found at https://accounts.brightcove.com/en/terms-and-conditions/.
+    --}}
+    <object id="myExperience{{videoPlayer}}" class="BrightcoveExperience embed-responsive-item">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="750" />
+      <param name="height" value="422" />
+      <param name="playerID" value="{{playerID}}" />
+      <param name="playerKey" value="{{playerKey}}" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      <param name="@videoPlayer" value="{{videoPlayer}}" />
+      {{!-- Enable SmartPlayer API --}}
+      <param name="includeAPI" value="true" />
+      <param name="templateLoadHandler" value="analytics.bcoveAddPlayer" />
+      <param name="templateReadyHandler" value="analytics.bcovePlayerReady" />
+    </object>
+    {{!-- End of Brightcove Player --}}
+  </div>
+  <p class="caption clearfix">newspapers that you'll never read Frontline copyright dingbat CPC, media bias The Weekender WordPress SEO mathewi the notion of the. <em class="pull-right">Photographer / Statesman</em></p>
+</div>
+
+<script>
+  if (typeof window.brightcove === "undefined") {
+    var script = document.createElement('script');
+    script.src = "http://admin.brightcove.com/js/BrightcoveExperiences.js";
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+</script>

@@ -1,0 +1,183 @@
+@navbar-separator-width: 8px;
+@navbar-separator-line-width: 1px;
+
+.navbar {
+  border: none;
+  .box-shadow(0 0 25px rgba(0,0,0,.05));
+  border-bottom: 1px solid @gray-lighter;
+  &.navbar-default {
+    z-index: @zindex-navbar;
+
+    .navbar-collapse {
+      border-top: none;
+    }
+
+    .navbar-header {
+      @media (max-width: @grid-float-breakpoint-max) {
+        margin-bottom: -10px;
+        margin-top: -10px;
+      }
+      .navbar-brand {
+        text-align: center;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: @gray-dark;
+        > img {
+          .center-block();
+          margin-bottom: 5px;
+        }
+        > p {
+          margin: 0;
+          line-height: 12px;
+        }
+        @media (max-width: @grid-float-breakpoint-max) {
+          float: none;
+        }
+      }
+    }
+  }
+  #navbar-chapters.navbar-nav {
+    @media (min-width: @grid-float-breakpoint) {
+      padding-left: 30px;
+      > li {
+        &:before,
+        &:after {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          border-bottom: @navbar-height / 2 solid transparent;
+          border-left: @navbar-separator-width solid transparent;
+          border-top: @navbar-height / 2 solid transparent;
+          content: '';
+          display: block;
+          z-index: 2;
+        }
+
+        &:before {
+          border-left-color: @gray-lighter;
+          z-index: 1;
+          margin-left: @navbar-separator-line-width;
+        }
+        &:after {
+          border-left-color: @navbar-default-bg;
+        }
+      }
+    }
+
+    > li > a,
+    > li.active > a,
+    > li.active:hover > a {
+      > strong {
+        font-family: @font-family-sans-serif;
+        font-size: 15px;
+      }
+      margin-left: @navbar-separator-width;
+      color: @gray-dark;
+      font-weight: normal;
+      font-family: @font-family-serif-2;
+      background: white;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  &.navbar-thin {
+    background: white;
+    min-height: 35px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: @zindex-navbar - 10;
+    .navbar-header {
+      float: left;
+      .navbar-brand {
+        height: 44px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+    .navbar-nav {
+      > li > a {
+        padding-top: 12px;
+        padding-bottom: 8px;
+
+        color: @text-color;
+        font-family: @font-family-sans-serif;
+        font-weight: 400;
+      }
+      &.navbar-right.social {
+        float: right;
+        margin-top: 0;
+        margin-bottom: 0;
+        > li {
+          float: left;
+        }
+      }
+    }
+
+    ul.social {
+      > li > a {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 16px;
+        .fa-facebook-square {
+          color: #3b5998;
+        }
+        .fa-twitter {
+          color: #55acee;
+        }
+        .fa-google-plus {
+          color: #dd4b39;
+        }
+      }
+    }
+  }
+}
+
+// Expand button
+.navbar-expand {
+  display: none;
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+  .navbar-expand {
+    display:block;
+    background-color: #f9f9f9;
+    .text-center();
+    margin-left: -15px;
+    margin-right: -15px;
+    border-top: 1px solid @gray-lighter;
+    border-bottom: 1px solid @gray-lighter;
+    a {
+      color: @gray;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}
+// This is formatting for the expand button for times when the navbar is
+// collapsed but the we're not at container-fluid yet
+@media (min-width: @screen-sm-min) and (max-width: @grid-float-breakpoint-max) {
+  .navbar-default .navbar-expand {
+    border: 1px solid @gray-lighter;
+    width: 175px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    .center-block();
+  }
+  .navbar-thin .navbar-expand {
+    margin-left: -150px;
+    margin-right: -150px;
+  }
+}
+.navbar-thin .navbar-expand {
+  margin-top: 44px;
+  margin-bottom: -2px;
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+  .hidden-navbar-collapsed {
+    display: none;
+  }
+}

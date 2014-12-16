@@ -1,0 +1,24 @@
+{
+  "name": "starter",
+  "version": "0.0.0",
+  "authors": [
+    "Andrew Chavez <adchavez@gmail.com>"
+  ],
+  "main": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.0",
+    "font-awesome": "~4.2.0",
+    "ScrollMagic": "~1.2.3",
+    "Slides": "nathansearles/Slides#SlidesJS-3",
+    "underscore": "~1.7.0",
+    "imagesloaded": "~3.1.8"
+  }
+}
