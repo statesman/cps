@@ -14,11 +14,19 @@ module.exports = function(grunt) {
 
     // Copy FontAwesome files to the fonts/ directory
     copy: {
-       fonts: {
-        src: [
-          'bower_components/font-awesome/fonts/**'
-        ],
+      fonts: {
+        src: 'bower_components/font-awesome/fonts/**',
         dest: 'public/fonts/',
+        flatten: true,
+        expand: true
+      },
+      leafletCss: {
+        src: 'bower_components/leaflet/dist/leaflet.css',
+        dest: 'build/leaflet.less'
+      },
+      leafletImgs: {
+        src: 'bower_components/leaflet/dist/images/**',
+        dest: 'public/assets/images/',
         flatten: true,
         expand: true
       }
@@ -63,7 +71,13 @@ module.exports = function(grunt) {
             'bower_components/underscore/underscore.js',
             'bower_components/imagesloaded/imagesloaded.pkgd.js',
             'bower_components/Slides/source/jquery.slides.js',
+            'bower_components/highcharts/highcharts.js',
+            'bower_components/leaflet/dist/leaflet.js',
+            'bower_components/chroma-js/chroma.js',
+            'bower_components/numeral/numeral.js',
+            'src/js/chloromap.js',
             'src/js/call-time.js',
+            'src/js/charts.js',
             'src/js/slider.js',
             'src/js/main.js'
           ]

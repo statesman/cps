@@ -1,0 +1,145 @@
+(function($, Highcharts, ChloroMap) {
+
+  $.getJSON('data/deathsByCounty.json', function(data) {
+    var countyMap = new ChloroMap('county-by-county', data, 'perCapita');
+    var countyMap2 = new ChloroMap('county-by-county-count', data, 'count');
+  });
+
+  var primaryColor = '#395271';
+
+  Highcharts.setOptions({
+    chart: {
+      style: {
+        fontFamily: '"Merriweather Sans", sans-serif'
+      }
+    },
+    colors: [primaryColor, '#333'],
+    credits: {
+      enabled: false
+    }
+  });
+
+  $('#causes-of-death').highcharts({
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: [
+        'blunt force trauma',
+        'drowning',
+        'gunshot',
+        'co-sleeping',
+        'suffocation',
+        'left in car',
+        'hit by car',
+        'vehicle accident',
+        'medical',
+        'overdose',
+        'other'
+      ]
+    },
+    series: [{
+      data: [255, 148, 59, 57, 30, 27, 27, 24, 21, 14, 116],
+      name: 'Number of deaths'
+    }]
+  });
+
+  $('#cps-staff-costs').highcharts({
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+    },
+    series: [{
+      data: [241927936, 303837559, 376531782, 422939948, 490511804.05, 462545961.88, 453054389, 451810639, 468990287],
+      name: 'Staff costs'
+    }]
+  });
+
+  $('#cps-turnover-rate').highcharts({
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+    },
+    yAxis: {
+      min: 0,
+      max: 100
+    },
+    series: [{
+      data: [29.3, 29.8, 34.1, 30.5, 23.6, 25.4, 25, 26.1, 25.5],
+      name: 'Turnover rate'
+    }]
+  });
+
+  $('#cps-staff-counts').highcharts({
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+    },
+    yAxis: {
+      min: 0
+    },
+    series: [{
+      data: [5114, 5894, 7046, 8037, 8632.6, 8343.5, 8362, 0, 8234],
+      name: 'Total staff'
+    }]
+  });
+
+  $('#cps-caseloads').highcharts({
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+    },
+    yAxis: {
+      min: 0
+    },
+    tooltip: {
+      crosshairs: true
+    },
+    series: [{
+      data: [43.2, 34.7, 25.3, 21.9, 20.7, 29.1, 27.4, 24.7, 19.9],
+      name: 'Investigations'
+    }, {
+      data: [40.4, 44.5, 43.3, 37.3, 28.2, 29.5, 32, 33.7, 31.8],
+      name: 'Conservatorship'
+    }]
+  });
+
+  $('#reported-vs-unreported').highcharts({
+    chart: {
+      type: 'area'
+    },
+    title: {
+      text: ''
+    },
+    xAxis: {
+      categories: ['2010', '2011', '2012', '2013', '2014']
+    },
+    tooltip: {
+      crosshairs: true
+    },
+    plotOptions: {
+      area: {
+        stacking: 'normal'
+      }
+    },
+    series: [{
+      data: [280, 231, 212, 156, 145],
+      name: 'Reported publicly'
+    }, {
+      data: [120, 140, 120, 150, 125],
+      name: 'Not reported publicly'
+    }]
+  });
+
+}(jQuery, Highcharts, ChloroMap));
