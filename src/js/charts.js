@@ -1,8 +1,13 @@
-(function($, Highcharts, ChloroMap) {
+(function($, Highcharts, ChloroMap, numeral) {
 
   $.getJSON('data/deathsByCounty.json', function(data) {
-    var countyMap = new ChloroMap('county-by-county', data, 'perCapita');
-    var countyMap2 = new ChloroMap('county-by-county-count', data, 'count');
+    var countyMap = new ChloroMap('county-by-county', data, {
+      property: 'perCapita'
+    });
+    var countyMap2 = new ChloroMap('county-by-county-count', data, {
+      property: 'count',
+      colors: ['#deebf7', '#9ecae1', '#3182bd']
+    });
   });
 
   var primaryColor = '#395271';
@@ -13,7 +18,12 @@
         fontFamily: '"Merriweather Sans", sans-serif'
       }
     },
-    colors: [primaryColor, '#333'],
+    colors: [primaryColor, '#555'],
+    tooltip: {
+      backgroundColor: '#fff',
+      borderColor: '#f7f7f7',
+      borderRadius: 0
+    },
     credits: {
       enabled: false
     }
@@ -104,7 +114,8 @@
       min: 0
     },
     tooltip: {
-      crosshairs: true
+      crosshairs: true,
+      shared: true
     },
     series: [{
       data: [43.2, 34.7, 25.3, 21.9, 20.7, 29.1, 27.4, 24.7, 19.9],
@@ -116,9 +127,6 @@
   });
 
   $('#reported-vs-unreported').highcharts({
-    chart: {
-      type: 'area'
-    },
     title: {
       text: ''
     },
@@ -126,7 +134,8 @@
       categories: ['2010', '2011', '2012', '2013', '2014']
     },
     tooltip: {
-      crosshairs: true
+      crosshairs: true,
+      shared: true
     },
     plotOptions: {
       area: {

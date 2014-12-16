@@ -1,19 +1,37 @@
+/**
+ * A regional chloropleth map fed by GeoJSON data
+ *
+ * Params:
+ * @el - an ID for the div where we'll put the map
+ * @geojson - a geojson object
+ * @options - optional options object with the following:
+ *   - property: the key for the item in the geojson properties object that'll
+ *       be used to determine region colors
+ *   - colors: an array that'll be interpolated into a color scale
+ */
 var ChloroMap = (function($, L, _, numeral, chroma) {
 
-  var ChloroMap = function(el, geojson, field) {
+  var ChloroMap = function(el, geojson, options) {
 
-    this.field = field;
+    // Set some default options if none are set
+    this.property = options.property || 'count';
+    this.colors = options.colors || ['#fef0d9', '#fdbb84', '#b30000'];
+
+    // Calculate max and min values based on passed data
+    this.min = _.min(geojson.features, function(county) {
+      return county.properties[this.property];
+    }, this).properties[this.property];
 
     this.max = _.max(geojson.features, function(county) {
-      return county.properties[field];
-    }, this).properties[field];
+      return county.properties[this.property];
+    }, this).properties[this.property];
 
-    this.scale = [0, this.max];
+    // Build a color scale function
+    this.scale = [this.min, this.max];
 
-    this.colorScale = chroma.scale(['#fef0d9', '#fdbb84', '#b30000']).correctLightness(true).domain(this.scale);
+    this.colorScale = chroma.scale(this.colors).correctLightness(true).domain(this.scale);
 
-    /* Setup the basemap, with tiles and geojson data layer */
-
+    // Setup the basemap, with tiles and geojson data layer
     this.map = L.map(el);
 
     L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -27,14 +45,12 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
     }).addTo(this.map);
 
 
-    /* Autofit the map and autosize on window resize */
-
+    // Autofit the map and autosize on window resize
     this.fit();
     $(window).resize(_.debounce($.proxy(this.fit, this), 350));
 
 
-    /* Setup the info window */
-
+    // Setup the info window
     this.info = L.control();
 
     this.info.onAdd = function (map) {
@@ -58,20 +74,23 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
     this.info.addTo(this.map);
 
 
-    /* Setup the legend */
-
+    // Setup the legend
     this.legend = L.control({position: 'bottomright'});
 
     var self = this;
     this.legend.onAdd = function (map) {
-      var interval = function(val, label) {
-        return '<i style="background:' + self.getColor(val) + '"></i> ' + label + '<br>';
-      };
+      var range = self.max - self.min;
+      var steps = 6;
+
+      var colorBar = _.times((steps + 1), function(i) {
+        return '<i style="background:' + self.getColor(self.min + (range / steps * i)) + '"></i>';
+      }, this);
 
       var div = L.DomUtil.create('div', 'info legend');
 
-      div.innerHTML += interval(self.scale[0], 'Minimum');
-      div.innerHTML += interval(self.scale[1], 'Maximum');
+      div.innerHTML += 'Min';
+      div.innerHTML += '<div class="color-bar">' + colorBar.join('') + '</div>';
+      div.innerHTML += 'Max';
 
       return div;
     };
@@ -85,7 +104,7 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
 
   ChloroMap.prototype.style = function(feature) {
     return {
-      fillColor: this.getColor(feature.properties[this.field]),
+      fillColor: this.getColor(feature.properties[this.property]),
       weight: 1,
       opacity: 1,
       color: 'white',
