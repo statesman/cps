@@ -29,7 +29,7 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
     // Build a color scale function
     this.scale = [this.min, this.max];
 
-    this.colorScale = chroma.scale(this.colors).correctLightness(true).domain(this.scale);
+    this.colorScale = chroma.scale(this.colors).correctLightness(true).domain(this.scale, 25, 'log');
 
     // Setup the basemap, with tiles and geojson data layer
     this.map = L.map(el);
