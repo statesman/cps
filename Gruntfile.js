@@ -92,7 +92,7 @@ module.exports = function(grunt) {
         livereload: true,
       },
       templates: {
-        files: ['pages/**/*', 'layouts/*', 'helpers/**'],
+        files: ['pages/**/*', 'layouts/*', 'helpers/**', 'partials/*'],
         tasks: ['clean:pages', 'generator']
       },
       scripts: {
@@ -153,19 +153,23 @@ module.exports = function(grunt) {
               children: [
                 {
                   title: "CPS main",
-                  file: "main",
+                  subtitle: "Explaining story 1",
+                  file: "main"
                 },
                 {
                   title: "Previous removals",
-                  file: "previous-removals",
+                  subtitle: "Explaining story 1",
+                  file: "previous-removals"
                 },
                 {
                   title: "Undercounting",
-                  file: "dummy",
+                  subtitle: "Explaining story 1",
+                  file: "dummy"
                 },
                 {
                   title: "Brandon White",
-                  file: "brandon-white",
+                  subtitle: "Explaining story 1",
+                  file: "brandon-white"
                 }
               ]
             },

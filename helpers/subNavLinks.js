@@ -63,7 +63,19 @@ module.exports = function(type) {
         return
       }
 
-      links += '<li' + (child.file === this.name ? ' class="active"' : '') + '><a href="' + child.file + '.html">' + child.title + '</a></li>';
+      // Include a subtitle i there is one
+      var linktext = '';
+      if(type === 'super') {
+        linktext = '<strong>' + child.title + '</strong><br />';
+        if(_.has(child, 'subtitle')) {
+          linktext += child.subtitle
+        }
+      }
+      else {
+        linktext = child.title;
+      }
+
+      links += '<li' + (child.file === this.name ? ' class="active"' : '') + '><a href="' + child.file + '.html">' + linktext + '</a></li>';
     }, this);
   }
 
