@@ -142,42 +142,42 @@ module.exports = function(grunt) {
           base: 'http://projects.statesman.com/templates/immersive/',
           nav: [
             {
-              title: "Story 1",
-              subtitle: "Explaining story 1",
+              title: "Overview",
+              subtitle: "Explaining it",
               file: "index",
+            },
+            {
+              title: "Part 1",
+              subtitle: "Explaining story 1",
+              file: "main",
               children: [
                 {
-                  title: "Sub-story 1",
-                  subtitle: "Explaining story 1",
-                  file: "page2"
+                  title: "CPS main",
+                  file: "main",
                 },
                 {
-                  title: "Sub-story 2",
-                  subtitle: "More on story 2",
-                  file: "page2"
+                  title: "Previous removals",
+                  file: "previous-removals",
                 },
                 {
-                  title: "Sub-story 3",
-                  subtitle: "And this is story 3",
-                  file: "page3"
+                  title: "Undercounting",
+                  file: "dummy",
+                },
+                {
+                  title: "Brandon White",
+                  file: "brandon-white",
                 }
               ]
             },
             {
-              title: "Story 2",
-              subtitle: "More on story 2",
-              file: "page2"
+              title: "Part 2",
+              subtitle: "Part 2 description",
+              file: "dummy"
             },
             {
-              title: "Story 3",
+              title: "Part 3",
               subtitle: "And this is story 3",
-              file: "page3",
-              children: [
-                {
-                  title: "Sub-story 4",
-                  file: "page4"
-                }
-              ]
+              file: "dummy"
             }
           ]
         }
