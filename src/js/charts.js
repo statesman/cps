@@ -18,11 +18,16 @@
         fontFamily: '"Merriweather Sans", sans-serif'
       }
     },
-    colors: [primaryColor, '#555'],
+    colors: [primaryColor, '#ca3a29', '#74BA0D'],
     tooltip: {
       backgroundColor: '#fff',
       borderColor: '#f7f7f7',
       borderRadius: 0
+    },
+    yAxis: {
+      title: {
+        text: null
+      }
     },
     credits: {
       enabled: false
@@ -64,6 +69,16 @@
     xAxis: {
       categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
     },
+    yAxis: {
+      labels: {
+        formatter: function() {
+          return numeral(this.value).format('$0a');
+        }
+      }
+    },
+    tooltip: {
+      valuePrefix: '$'
+    },
     series: [{
       data: [241927936, 303837559, 376531782, 422939948, 490511804.05, 462545961.88, 453054389, 451810639, 468990287],
       name: 'Staff costs'
@@ -79,7 +94,15 @@
     },
     yAxis: {
       min: 0,
-      max: 100
+      max: 100,
+      labels: {
+        formatter: function() {
+          return this.value + '%';
+        }
+      }
+    },
+    tooltip: {
+      valueSuffix: '%'
     },
     series: [{
       data: [29.3, 29.8, 34.1, 30.5, 23.6, 25.4, 25, 26.1, 25.5],
@@ -110,19 +133,33 @@
     xAxis: {
       categories: ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
     },
-    yAxis: {
-      min: 0
-    },
+    yAxis: [{
+      title: {
+        text: 'Cases per day'
+      }
+    }, {
+      title: {
+        text: 'Total CPS staff'
+      },
+      opposite: true
+    }],
     tooltip: {
       crosshairs: true,
       shared: true
     },
     series: [{
       data: [43.2, 34.7, 25.3, 21.9, 20.7, 29.1, 27.4, 24.7, 19.9],
-      name: 'Investigations'
+      name: 'Investigations',
+      yAxis: 0
     }, {
       data: [40.4, 44.5, 43.3, 37.3, 28.2, 29.5, 32, 33.7, 31.8],
-      name: 'Conservatorship'
+      name: 'Conservatorship',
+      yAxis: 0
+    }, {
+      data: [5114, 5894, 7046, 8037, 8632.6, 8343.5, 8362, 8064.5, 8234],
+      name: 'Total staff',
+      yAxis: 1,
+      zIndex: -1
     }]
   });
 
@@ -151,4 +188,4 @@
     }]
   });
 
-}(jQuery, Highcharts, ChloroMap));
+}(jQuery, Highcharts, ChloroMap, numeral));
