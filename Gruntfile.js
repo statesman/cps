@@ -1,3 +1,5 @@
+var ENV_STAGE = process.env.ENV_STAGE || 's:/projects/';
+
 module.exports = function(grunt) {
   'use strict';
 
@@ -93,15 +95,15 @@ module.exports = function(grunt) {
       },
       templates: {
         files: ['pages/**/*', 'layouts/*', 'helpers/**', 'partials/*'],
-        tasks: ['clean:pages', 'generator']
+        tasks: ['build:html']
       },
       scripts: {
         files: ['src/js/**.js'],
-        tasks: ['jshint', 'clean:js', 'uglify']
+        tasks: ['build:js']
       },
       styles: {
         files: ['src/css/**.less', 'src/css/**/**.less'],
-        tasks: ['clean:css', 'less']
+        tasks: ['build:css']
       }
     },
 
@@ -186,6 +188,23 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+
+    // A multi-task to publish static files from public/ to the staging
+    // environment
+    sync: {
+      stage: {
+        files: [{
+          cwd: 'public',
+          src: [
+            '**'
+          ],
+          dest: ENV_STAGE + 'news/child-fatalities',
+        }],
+        ignoreInDest: '.htaccess',
+        verbose: true,
+        updateAndDelete: true
+      }
     }
 
   });
@@ -200,8 +219,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-generator');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-sync');
 
-  grunt.registerTask('bake', ['clean:pages', 'generator']);
-  grunt.registerTask('default', ['jshint', 'clean', 'generator', 'less', 'copy', 'uglify', 'concurrent']);
+  // Assorted build tasks
+  grunt.registerTask('build:html', ['clean:pages', 'generator']);
+  grunt.registerTask('build:css', ['clean:css', 'clean:fonts', 'copy', 'less']);
+  grunt.registerTask('build:js', ['clean:js', 'jshint', 'uglify']);
+  grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
+
+  // Publishing tasks
+  grunt.registerTask('stage', ['build', 'sync:stage']);
+
+  // A dev task that runs a build then launches a dev server w/ livereload
+  grunt.registerTask('default', ['build', 'concurrent']);
 
 };
