@@ -2,15 +2,40 @@
   "template" : "story",
   "title": "Missing families",
   "description": "This is a starter template",
-  "thumbnail": "assets/thumbnail.jpg"
+  "thumbnail": "assets/thumbnail.jpg",
+  "turnergravephoto": {
+    "url": "assets/colton-turner-grave.jpg",
+    "caption": "This is the shallow grave on Saturday September 13, 2014, in the woods off Felter Lane where police found the body of Colton Turner on Friday.",
+    "credit": "Jay Janner / American-Statesman"
+  },
+  "turnerphoto": {
+    "url": "assets/colton-turner.jpg",
+    "caption": "Messages for Colton Turner are attached to balloons that were released at a prayer vigil for the boy at the Cedar Park Tree across from the Cedar Park Police Department on Saturday September 13, 2014. Hundreds gathered to remember the two-year-old boy who was found dead Friday.",
+    "credit": "Jay Janner / American-Statesman"
+  },
+  "spearsquote": {
+    "text": "Missing families are an increasing problem throughout the country and it’s not getting any better.",
+    "attribution": "Linda Spears, Child Welfare Agency of America"
+  },
+  "related": {
+    "title": "Related story",
+    "links": [
+      {
+        "name": "Statesman investigates: Did law enforcement miss opportunities to help Colton Turner?",
+        "url": "http://www.mystatesman.com/news/news/crime-law/did-law-enforcement-miss-opportunities-to-help-col/nhj92/"
+      }
+    ]
+  }
 }
 ---
 <h6>Part 2: What is part 2</h6>
 {{#markdown}}
-# Missing families
-## Missing families subhed
+# Missing families hed that is actually headline length
+## Missing families subhed that expains the hed
 
 <p class="author">By Andrea Ball and Eric Dexheimer / Published January 12, 2014</p>
+
+{{> photo-right page.turnerphoto}}
 
 Colton Turner had been missing for months before he was found dead in a shallow grave on September 12.
 
@@ -20,7 +45,7 @@ When families drop off CPS’ radar, the consequences can be deadly. Between 200
 
 It’s a problem the state has tried to tackle. Child Protective Services has a 14-member unit called FINDRS, which was created in 1999 to help find missing families.
 
-But the state has no idea how effective the team is, whether caseworkers even use it or whether it has helped them find children. The American-Statesman has learned that officials don’t track the quality of the information produced by FINDRS, meaning they have no idea how many of its searches result in found children.
+But the state has no idea how effective the team is, whether caseworkers even use it or whether it has helped them find children. The *American-Statesman* has learned that officials don’t track the quality of the information produced by FINDRS, meaning they have no idea how many of its searches result in found children.
 
 CPS officials, however, are confident that FINDRS works.
 
@@ -30,6 +55,8 @@ Texas isn’t alone in its struggle to find families that don’t want to be fou
 
 “Missing families are an increasing problem throughout the country and it’s not getting any better,” Linda Spears with the Child Welfare Agency of America.
 
+{{> linklist page.related}}
+
 Colton Turner wasn’t even a year old when his family fell under CPS scrutiny. Over a period of two years, Child Protective Services received six reports alleging that Colton was being abused. The agency conducted four investigations.
 
 He was 10-months old when a caller complained the little boy was being abused by the boyfriend of his mother, Meagan Work. By the time he was pushing 3-years-old, his family had been investigated four times and his mother slipped out of sight several times. Twice, an investigator caught up with Work and her boyfriend Michael Turner. In March 2014, an investigator decided that Colton was safe.
@@ -37,6 +64,8 @@ He was 10-months old when a caller complained the little boy was being abused by
 But despite additional complaints about the boy’s safety, that was the last time the agency saw him. The case fell through the cracks after caseworkers quit or went on vacation.
 
 In late August, a new caseworker was assigned and began looking for Colton. By that time, police say, he had been dead for more than six weeks. Colton was found in a shallow grave in Southeast Austin on September 12.
+
+{{> photo-right page.turnergravephoto}}
 
 Meagan Work has been charged with injury to a child and injury to a child by omission in the death of her son. Turner has been charged with injury to a child by omission.
 
@@ -59,4 +88,6 @@ But in some cases, families are just good at going underground. Ten years ago, 9
 Investigators lost track of the family in 2002. When Devonte died in July 2004, he had been beaten, bore 250 scars and weighed 35 pounds.
 
 In September, Coleman was executed by lethal injection for the crime. Marcella Williams is serving life in prison.
+
+<p class="author">Contact Andrea Ball at 512-912-2506. Contact Eric Dexheimer at 512-445-1774.</p>
 {{/markdown}}
