@@ -159,14 +159,14 @@ module.exports = function(grunt) {
                   file: "main"
                 },
                 {
-                  title: "Previous removals",
+                  title: "Missteps",
                   subtitle: "Explaining story 1",
-                  file: "previous-removals"
+                  file: "missteps"
                 },
                 {
                   title: "Undercounting",
                   subtitle: "Explaining story 1",
-                  file: "dummy"
+                  file: "undercounting"
                 },
                 {
                   title: "Brandon White",
@@ -178,12 +178,56 @@ module.exports = function(grunt) {
             {
               title: "Part 2",
               subtitle: "Part 2 description",
-              file: "dummy"
+              file: "no-arrest",
+              children: [
+                {
+                  title: "No arrest",
+                  subtitle: "Explaining story 1",
+                  file: "no-arrest"
+                },
+                {
+                  title: "Paramours",
+                  subtitle: "Explaining story 1",
+                  file: "paramours"
+                },
+                {
+                  title: "Missing families",
+                  subtitle: "Explaining story 1",
+                  file: "missing-families"
+                }
+              ]
             },
             {
               title: "Part 3",
               subtitle: "And this is story 3",
-              file: "dummy"
+              file: "wrongdoing",
+              children: [
+                {
+                  title: "Wrongdoing",
+                  subtitle: "Explaining story 1",
+                  file: "wrongdoing"
+                },
+                {
+                  title: "Caseworker violence",
+                  subtitle: "Explaining story 1",
+                  file: "caseworker-violence"
+                },
+                {
+                  title: "Turnover",
+                  subtitle: "Explaining story 1",
+                  file: "turnover"
+                },
+                {
+                  title: "Overhaul strategy",
+                  subtitle: "Explaining story 1",
+                  file: "overhaul-strategy"
+                },
+                {
+                  title: "Previous removals",
+                  subtitle: "Explaining story 1",
+                  file: "previous-removals"
+                },
+              ]
             }
           ]
         }
