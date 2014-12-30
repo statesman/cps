@@ -1,4 +1,4 @@
-(function($, Slider) {
+(function($, Slider, Children, ChildPopup) {
 
   "use strict";
 
@@ -26,6 +26,20 @@
         });
     });
 
+    // Setup the collection and make it available globally
+    $.getJSON('data.json', function(data) {
+      var children = new Children(data);
+
+      $('.child-link').each(function(i, el) {
+        var id = $(el).data('id');
+        var popup = new ChildPopup({
+          model: children.get(id),
+          el: el
+        });
+        popup.render();
+      });
+    });
+
   });
 
-}(jQuery, Slider));
+}(jQuery, Slider, Children, ChildPopup));

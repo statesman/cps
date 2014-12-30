@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     // Clean files from dist/ before build
     clean: {
       css: ["public/dist/*.css", "public/dist/*.css.map"],
-      js: ["public/dist/*.js", "public/dist/*.js.map"],
+      js: ["public/dist/*.js", "public/dist/*.js.map", "build/*.js"],
       fonts: ["public/fonts/**"],
       pages: ["public/**.html"]
     },
@@ -61,6 +61,29 @@ module.exports = function(grunt) {
       }
     },
 
+    // Pre-render Handlebars templates
+    handlebars: {
+      options: {
+        // Returns the filename, with its parent directory if
+        // it's in a subdirectory of the src/templates folder
+        processName: function(filePath) {
+          var path = filePath.toLowerCase(),
+              pieces = path.split("/"),
+              name = '';
+          if(pieces[pieces.length - 2] !== 'templates') {
+            name = name + pieces[pieces.length - 2];
+          }
+          name = name + pieces[pieces.length - 1];
+          return name.split(".")[0];
+        }
+      },
+      compile: {
+        files: {
+          'build/templates.js': ['src/templates/**/*.hbs']
+        }
+      }
+    },
+
     // Use Uglify to bundle up a pym file for the home page
     uglify: {
       options: {
@@ -70,13 +93,22 @@ module.exports = function(grunt) {
         files: {
           'public/dist/scripts.js': [
             'bower_components/jquery/dist/jquery.js',
+            'bower_components/bootstrap/js/tooltip.js',
+            'bower_components/bootstrap/js/popover.js',
             'bower_components/underscore/underscore.js',
+            'bower_components/backbone/backbone.js',
             'bower_components/imagesloaded/imagesloaded.pkgd.js',
             'bower_components/Slides/source/jquery.slides.js',
             'bower_components/highcharts/highcharts.js',
             'bower_components/leaflet/dist/leaflet.js',
+            'bower_components/handlebars/handlebars.runtime.js',
+            'bower_components/moment/moment.js',
             'bower_components/chroma-js/chroma.js',
             'bower_components/numeral/numeral.js',
+            'build/templates.js',
+            'src/js/models/child.js',
+            'src/js/collections/children.js',
+            'src/js/views/child-popup.js',
             'src/js/chloromap.js',
             'src/js/call-time.js',
             'src/js/charts.js',
@@ -98,7 +130,7 @@ module.exports = function(grunt) {
         tasks: ['build:html']
       },
       scripts: {
-        files: ['src/js/**.js'],
+        files: ['src/js/**/*.js', 'src/templates/**/*.hbs'],
         tasks: ['build:js']
       },
       styles: {
@@ -260,6 +292,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-generator');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
@@ -268,7 +301,7 @@ module.exports = function(grunt) {
   // Assorted build tasks
   grunt.registerTask('build:html', ['clean:pages', 'generator']);
   grunt.registerTask('build:css', ['clean:css', 'clean:fonts', 'copy', 'less']);
-  grunt.registerTask('build:js', ['clean:js', 'jshint', 'uglify']);
+  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint', 'uglify']);
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
 
   // Publishing tasks

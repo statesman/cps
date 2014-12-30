@@ -1,0 +1,40 @@
+a.child-link {
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  // Put an icon after every child link
+  &:after {
+    margin-left: 4px;
+    color: @gray-light;
+    .fa-icon();
+    content: @fa-var-comment;
+  }
+}
+
+.popover-child {
+  font-family: @font-family-sans-serif;
+  h3.popover-title {
+    font-size: 16px;
+    a.popover-close {
+      color: @gray;
+    }
+  }
+  .popover-content {
+    font-size: 12px;
+    p {
+      margin: 0;
+    }
+    ul {
+      border-top: 1px solid @gray-lighter;
+      padding-top: 6px;
+      margin: 4px 0 0 0;
+      > li {
+        padding-left: 0;
+        padding-right: 10px;
+      }
+    }
+  }
+}
