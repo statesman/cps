@@ -34,6 +34,7 @@ article {
     margin-right: 0;
     margin-bottom: @line-height-computed * 2;
     width: 100%;
+
     img {
       .img-responsive();
     }
@@ -41,6 +42,15 @@ article {
       color: @gray;
       font-size: 12px;
       margin: 5px 15px @line-height-computed 15px;
+    }
+  }
+
+  > .slider-full {
+    @media (min-width: @screen-sm-min) {
+      margin-top: @line-height-computed * 1.5;
+      margin-bottom: @line-height-computed * 1.5;
+      margin-left: 10%;
+      width: 80%;
     }
   }
 
