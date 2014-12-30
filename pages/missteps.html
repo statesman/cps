@@ -2,15 +2,54 @@
   "template" : "story",
   "title": "Page 2",
   "description": "This is a starter template",
-  "thumbnail": "assets/thumbnail.jpg"
+  "thumbnail": "assets/thumbnail.jpg",
+  "deaconslider": {
+    "images": [{
+      "url": "assets/deacon4.jpg",
+      "caption": "Martha Garay's grandson, Deacon was killed by his mother's boyfriend when he was two years old. This is one of the photos she has of Deacon.",
+      "credit": "Laura Skelding / American-Statesman"
+    }, {
+      "url": "assets/deacon1.jpg",
+      "caption": "Martha Garay's grandson, Deacon was killed by his mother's boyfriend when he was two years old. Deacon's Superman costume was used to make a teddy bear after he died.",
+      "credit": "Laura Skelding / American-Statesman"
+    }, {
+      "url": "assets/deacon3.jpg",
+      "caption": "Martha Garay's grandson, Deacon was killed by his mother's boyfriend when he was two years old. Deacon's Superman costume was used to make a teddy bear after he died.",
+      "credit": "Laura Skelding / American-Statesman"
+    }, {
+      "url": "assets/deacon5.jpg",
+      "caption": "Martha Garay's grandson, Deacon was killed by his mother's boyfriend when he was two years old. The kitchen door frame serves as a height marker for her grandchildren, including several markers for Deacon as he grew.",
+      "credit": "Laura Skelding / American-Statesman"
+    }, {
+      "url": "assets/deacon8.jpg",
+      "caption": "Martha Garay's grandson, Deacon was killed by his mother's boyfriend when he was two years old. Deacon's Superman costume was used to make a teddy bear after he died.",
+      "credit": "Laura Skelding / American-Statesman"
+    }]
+  },
+  "crimmins": {
+    "text": "[It is] unacceptable, if there were clear indications that children were at risk and CPS did not act.",
+    "attribution": "Patrick Crimmins, DFPS spokesman"
+  },
+  "part3links": {
+    "title": "More about the agency",
+    "links": [{
+      "url": "turnover.html",
+      "name": "Turnover headline autem in quo sapienter dicimus"
+    }, {
+      "url": "overhaul-strategy.html",
+      "name": "Overhaul strategy headline, inquit ille. Ergo adhuc"
+    }]
+  }
 }
 ---
 <h6>Part 1: What is part 1</h6>
 {{#markdown}}
-  # Missteps
-  ## Missteps subhed
+  # Missteps Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  ## Missteps subhed quoniam de primis naturae commodis satis dietum est nunc de maioribus
 
   <p class="author">By Eric Dexheimer and Andrea Ball / Published January 11, 2014</p>
+
+  {{> slider-right page.deaconslider}}
 
   Two-year-old Deacon Garay first told a Child Protective Services investigator that “Bully” hurt his head in January 2011.
 
@@ -28,6 +67,8 @@
 
   Yet the newspaper’s examination also uncovered gaps in the state’s child protection system that might have averted some of the tragedies.
 
+  {{> blockquote page.crimmins}}
+
   It wasn’t until two months ago, for example, after the October death of Austin’s Colton Turner, whose family the agency had investigated twice before losing track of him, that CPS finally started tracking its cases by number of prior investigations contacts. Yet repeated contact can be an obvious red flag: The newspaper’s analysis found that nearly half of the children who died were already on CPS’s radar. Of those 380 fatalities, 165 families — more than a quarter — had been the subject of a CPS investigation at least 3 times
 
   It is “unacceptable, if there were clear indications that children were at risk and CPS did not act,” said Patrick Crimmins, spokesman for the Department of Family and Protective Services. “The consensus seems clear that the CPS workforce includes talented and dedicated employees whose efforts to protect children aren’t as effective as they have to be.”
@@ -35,6 +76,8 @@
   ---
 
   ### Death could be prevented
+
+  {{> linklist page.part3links}}
 
   Crimmins acknowledged that CPS has been plagued by a variety of problems, such as poor caseworker supervision, inadequate training, and burdensome paperwork demands. But he added the agency had launched a comprehensive reform effort, including a system begun two months ago that records the number of accumulated contacts caseworkers have with a family.
 
@@ -109,4 +152,8 @@
   In Sept. 2011, Malachi Cosby’s aunt noticed he’d stopped crawling and took him to the hospital, where x-rays revealed “several distal femur fractures.” A CPS investigation found reason to believe the 6-month-old’s parents were physically abusive, and Malachi was placed in foster care.
 
   Records show he was returned to his family six weeks later. Five months after that, on April 9, 2012, his parents called 911 to report his death. An autopsy showed a fatal tear in his intestine caused by a blow to his stomach. His father, Fort Bliss soldier Crispen Hanson, has been charged with the murder.
+
+  ---
+
+  <p class="author">Contact Eric Dexheimer at 512-445-1774. Contact Andrea Ball at 512-912-2506.</p>
 {{/markdown}}
