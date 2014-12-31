@@ -1,5 +1,6 @@
 /*
- * A bar chart with a breakdown of causes of death
+ * A bar chart with a breakdown of causes of death, pulled from the children
+ * Backbone collection
  */
 (function(AAS, Backbone) {
 
@@ -13,6 +14,34 @@
     },
 
     render: function() {
+      // Total up the causes of death
+      var totals = this.collection.chain()
+      .countBy(function(model) {
+        return model.get('cod');
+      })
+      .pairs()
+      .sortBy(function(count) {
+        return -count[1];
+      })
+      .value();
+
+      // How many of the top causes to show
+      var showTop = 10;
+
+      // Separate the top from the other and format them for HC
+      var cats = _.map(totals.slice(0, showTop), function(el) {
+        return el[0];
+      });
+      cats.push('Other');
+
+      var counts = _.map(totals.slice(0, showTop), function(el) {
+        return el[1];
+      });
+      var otherCount = _.reduce(totals.slice(showTop), function(memo, key, val) {
+        return memo + key[1];
+      }, 0);
+      counts.push(otherCount);
+
       this.$el.highcharts({
         chart: {
           type: 'bar'
@@ -21,22 +50,10 @@
           text: ''
         },
         xAxis: {
-          categories: [
-            'blunt force trauma',
-            'drowning',
-            'gunshot',
-            'co-sleeping',
-            'suffocation',
-            'left in car',
-            'hit by car',
-            'vehicle accident',
-            'medical',
-            'overdose',
-            'other'
-          ]
+          categories: cats
         },
         series: [{
-          data: [255, 148, 59, 57, 30, 27, 27, 24, 21, 14, 116],
+          data: counts,
           name: 'Number of deaths'
         }]
       });

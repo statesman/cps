@@ -6,7 +6,7 @@ Highcharts = (function(Highcharts) {
         fontFamily: '"Merriweather Sans", sans-serif'
       }
     },
-    colors: ['#395271', '#ca3a29', '#74BA0D'],
+    colors: ['#395271', '#ca3a29', '#74BA0D', '#777777'],
     tooltip: {
       backgroundColor: '#fff',
       borderColor: '#f7f7f7',

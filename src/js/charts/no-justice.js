@@ -10,31 +10,41 @@
     },
 
     render: function() {
+      // Format data for
+      var counts = this.collection.chain()
+        .countBy(function(model) {
+          var justice = model.get('justice');
+          return justice.substr(0,1).toUpperCase() + justice.substr(1);
+        })
+        .omit("")
+        .pairs()
+        .sortBy(function(el) {
+          return -el[1];
+        })
+        .value();
+
       this.$el.highcharts({
-        chart: {
-          type: 'bar'
-        },
         title: {
-          text: ''
+          text: null
         },
-        xAxis: {
-          categories: [
-            'blunt force trauma',
-            'drowning',
-            'gunshot',
-            'co-sleeping',
-            'suffocation',
-            'left in car',
-            'hit by car',
-            'vehicle accident',
-            'medical',
-            'overdose',
-            'other'
-          ]
+        tooltip: {
+          headerFormat: '<b>{point.key}</b><br/>',
+          pointFormat: '{point.y} ({point.percentage:.1f}%)'
+        },
+        plotOptions: {
+          pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: false,
+            },
+            showInLegend: true
+          }
         },
         series: [{
-          data: [255, 148, 59, 57, 30, 27, 27, 24, 21, 14, 116],
-          name: 'Number of deaths'
+          type: 'pie',
+          name: 'Number of cases',
+          data: counts
         }]
       });
     }

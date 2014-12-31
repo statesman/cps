@@ -1,4 +1,4 @@
-(function($, Slider, Children, ChildPopup) {
+(function($, Slider, ChildPopup, AAS) {
 
   "use strict";
 
@@ -20,13 +20,13 @@
     });
 
     // Setup the collection and make it available globally
-    $.getJSON('data.json', function(data) {
-      var children = new Children(data);
+    $.getJSON('data/cps-reports.json', function(data) {
+      AAS.children.reset(data);
 
       $('.child-link').each(function(i, el) {
         var id = $(el).data('id');
         var popup = new ChildPopup({
-          model: children.get(id),
+          model: AAS.children.get(id),
           el: el
         });
         popup.render();
@@ -35,4 +35,4 @@
 
   });
 
-}(jQuery, Slider, Children, ChildPopup));
+}(jQuery, Slider, ChildPopup, AAS));
