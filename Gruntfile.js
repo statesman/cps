@@ -109,11 +109,17 @@ module.exports = function(grunt) {
             'src/js/models/child.js',
             'src/js/collections/children.js',
             'src/js/views/child-popup.js',
+            'src/js/navbar.js',
             'src/js/chloromap.js',
             'src/js/call-time.js',
             'src/js/charts.js',
             'src/js/slider.js',
             'src/js/main.js'
+          ],
+          'public/dist/viewer.js': [
+            'bower_components/jquery/dist/jquery.js',
+            'src/js/navbar.js',
+            'src/js/dc-viewer.js'
           ]
         }
       }

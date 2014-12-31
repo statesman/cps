@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+  <title id="maintitle">{{page.title}}</title>
+
+	<link href="css/document-cloud.css" media="all" rel="stylesheet" type="text/css">
+
+   <!--
+     Customized document viewer for use with DocumentCloud, at http://documentcloud.org.
+     Built on a version from the Chicago Tribune team, http://blog.apps.chicagotribune.com/
+     Made for use at WNYC, http://wnyc.org
+     A base version, without our tracking code, is at: http://s3.amazonaws.com/datadesk/dc.html
+     Use at your own risk, improve as you see fit, and let me know if you do!
+
+     To use, see: http://johnkeefe.net/a-customized-viewer-for-documentcloud
+
+     John Keefe
+     john at johnkeefe.net
+     http://johnkeefe.net
+
+   -->
+
+  {{> styles}}
+
+  {{> cmg-header-scripts}}
+</head>
+<body class="dc-viewer">
+
+  {{{body}}}
+
+  <script src="http://s3.documentcloud.org/viewer/loader.js"></script>
+  <script src="dist/viewer.js"></script>
+
+  {{> cmg-footer-scripts}}
+
+</body>
+</html>

@@ -11,13 +11,6 @@
       window.open(url, "_blank", "width=555, height=520");
     });
 
-    // Show the chapters when they're expanded on mobile
-    $('.navbar-expand').on('click', function(e) {
-      e.preventDefault();
-      var elId = $(this).data('target');
-      $(elId).toggleClass('hidden-navbar-collapsed');
-    });
-
     // Setup sliders
     $('.slider').each(function(i, el) {
       $(el).imagesLoaded()
