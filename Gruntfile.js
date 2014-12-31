@@ -105,15 +105,31 @@ module.exports = function(grunt) {
             'bower_components/moment/moment.js',
             'bower_components/chroma-js/chroma.js',
             'bower_components/numeral/numeral.js',
+            // Pre-processed Handlebars templates
             'build/templates.js',
+            // Backbone models
             'src/js/models/child.js',
             'src/js/collections/children.js',
+            // Load up the collection
+            'src/js/init.js',
             'src/js/views/child-popup.js',
-            'src/js/navbar.js',
+            // Charts (Backbone views)
+            'src/js/charts/chart-styles.js',
+            'src/js/charts/no-justice.js',
+            'src/js/charts/staff-costs.js',
+            'src/js/charts/causes-of-death.js',
+            'src/js/charts/turnover-rate.js',
+            'src/js/charts/reported-vs-unreported.js',
+            'src/js/charts/caseloads.js',
+            'src/js/charts/total-staff.js',
+            // Maps (first the class, then instances)
             'src/js/chloromap.js',
+            'src/js/maps.js',
+            // A few misc. standalone modules
             'src/js/call-time.js',
-            'src/js/charts.js',
+            'src/js/navbar.js',
             'src/js/slider.js',
+            // Lastly, run the setup for everything
             'src/js/main.js'
           ],
           'public/dist/viewer.js': [
