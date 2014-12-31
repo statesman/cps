@@ -1,4 +1,8 @@
 a.child-link {
+  background: @gray-lighter;
+  padding: 3px 6px;
+  font-weight: normal;
+
   &:hover,
   &:active,
   &:focus {
@@ -7,10 +11,9 @@ a.child-link {
 
   // Put an icon after every child link
   &:after {
-    margin-left: 4px;
-    color: @gray-light;
+    margin-left: 5px;
     .fa-icon();
-    content: @fa-var-comment;
+    content: @fa-var-child;
   }
 }
 
