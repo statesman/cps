@@ -116,6 +116,7 @@ module.exports = function(grunt) {
             // Charts (Backbone views)
             'src/js/charts/chart-styles.js',
             'src/js/charts/no-justice.js',
+            'src/js/charts/time-pending.js',
             'src/js/charts/staff-costs.js',
             'src/js/charts/causes-of-death.js',
             'src/js/charts/turnover-rate.js',
