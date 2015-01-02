@@ -35,8 +35,7 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
     this.map = L.map(el);
 
     L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: "Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL."
+      maxZoom: 18
     }).addTo(this.map);
 
     this.dataLayer = L.geoJson(geojson, {
