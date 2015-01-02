@@ -1,0 +1,31 @@
+// Styles for the Document Cloud siders
+
+.sider.document {
+  .document-img {
+    max-height: 150px;
+    overflow: hidden;
+    border-bottom: 1px solid @panel-default-border;
+    img {
+      margin-top: -50px;
+    }
+  }
+  .document-title {
+    font-weight: bold;
+    small {
+      font-weight: normal;
+    }
+  }
+  p {
+    margin: 0;
+
+    &.document-description {
+      margin-bottom: 8px;
+    }
+  }
+  .document-links {
+    li:first-child {
+      padding-left: 0;
+    }
+    font-size: 12px;
+  }
+}

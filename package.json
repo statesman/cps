@@ -21,6 +21,7 @@
     "handlebars": "^2.0.0",
     "marked": "^0.3.2",
     "simplify-geojson": "0.0.2",
+    "sync-request": "^1.0.2",
     "underscore": "^1.7.0"
   },
   "dependencies": {}

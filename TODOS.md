@@ -12,8 +12,8 @@
 - In 146 cases — a little more than one of every five reviewed by the paper — a child had been taken from one of his or her caretakers out of safety concerns prior to the fatality. In 41 of those instances, it was the same child who later died.
 - **TODO**: Geographically, children died from abuse and neglect in nearly half of the state’s 254 counties
 - ~~**TODO**: Texas’s children died of drownings and co-sleeping suffocations and being left to overheat in cars — but also of severe medical and nutritional neglect, burns, boilings, whippings, beatings, stabbings and gunshots~~
-- **TODO**: Stephen report
-- **TODO**: Sunset report
+- ~~**TODO**: Stephen report~~
+- ~~**TODO**: Sunset report~~
 - **TODO**: Add call times interactive
 - **TODO**: In Texas, 80 children died between 2009 and 2013 with cases already opened by child protection workers.
 
