@@ -22,6 +22,9 @@
           }
         }
       },
+      legend: {
+        enabled: false
+      },
       tooltip: {
         valueSuffix: '%'
       },
