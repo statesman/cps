@@ -12,6 +12,7 @@
 - In 146 cases — a little more than one of every five reviewed by the paper — a child had been taken from one of his or her caretakers out of safety concerns prior to the fatality. In 41 of those instances, it was the same child who later died.
 - **TODO**: Add call times interactive
 - **TODO**: In Texas, 80 children died between 2009 and 2013 with cases already opened by child protection workers.
+- sync up maps
 
 ### Missteps
 - **TODO**: The newspaper’s analysis found that nearly half of the children who died were already on CPS’s radar. Of those 380 fatalities, 165 families — more than a quarter — had been the subject of a CPS investigation at least 3 times
@@ -51,3 +52,35 @@
 - ~~**TODO:** Pullquote with “It’s like getting a knife and carving me all up again,” she said. “I’m so angry I’m so angry I’m so angry I’m so angry.”?~~
 - **TODO:** Pie chart with age breakdown for first graf in "Parents scuttle cases"
 - mentioned: Jacob Jones (child), Monique Johnson (suspect); Keyaria Bowens (child); Abigail Couvillon (child); Xavier Graham (child); Aiden Walker (child); Adrian Joe Acosta (suspect), Adrian Limon (child); Brett Sealy (suspect), Alessa Jade (child); Romeo Wright (child); Jaden Sanders (child), Aliesha Sams (suspect), Anthony Arista (suspect); Deondra Garcia (suspect), Erica Johnson (suspect); Emily Lirette (child); Brandel Goebel (child); Anna Gonzales (child), Juanita Gonzales (suspect); Daiyzha Johnson-Wright (child); Jayden McDaniel (child)
+
+# Day 3
+
+### Wrongdoing
+- "Through a series of open records requests, the American-Statesman discovered numerous employees accused by CPS or the Inspector General of misconduct that were referred to local law enforcement agencies."
+- Bit Whitaker (Abilene CPS person, indicted in Taylor Co.)
+-  Laura Ard, Natalie Ausbie-Reynolds and Rebekah Thonginh-Ross (Greenville CPS workers)
+- "Ross told officials she did it because she was under pressure to close cases and that she was only following Ard’s orders, according to a report by an inspector general investigator."
+- mentioned: Tamryn Klapheke (child); Alicia Moore (child)
+
+### Caseworker violence
+- Stacy Casey slideshow
+- worker assault numbers chart
+- violence against worker reports
+
+### Turnover
+- turnover chart
+- "Since 2005, CPS has hired more than 3,100 employees, reaching 8,234 in 2013. Its staff budget has nearly doubled, from $241 million to $469 million, over that time. Overall turnover for staffers is down from 29.3 percent to 25.5 percent."
+- link bulleted findings to relevant reports
+- "The state also hasn’t tried hard hard enough to fixpoor management practices that contribute to high caseworker turnover, according to a recent report by the Texas Sunset Commission, which evaluates the effectiveness of state agencies."
+- " violence against caseworkers has grown"
+
+### Overhaul strategy
+- “These sweeping reforms have yielded tremendous improvement in the services that protect the most vulnerable Texans,” they wrote in a report to legislators.
+- "In 2012, the state ranked 47th in the country for its per capita spending — $175 — on child protection and welfare programs, according to the Center for Public Policy Priorities"
+- CPS released a comprehensive review of the agency by the Stephen Group, which offered numerous suggestions on how to improve morale and supervision at the organization
+- mentioned: Jakaela Newhouse (child); Adrian Bosques (child)
+- In XX instances, a child had been previously removed from the home prior to his death
+
+### Previous removals
+- “The impact of each prior removal due to parents who have abused alcohol or drugs increase the odds of deaths by a multiple of nearly 15,”: http://www.dcf.state.fl.us/newsroom/pressreleases/docs/20140106_pressrelease_attachments.pdf
+- mentioned: Ethan Alatamirano (child), Janie Alatamirano (suspect, Bexar Co.), Michael Pastran (suspect, Bexar Co.); Jakaela Newhouse (child), Curtis James Adams (suspect, ); Adrian Bosque (child)
