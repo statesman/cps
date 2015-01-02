@@ -49,6 +49,9 @@
         title: {
           text: ''
         },
+        legend: {
+          enabled: false
+        },
         xAxis: {
           categories: cats
         },
