@@ -85,6 +85,7 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
       var steps = 6;
 
       var colorBar = _.times((steps + 1), function(i) {
+        console.log(self.min + (range / steps * i));
         return '<i style="background:' + self.getColor(self.min + (range / steps * i)) + '"></i>';
       }, this);
 
@@ -93,6 +94,8 @@ var ChloroMap = (function($, L, _, numeral, chroma) {
       div.innerHTML += 'Min';
       div.innerHTML += '<div class="color-bar">' + colorBar.join('') + '</div>';
       div.innerHTML += 'Max';
+
+      console.log(colorBar);
 
       return div;
     };

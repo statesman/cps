@@ -25,11 +25,8 @@
 - mentioned: Dakylie Hamilton (child), DeSean Hamilton (child)
 
 ### Brandon White
-- **TODO**: Document link to White court docs?
-- **TODO**: Document link to White CPS report?
 - **TODO**: White case timeline?
-- **TODO**: Court doc photo collage?
-- mentioned: Brandon White (child), Robert Gray (suspect, Grayson Co.), Holly White (suspect, Grayson Co.) {mugs available in court docs}
+- mentioned: Brandon White (child)
 
 # Day 2
 
@@ -56,19 +53,18 @@
 # Day 3
 
 ### Wrongdoing
-- "Through a series of open records requests, the American-Statesman discovered numerous employees accused by CPS or the Inspector General of misconduct that were referred to local law enforcement agencies."
 - Bit Whitaker (Abilene CPS person, indicted in Taylor Co.)
--  Laura Ard, Natalie Ausbie-Reynolds and Rebekah Thonginh-Ross (Greenville CPS workers)
+- Laura Ard, Natalie Ausbie-Reynolds and Rebekah Thonginh-Ross (Greenville CPS workers)
 - "Ross told officials she did it because she was under pressure to close cases and that she was only following Ard’s orders, according to a report by an inspector general investigator."
 - mentioned: Tamryn Klapheke (child); Alicia Moore (child)
 
 ### Caseworker violence
-- Stacy Casey slideshow
 - worker assault numbers chart
 - violence against worker reports
 
 ### Turnover
 - turnover chart
+- : “State officials say investigators generally juggle about 20 cases at a time, but a state-commissioned study recently showed stated that the real numbers vary wildly.” Referring to the Stephen report {STephens report}
 - "Since 2005, CPS has hired more than 3,100 employees, reaching 8,234 in 2013. Its staff budget has nearly doubled, from $241 million to $469 million, over that time. Overall turnover for staffers is down from 29.3 percent to 25.5 percent."
 - link bulleted findings to relevant reports
 - "The state also hasn’t tried hard hard enough to fixpoor management practices that contribute to high caseworker turnover, according to a recent report by the Texas Sunset Commission, which evaluates the effectiveness of state agencies."
