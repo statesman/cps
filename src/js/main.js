@@ -1,38 +1,39 @@
-(function($, Slider, ChildPopup, AAS) {
+window.jQuery = window.$ = $ = require('jquery');
+require('imagesloaded');
 
-  "use strict";
+var Slider = require('./lib/slider'),
+    ChildPopup = require('./views/child-popup'),
+    AAS = require('./lib/aas');
 
-  $(function() {
+$(function() {
 
-    // Open Twitter links in a new window
-    $('.sider-twitter').on('click', 'a', function(e) {
-      e.preventDefault();
-      var url = $(this).attr('href');
-      window.open(url, "_blank", "width=555, height=520");
-    });
-
-    // Setup sliders
-    $('.slider').each(function(i, el) {
-      $(el).imagesLoaded()
-        .always(function() {
-          new Slider(el);
-        });
-    });
-
-    // Setup the collection and make it available globally
-    $.getJSON('data/cps-reports.json', function(data) {
-      AAS.children.reset(data);
-
-      $('.child-link').each(function(i, el) {
-        var id = $(el).data('id');
-        var popup = new ChildPopup({
-          model: AAS.children.get(id),
-          el: el
-        });
-        popup.render();
-      });
-    });
-
+  // Open Twitter links in a new window
+  $('.sider-twitter').on('click', 'a', function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    window.open(url, "_blank", "width=555, height=520");
   });
 
-}(jQuery, Slider, ChildPopup, AAS));
+  // Setup sliders
+  $('.slider').each(function(i, el) {
+    $(el).imagesLoaded()
+      .always(function() {
+        new Slider(el);
+      });
+  });
+
+  // Populate the collection and setup the child popups
+  $.getJSON('data/cps-reports.json', function(data) {
+    AAS.children.reset(data);
+
+    $('.child-link').each(function(i, el) {
+      var id = $(el).data('id');
+      var popup = new ChildPopup({
+        model: AAS.children.get(id),
+        el: el
+      });
+      popup.render();
+    });
+  });
+
+});

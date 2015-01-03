@@ -23,11 +23,11 @@ module.exports = function(grunt) {
         expand: true
       },
       leafletCss: {
-        src: 'bower_components/leaflet/dist/leaflet.css',
+        src: 'node_modules/leaflet/dist/leaflet.css',
         dest: 'build/leaflet.less'
       },
       leafletImgs: {
-        src: 'bower_components/leaflet/dist/images/**',
+        src: 'node_modules/leaflet/dist/images/**',
         dest: 'public/assets/images/',
         flatten: true,
         expand: true
@@ -75,7 +75,8 @@ module.exports = function(grunt) {
           }
           name = name + pieces[pieces.length - 1];
           return name.split(".")[0];
-        }
+        },
+        node: true
       },
       compile: {
         files: {
@@ -92,11 +93,11 @@ module.exports = function(grunt) {
       prod: {
         files: {
           'public/dist/scripts.js': [
-            'bower_components/jquery/dist/jquery.js',
+            //'bower_components/jquery/dist/jquery.js',
             'bower_components/bootstrap/js/tooltip.js',
             'bower_components/bootstrap/js/popover.js',
-            'bower_components/underscore/underscore.js',
-            'bower_components/backbone/backbone.js',
+            //'bower_components/underscore/underscore.js',
+            //'bower_components/backbone/backbone.js',
             'bower_components/imagesloaded/imagesloaded.pkgd.js',
             'bower_components/Slides/source/jquery.slides.js',
             'bower_components/highcharts/highcharts.js',
@@ -142,6 +143,18 @@ module.exports = function(grunt) {
       }
     },
 
+    // Use Watchify to smartly compile JS
+    watchify: {
+      options: {
+        keepalive: true,
+        debug: true
+      },
+      js: {
+        src: './src/js/main.js',
+        dest: './public/dist/scripts.js'
+      }
+    },
+
     // Watch for changes in LESS and JavaScript files,
     // relint/retranspile when a file changes
     watch: {
@@ -149,12 +162,15 @@ module.exports = function(grunt) {
         livereload: true,
       },
       templates: {
-        files: ['pages/**/*', 'layouts/*', 'helpers/**', 'partials/*'],
+        files: ['pages/**/*', 'layouts/*', 'helpers/*', 'partials/*'],
         tasks: ['build:html']
       },
+      tpls: {
+        files: ['src/templates/**/*.hbs'],
+        tasks: ['handlebars']
+      },
       scripts: {
-        files: ['src/js/**/*.js', 'src/templates/**/*.hbs'],
-        tasks: ['build:js']
+        files: ['public/dist/*.js']
       },
       styles: {
         files: ['src/css/**.less', 'src/css/**/**.less'],
@@ -180,7 +196,7 @@ module.exports = function(grunt) {
       options: {
         logConcurrentOutput: true
       },
-      dev: ['connect', 'watch']
+      dev: ['connect', 'watchify', 'watch']
     },
 
     // Bake out static HTML of our pages
@@ -320,11 +336,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-sync');
+  grunt.loadNpmTasks('grunt-watchify');
 
   // Assorted build tasks
   grunt.registerTask('build:html', ['clean:pages', 'generator']);
   grunt.registerTask('build:css', ['clean:css', 'clean:fonts', 'copy', 'less']);
-  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint', 'uglify']);
+  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint']);
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
 
   // Publishing tasks

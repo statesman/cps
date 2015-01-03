@@ -1,43 +1,43 @@
-var Children = (function(Backbone, Child, _) {
+var Backbone = require('../lib/backbone'),
+    Child = require('../models/child'),
+    _ = require('underscore');
 
-  var Children = Backbone.Collection.extend({
+var Children = Backbone.Collection.extend({
 
-    model: Child,
+  model: Child,
 
-    filterClear: function() {
-      _.each(this.models, function(model) {
+  filterClear: function() {
+    _.each(this.models, function(model) {
+      model.set('selected', true);
+    });
+    this.trigger('filtered');
+  },
+
+  filterBy: function(field, value) {
+    _.each(this.models, function(model) {
+      if(model.get(field) === value) {
         model.set('selected', true);
-      });
-      this.trigger('filtered');
-    },
+      }
+      else {
+        model.set('selected', false);
+      }
+    });
+    this.trigger('filtered');
+  },
 
-    filterBy: function(field, value) {
-      _.each(this.models, function(model) {
-        if(model.get(field) === value) {
-          model.set('selected', true);
-        }
-        else {
-          model.set('selected', false);
-        }
-      });
-      this.trigger('filtered');
-    },
+  filterByRange: function(field, minVal, maxVal) {
+    _.each(this.models, function(model) {
+      var val = model.get(field);
+      if(val >= minVal && val <= maxVal) {
+        model.set('selected', true);
+      }
+      else {
+        model.set('selected', false);
+      }
+    });
+    this.trigger('filtered');
+  }
 
-    filterByRange: function(field, minVal, maxVal) {
-      _.each(this.models, function(model) {
-        var val = model.get(field);
-        if(val >= minVal && val <= maxVal) {
-          model.set('selected', true);
-        }
-        else {
-          model.set('selected', false);
-        }
-      });
-      this.trigger('filtered');
-    }
+});
 
-  });
-
-  return Children;
-
-}(Backbone, Child, _));
+module.exports = Children;

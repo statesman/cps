@@ -1,17 +1,16 @@
-var Child = (function(Backbone, moment) {
+var Backbone = require('../lib/backbone'),
+    moment = require('moment');
 
-  var Child = Backbone.Model.extend({
+var Child = Backbone.Model.extend({
 
-    initialize: function(attributes) {
-      this.set('dod', moment(attributes.dod));
-    },
+  initialize: function(attributes) {
+    this.set('dod', moment(attributes.dod));
+  },
 
-    defaults: {
-      'selected': true
-    }
+  defaults: {
+    'selected': true
+  }
 
-  });
+});
 
-  return Child;
-
-}(Backbone, moment));
+module.exports = Child;

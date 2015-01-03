@@ -1,3 +1,7 @@
+var glob = ('undefined' === typeof window) ? global : window,
+
+Handlebars = glob.Handlebars || require('handlebars');
+
 this["JST"] = this["JST"] || {};
 
 this["JST"]["childpopup"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -12,3 +16,5 @@ this["JST"]["childpopup"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"
     + escapeExpression(((helper = (helper = helpers.dc_id || (depth0 != null ? depth0.dc_id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"dc_id","hash":{},"data":data}) : helper)))
     + "\" target=\"_blank\"><i class=\"fa fa-file-text\"></i> Read report</a></li>\n  <li><a href=\"#\"><i class=\"fa fa-area-chart\"></i> View in database</a></li>\n</ul>\n";
 },"useData":true});
+
+if (typeof exports === 'object' && exports) {module.exports = this["JST"];}
