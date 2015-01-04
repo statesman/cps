@@ -1,8 +1,6 @@
 # All
 - **TODO**: Add info boxes from NewsEngin
 - **TODO**: Add Story Highlights partial and content from NewsEngin
-- ~~**TODO**: Document link~~
-- ~~**TODO**: Document viewer~~
 - **TODO**: Child popup
 
 # Day 1

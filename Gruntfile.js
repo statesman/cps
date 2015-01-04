@@ -203,6 +203,11 @@ module.exports = function(grunt) {
           // Part 2
           'public/dist/no-arrest.js': './src/js/no-arrest.js'
         }
+      },
+      explorer: {
+        files: {
+          'public/dist/explorer.js': './src/js/explorer.js'
+        }
       }
     },
 
@@ -244,7 +249,8 @@ module.exports = function(grunt) {
     // A tool to run the webserver and livereloader simultaneously
     concurrent: {
       options: {
-        logConcurrentOutput: true
+        logConcurrentOutput: true,
+        limit: 12
       },
       dev: [
         'browserify:storycommon',
@@ -253,6 +259,7 @@ module.exports = function(grunt) {
         'browserify:undercounting',
         'browserify:noarrest',
         'browserify:docs',
+        'browserify:explorer',
         'watch',
         'connect'
       ]

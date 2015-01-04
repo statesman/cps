@@ -1,0 +1,46 @@
+#explorer {
+
+  @male-color: #6595EC;
+  @female-color: #FFABF1;
+
+  @grid-item-size: 25px;
+
+  .overview-item {
+    background-color: @gray-lighter;
+    float: left;
+    .size(@grid-item-size, @grid-item-size);
+    border: 1px solid #fff;
+    cursor: pointer;
+
+    .transition(height 300ms);
+    .transition(width 300ms);
+    .transition(margin 300ms);
+    .transition(border-width 300ms);
+
+    &.active {
+      &.gender-M {
+        background-color: @male-color;
+      }
+      &.gender-F {
+        background-color: @female-color;
+      }
+      &.gender- {
+        background-color: darken(@gray-lighter, 20%);
+      }
+    }
+
+    &:hover {
+      border-width: 4px;
+      box-shadow: 0 0 12px rgba(0,0,0,.3);
+      z-index: 100;
+      position: relative;
+      .size(@grid-item-size * 1.25, @grid-item-size * 1.25);
+      margin: -(@grid-item-size / 8);
+      opacity: 1 !important;
+    }
+  }
+
+  &:hover .overview-item {
+    opacity: 0.7;
+  }
+}
