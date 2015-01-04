@@ -2,10 +2,11 @@
  * A bar chart with a breakdown of causes of death, pulled from the children
  * Backbone collection
  */
- var $ = require('jquery'),
-     Highcharts = require('../lib/highcharts'),
-     AAS = require('../lib/aas'),
-     Backbone = require('../lib/backbone');
+ var AAS = require('../lib/aas'),
+     Backbone = require('backbone'),
+     _ = require('underscore');
+
+require('../lib/highcharts');
 
 new (Backbone.View.extend({
 

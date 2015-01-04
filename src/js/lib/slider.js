@@ -1,7 +1,6 @@
-window.jQuery = window.$ = $ = require('jquery');
+var _ = require('underscore');
 
-var _ = require('underscore'),
-    slides = require('../../../bower_components/Slides/source/jquery.slides');
+require('../../../bower_components/Slides/source/jquery.slides');
 
 var Slider = function(el) {
   // Save the $ version of the slider element

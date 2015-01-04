@@ -144,14 +144,65 @@ module.exports = function(grunt) {
     },
 
     // Use Watchify to smartly compile JS
-    watchify: {
+    browserify: {
       options: {
-        keepalive: true,
+        watch: true,
+        keepAlive: true,
         debug: true
       },
-      js: {
-        src: './src/js/main.js',
-        dest: './public/dist/scripts.js'
+      docs: {
+        src: './src/js/docs.js',
+        dest: 'public/dist/docs.js'
+      },
+      storycommon: {
+        options: {
+          alias: [
+            './src/js/bundles/story.js:./bundles/story'
+          ],
+        },
+        src: [],
+        dest: 'public/dist/story-common.js'
+      },
+      main: {
+        options: {
+          external: [
+            './src/js/bundles/story.js:./bundles/story'
+          ]
+        },
+        files: {
+          'public/dist/main.js': './src/js/main.js',
+        }
+      },
+      missteps: {
+        options: {
+          external: [
+            './src/js/bundles/story.js:./bundles/story'
+          ]
+        },
+        files: {
+          'public/dist/missteps.js': './src/js/missteps.js'
+        }
+      },
+      undercounting: {
+        options: {
+          external: [
+            './src/js/bundles/story.js:./bundles/story'
+          ]
+        },
+        files: {
+          'public/dist/undercounting.js': './src/js/undercounting.js',
+        }
+      },
+      noarrest: {
+        options: {
+          external: [
+            './src/js/bundles/story.js:./bundles/story'
+          ]
+        },
+        files: {
+          // Part 2
+          'public/dist/no-arrest.js': './src/js/no-arrest.js'
+        }
       }
     },
 
@@ -169,7 +220,7 @@ module.exports = function(grunt) {
         files: ['src/templates/**/*.hbs'],
         tasks: ['handlebars']
       },
-      scripts: {
+      js: {
         files: ['public/dist/*.js']
       },
       styles: {
@@ -185,8 +236,7 @@ module.exports = function(grunt) {
           hostname: 'localhost',
           base: 'public',
           keepalive: true,
-          livereload: true,
-          open: true
+          livereload: true
         }
       }
     },
@@ -196,7 +246,16 @@ module.exports = function(grunt) {
       options: {
         logConcurrentOutput: true
       },
-      dev: ['connect', 'watchify', 'watch']
+      dev: [
+        'browserify:storycommon',
+        'browserify:main',
+        'browserify:missteps',
+        'browserify:undercounting',
+        'browserify:noarrest',
+        'browserify:docs',
+        'watch',
+        'connect'
+      ]
     },
 
     // Bake out static HTML of our pages
@@ -336,7 +395,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-sync');
-  grunt.loadNpmTasks('grunt-watchify');
+  grunt.loadNpmTasks('grunt-browserify');
 
   // Assorted build tasks
   grunt.registerTask('build:html', ['clean:pages', 'generator']);

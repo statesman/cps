@@ -1,8 +1,7 @@
 /*
  * Maps showing deaths by county, in real numbers and per capita
  */
-var $ = require('jquery'),
-    Chloromap = require('./Chloromap');
+var ChloroMap = require('./chloromap');
 
 $.getJSON('data/deathsByCounty.json', function(data) {
   var countyMap = new ChloroMap('county-by-county', data, {

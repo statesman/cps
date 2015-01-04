@@ -1,8 +1,7 @@
 /*
  * Total staff over the years
  */
- var $ = require('jquery'),
-     Highcharts = require('../lib/highcharts');
+var Highcharts = require('../lib/highcharts');
 
 $(function() {
   $('#cps-staff-counts').highcharts({

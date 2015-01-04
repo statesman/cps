@@ -1,9 +1,8 @@
 /*
  * A chart showing CPS staff costs over the years
  */
- var $ = require('jquery'),
-     Highcharts = require('../lib/highcharts'),
-     numeral = require('numeral');
+var Highcharts = require('../lib/highcharts'),
+    numeral = require('numeral');
 
 $(function() {
   $('#cps-staff-costs').highcharts({

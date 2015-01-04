@@ -1,8 +1,7 @@
 /*
  * Reported vs. unreported deaths over the years; line chart
  */
-var $ = require('jquery'),
-    Highcharts = require('../lib/highcharts');
+var Highcharts = require('../lib/highcharts');
 
 $(function() {
 

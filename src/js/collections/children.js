@@ -1,6 +1,8 @@
-var Backbone = require('../lib/backbone'),
+var Backbone = require('backbone'),
     Child = require('../models/child'),
     _ = require('underscore');
+
+Backbone.$ = window.jQuery;
 
 var Children = Backbone.Collection.extend({
 

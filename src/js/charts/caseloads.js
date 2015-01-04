@@ -2,8 +2,7 @@
  * A line chart showing the change in caseloads mashed up with the change in
  * staff
  */
-var $ = require('jquery'),
-    Highcharts = require('../lib/highcharts');
+var Highcharts = require('../lib/highcharts');
 
 $(function() {
   $('#cps-caseloads').highcharts({

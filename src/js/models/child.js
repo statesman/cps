@@ -1,4 +1,4 @@
-var Backbone = require('../lib/backbone'),
+var Backbone = require('backbone'),
     moment = require('moment');
 
 var Child = Backbone.Model.extend({

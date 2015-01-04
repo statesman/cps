@@ -1,7 +1,6 @@
-var $ = require('jquery'),
-    Highcharts = require('../lib/highcharts'),
+var Highcharts = require('../lib/highcharts'),
     AAS = require('../lib/aas'),
-    Backbone = require('../lib/backbone');
+    Backbone = require('backbone');
 
 new (Backbone.View.extend({
 

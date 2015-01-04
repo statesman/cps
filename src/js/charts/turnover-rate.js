@@ -1,8 +1,8 @@
 /*
  * A line chart showing CPS turnover rate over the years
  */
- var $ = require('jquery'),
-     Highcharts = require('../lib/highcharts');
+
+var Highcharts = require('../lib/highcharts');
 
 $(function() {
   $('#cps-turnover-rate').highcharts({

@@ -1,9 +1,10 @@
-window.jQuery = window.$ = $ = require('jquery');
 require('../../../bower_components/bootstrap/js/tooltip');
 require('../../../bower_components/bootstrap/js/popover');
 
-var Backbone = require('../lib/backbone'),
+var Backbone = require('backbone'),
     JST = require('../../../build/templates');
+
+Backbone.$ = window.jQuery;
 
 var ChildPopup = Backbone.View.extend({
 

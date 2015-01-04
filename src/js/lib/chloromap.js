@@ -10,8 +10,7 @@
  *   - colors: an array that'll be interpolated into a color scale
  */
 
-var $ = require('jquery'),
-    L = require('leaflet'),
+var L = require('leaflet'),
     _ = require('underscore'),
     numeral = require('numeral'),
     chroma = require('chroma-js');
@@ -90,7 +89,6 @@ var ChloroMap = function(el, geojson, options) {
     var steps = 6;
 
     var colorBar = _.times((steps + 1), function(i) {
-      console.log(self.min + (range / steps * i));
       return '<i style="background:' + self.getColor(self.min + (range / steps * i)) + '"></i>';
     }, this);
 
@@ -99,8 +97,6 @@ var ChloroMap = function(el, geojson, options) {
     div.innerHTML += 'Min';
     div.innerHTML += '<div class="color-bar">' + colorBar.join('') + '</div>';
     div.innerHTML += 'Max';
-
-    console.log(colorBar);
 
     return div;
   };
