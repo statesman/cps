@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\crossfilter.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function(exports){
 crossfilter.version = "1.3.11";
 function crossfilter_identity(d) {
@@ -1401,10 +1401,10 @@ function crossfilter_capacity(w) {
 }
 })(typeof exports !== 'undefined' && exports || this);
 
-},{}],"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js":[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 module.exports = require("./crossfilter").crossfilter;
 
-},{"./crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\crossfilter.js"}],"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js":[function(require,module,exports){
+},{"./crossfilter":1}],3:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.3"
@@ -10871,7 +10871,7 @@ module.exports = require("./crossfilter").crossfilter;
   if (typeof define === "function" && define.amd) define(d3); else if (typeof module === "object" && module.exports) module.exports = d3;
   this.d3 = d3;
 }();
-},{}],"c:\\wamp\\www\\cps\\node_modules\\dc\\dc.js":[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /*!
  *  dc 2.0.0-alpha.5
  *  http://dc-js.github.io/dc.js/
@@ -19518,14 +19518,14 @@ return dc;}
 }
 )();
 
-},{"crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js","d3":"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js"}],"c:\\wamp\\www\\cps\\node_modules\\dc\\index.js":[function(require,module,exports){
+},{"crossfilter":2,"d3":3}],5:[function(require,module,exports){
 // Import DC and dependencies
 
 d3 = require("d3");
 crossfilter = require("crossfilter");
 module.exports = require("./dc");
 
-},{"./dc":"c:\\wamp\\www\\cps\\node_modules\\dc\\dc.js","crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js","d3":"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js"}],"c:\\wamp\\www\\cps\\node_modules\\jquery\\dist\\jquery.js":[function(require,module,exports){
+},{"./dc":4,"crossfilter":2,"d3":3}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
@@ -28732,7 +28732,7 @@ return jQuery;
 
 }));
 
-},{}],"c:\\wamp\\www\\cps\\src\\js\\explorer.js":[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 var $ = require('jquery'),
     d3 = require('d3'),
     dc = require('dc'),
@@ -29006,4 +29006,4 @@ d3.json('data/cps-reports.json', function (data) {
   dc.renderAll();
 });
 
-},{"crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js","d3":"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js","dc":"c:\\wamp\\www\\cps\\node_modules\\dc\\index.js","jquery":"c:\\wamp\\www\\cps\\node_modules\\jquery\\dist\\jquery.js"}]},{},["c:\\wamp\\www\\cps\\src\\js\\explorer.js"]);
+},{"crossfilter":2,"d3":3,"dc":5,"jquery":6}]},{},[7]);

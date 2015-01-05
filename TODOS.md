@@ -48,7 +48,6 @@
 # Day 3
 
 ### Wrongdoing
-- "Ross told officials she did it because she was under pressure to close cases and that she was only following Ard’s orders, according to a report by an inspector general investigator."
 
 ### Caseworker violence
 - worker assault numbers chart

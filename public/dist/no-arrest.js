@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"c:\\wamp\\www\\cps\\node_modules\\backbone\\backbone.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //     Backbone.js 1.1.2
 
 //     (c) 2010-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -1608,7 +1608,7 @@
 
 }));
 
-},{"underscore":"c:\\wamp\\www\\cps\\node_modules\\underscore\\underscore.js"}],"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\browser.js":[function(require,module,exports){
+},{"underscore":5}],2:[function(require,module,exports){
 var $ = require('jquery');/*
  Highcharts JS v4.0.4 (2014-09-02)
 
@@ -1918,7 +1918,7 @@ function(b){b.setVisible(a,!1)});if(g)d.isDirtyBox=!0;b!==!1&&d.redraw();I(c,f)}
 c<=f.max){h=b[i+1];c=d===u?0:d+1;for(d=b[i+1]?L(t(0,U((e.clientX+(h?h.wrappedClientX||h.clientX:g))/2)),g):g;c>=0&&c<=d;)j[c++]=e}this.tooltipPoints=j}},show:function(){this.setVisible(!0)},hide:function(){this.setVisible(!1)},select:function(a){this.selected=a=a===u?!this.selected:a;if(this.checkbox)this.checkbox.checked=a;I(this,a?"select":"unselect")},drawTracker:T.drawTrackerGraph});r(K,{Axis:na,Chart:Ya,Color:ya,Point:Fa,Tick:Ta,Renderer:Za,Series:O,SVGElement:S,SVGRenderer:ta,arrayMin:Oa,arrayMax:Ca,
 charts:W,dateFormat:cb,format:Ja,pathAnim:vb,getOptions:function(){return E},hasBidiBug:Ob,isTouchDevice:Ib,numberFormat:Ba,seriesTypes:H,setOptions:function(a){E=w(!0,E,a);Bb();return E},addEvent:N,removeEvent:X,createElement:$,discardElement:Qa,css:B,each:q,extend:r,map:Va,merge:w,pick:p,splat:ra,extendClass:ma,pInt:y,wrap:Na,svg:ba,canvas:ga,vml:!ba&&!ga,product:"Highcharts",version:"4.0.4"})})();
 module.exports = window.Highcharts; module.exports.$ = $;
-},{"jquery":"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\node_modules\\jquery\\dist\\jquery.js"}],"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\node_modules\\jquery\\dist\\jquery.js":[function(require,module,exports){
+},{"jquery":3}],3:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v1.11.2
  * http://jquery.com/
@@ -12266,7 +12266,7 @@ return jQuery;
 
 }));
 
-},{}],"c:\\wamp\\www\\cps\\node_modules\\moment\\moment.js":[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (global){
 //! moment.js
 //! version : 2.8.4
@@ -15206,7 +15206,7 @@ return jQuery;
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"c:\\wamp\\www\\cps\\node_modules\\underscore\\underscore.js":[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 //     Underscore.js 1.7.0
 //     http://underscorejs.org
 //     (c) 2009-2014 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -16623,7 +16623,7 @@ return jQuery;
   }
 }.call(this));
 
-},{}],"c:\\wamp\\www\\cps\\src\\js\\charts\\no-justice.js":[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var Highcharts = require('../lib/highcharts'),
     AAS = require('../lib/aas'),
     Backbone = require('backbone');
@@ -16680,7 +16680,7 @@ new (Backbone.View.extend({
   el: '#no-justice-chart'
 });
 
-},{"../lib/aas":"c:\\wamp\\www\\cps\\src\\js\\lib\\aas.js","../lib/highcharts":"c:\\wamp\\www\\cps\\src\\js\\lib\\highcharts.js","backbone":"c:\\wamp\\www\\cps\\node_modules\\backbone\\backbone.js"}],"c:\\wamp\\www\\cps\\src\\js\\charts\\time-pending.js":[function(require,module,exports){
+},{"../lib/aas":9,"../lib/highcharts":10,"backbone":1}],7:[function(require,module,exports){
 var Highcharts = require('../lib/highcharts'),
     AAS = require('../lib/aas'),
     Backbone = require('backbone'),
@@ -16695,7 +16695,7 @@ new (Backbone.View.extend({
   },
 
   render: function() {
-    var now = moment("10-31-2014", "MM-DD-YYYY");
+    var now = moment("11-15-2014", "MM-DD-YYYY");
 
     var year_diffs = this.collection.chain()
       .filter(function(model) {
@@ -16760,7 +16760,7 @@ new (Backbone.View.extend({
   el: '#time-pending-chart'
 });
 
-},{"../lib/aas":"c:\\wamp\\www\\cps\\src\\js\\lib\\aas.js","../lib/highcharts":"c:\\wamp\\www\\cps\\src\\js\\lib\\highcharts.js","backbone":"c:\\wamp\\www\\cps\\node_modules\\backbone\\backbone.js","moment":"c:\\wamp\\www\\cps\\node_modules\\moment\\moment.js","underscore":"c:\\wamp\\www\\cps\\node_modules\\underscore\\underscore.js"}],"c:\\wamp\\www\\cps\\src\\js\\collections\\children.js":[function(require,module,exports){
+},{"../lib/aas":9,"../lib/highcharts":10,"backbone":1,"moment":4,"underscore":5}],8:[function(require,module,exports){
 var Backbone = require('backbone'),
     Child = require('../models/child'),
     _ = require('underscore');
@@ -16807,7 +16807,7 @@ var Children = Backbone.Collection.extend({
 
 module.exports = Children;
 
-},{"../models/child":"c:\\wamp\\www\\cps\\src\\js\\models\\child.js","backbone":"c:\\wamp\\www\\cps\\node_modules\\backbone\\backbone.js","underscore":"c:\\wamp\\www\\cps\\node_modules\\underscore\\underscore.js"}],"c:\\wamp\\www\\cps\\src\\js\\lib\\aas.js":[function(require,module,exports){
+},{"../models/child":11,"backbone":1,"underscore":5}],9:[function(require,module,exports){
 var Children = require('../collections/children');
 
 var AAS = {};
@@ -16821,7 +16821,7 @@ $.getJSON('data/cps-reports.json', function(data) {
 
 module.exports = AAS;
 
-},{"../collections/children":"c:\\wamp\\www\\cps\\src\\js\\collections\\children.js"}],"c:\\wamp\\www\\cps\\src\\js\\lib\\highcharts.js":[function(require,module,exports){
+},{"../collections/children":8}],10:[function(require,module,exports){
 var HighCharts = require('highcharts-browserify');
 
 Highcharts.setOptions({
@@ -16848,7 +16848,7 @@ Highcharts.setOptions({
 
 module.exports = Highcharts;
 
-},{"highcharts-browserify":"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\browser.js"}],"c:\\wamp\\www\\cps\\src\\js\\models\\child.js":[function(require,module,exports){
+},{"highcharts-browserify":2}],11:[function(require,module,exports){
 var Backbone = require('backbone'),
     moment = require('moment');
 
@@ -16866,9 +16866,9 @@ var Child = Backbone.Model.extend({
 
 module.exports = Child;
 
-},{"backbone":"c:\\wamp\\www\\cps\\node_modules\\backbone\\backbone.js","moment":"c:\\wamp\\www\\cps\\node_modules\\moment\\moment.js"}],"c:\\wamp\\www\\cps\\src\\js\\no-arrest.js":[function(require,module,exports){
+},{"backbone":1,"moment":4}],12:[function(require,module,exports){
 require('./bundles/story');
 require('./charts/time-pending');
 require('./charts/no-justice');
 
-},{"./bundles/story":"./bundles/story","./charts/no-justice":"c:\\wamp\\www\\cps\\src\\js\\charts\\no-justice.js","./charts/time-pending":"c:\\wamp\\www\\cps\\src\\js\\charts\\time-pending.js"}]},{},["c:\\wamp\\www\\cps\\src\\js\\no-arrest.js"]);
+},{"./bundles/story":"./bundles/story","./charts/no-justice":6,"./charts/time-pending":7}]},{},[12]);

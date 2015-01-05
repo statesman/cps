@@ -146,8 +146,6 @@ module.exports = function(grunt) {
     // Use Watchify to smartly compile JS
     browserify: {
       options: {
-        watch: true,
-        keepAlive: true,
         debug: true
       },
       docs: {
@@ -163,7 +161,7 @@ module.exports = function(grunt) {
         src: [],
         dest: 'public/dist/story-common.js'
       },
-      main: {
+      stories: {
         options: {
           external: [
             './src/js/bundles/story.js:./bundles/story'
@@ -171,41 +169,10 @@ module.exports = function(grunt) {
         },
         files: {
           'public/dist/main.js': './src/js/main.js',
-        }
-      },
-      missteps: {
-        options: {
-          external: [
-            './src/js/bundles/story.js:./bundles/story'
-          ]
-        },
-        files: {
-          'public/dist/missteps.js': './src/js/missteps.js'
-        }
-      },
-      undercounting: {
-        options: {
-          external: [
-            './src/js/bundles/story.js:./bundles/story'
-          ]
-        },
-        files: {
+          'public/dist/missteps.js': './src/js/missteps.js',
           'public/dist/undercounting.js': './src/js/undercounting.js',
-        }
-      },
-      noarrest: {
-        options: {
-          external: [
-            './src/js/bundles/story.js:./bundles/story'
-          ]
-        },
-        files: {
           // Part 2
-          'public/dist/no-arrest.js': './src/js/no-arrest.js'
-        }
-      },
-      explorer: {
-        files: {
+          'public/dist/no-arrest.js': './src/js/no-arrest.js',
           'public/dist/explorer.js': './src/js/explorer.js'
         }
       }
@@ -226,7 +193,8 @@ module.exports = function(grunt) {
         tasks: ['handlebars']
       },
       js: {
-        files: ['public/dist/*.js']
+        files: ['src/js/**/*.js'],
+        tasks: ['build:js']
       },
       styles: {
         files: ['src/css/**.less', 'src/css/**/**.less'],
@@ -253,13 +221,6 @@ module.exports = function(grunt) {
         limit: 12
       },
       dev: [
-        'browserify:storycommon',
-        'browserify:main',
-        'browserify:missteps',
-        'browserify:undercounting',
-        'browserify:noarrest',
-        'browserify:docs',
-        'browserify:explorer',
         'watch',
         'connect'
       ]
@@ -407,7 +368,7 @@ module.exports = function(grunt) {
   // Assorted build tasks
   grunt.registerTask('build:html', ['clean:pages', 'generator']);
   grunt.registerTask('build:css', ['clean:css', 'clean:fonts', 'copy', 'less']);
-  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint']);
+  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint', 'browserify']);
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
 
   // Publishing tasks

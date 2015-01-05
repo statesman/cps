@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\browser.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require('jquery');/*
  Highcharts JS v4.0.4 (2014-09-02)
 
@@ -308,7 +308,7 @@ function(b){b.setVisible(a,!1)});if(g)d.isDirtyBox=!0;b!==!1&&d.redraw();I(c,f)}
 c<=f.max){h=b[i+1];c=d===u?0:d+1;for(d=b[i+1]?L(t(0,U((e.clientX+(h?h.wrappedClientX||h.clientX:g))/2)),g):g;c>=0&&c<=d;)j[c++]=e}this.tooltipPoints=j}},show:function(){this.setVisible(!0)},hide:function(){this.setVisible(!1)},select:function(a){this.selected=a=a===u?!this.selected:a;if(this.checkbox)this.checkbox.checked=a;I(this,a?"select":"unselect")},drawTracker:T.drawTrackerGraph});r(K,{Axis:na,Chart:Ya,Color:ya,Point:Fa,Tick:Ta,Renderer:Za,Series:O,SVGElement:S,SVGRenderer:ta,arrayMin:Oa,arrayMax:Ca,
 charts:W,dateFormat:cb,format:Ja,pathAnim:vb,getOptions:function(){return E},hasBidiBug:Ob,isTouchDevice:Ib,numberFormat:Ba,seriesTypes:H,setOptions:function(a){E=w(!0,E,a);Bb();return E},addEvent:N,removeEvent:X,createElement:$,discardElement:Qa,css:B,each:q,extend:r,map:Va,merge:w,pick:p,splat:ra,extendClass:ma,pInt:y,wrap:Na,svg:ba,canvas:ga,vml:!ba&&!ga,product:"Highcharts",version:"4.0.4"})})();
 module.exports = window.Highcharts; module.exports.$ = $;
-},{"jquery":"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\node_modules\\jquery\\dist\\jquery.js"}],"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\node_modules\\jquery\\dist\\jquery.js":[function(require,module,exports){
+},{"jquery":2}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v1.11.2
  * http://jquery.com/
@@ -10656,7 +10656,7 @@ return jQuery;
 
 }));
 
-},{}],"c:\\wamp\\www\\cps\\src\\js\\charts\\reported-vs-unreported.js":[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /*
  * Reported vs. unreported deaths over the years; line chart
  */
@@ -10691,7 +10691,7 @@ $(function() {
 
 });
 
-},{"../lib/highcharts":"c:\\wamp\\www\\cps\\src\\js\\lib\\highcharts.js"}],"c:\\wamp\\www\\cps\\src\\js\\lib\\highcharts.js":[function(require,module,exports){
+},{"../lib/highcharts":4}],4:[function(require,module,exports){
 var HighCharts = require('highcharts-browserify');
 
 Highcharts.setOptions({
@@ -10718,8 +10718,8 @@ Highcharts.setOptions({
 
 module.exports = Highcharts;
 
-},{"highcharts-browserify":"c:\\wamp\\www\\cps\\node_modules\\highcharts-browserify\\browser.js"}],"c:\\wamp\\www\\cps\\src\\js\\undercounting.js":[function(require,module,exports){
+},{"highcharts-browserify":1}],5:[function(require,module,exports){
 require('./bundles/story');
 require('./charts/reported-vs-unreported');
 
-},{"./bundles/story":"./bundles/story","./charts/reported-vs-unreported":"c:\\wamp\\www\\cps\\src\\js\\charts\\reported-vs-unreported.js"}]},{},["c:\\wamp\\www\\cps\\src\\js\\undercounting.js"]);
+},{"./bundles/story":"./bundles/story","./charts/reported-vs-unreported":3}]},{},[5]);
