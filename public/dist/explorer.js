@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/achavez/Websites/cps/node_modules/crossfilter/crossfilter.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\crossfilter.js":[function(require,module,exports){
 (function(exports){
 crossfilter.version = "1.3.11";
 function crossfilter_identity(d) {
@@ -1401,10 +1401,10 @@ function crossfilter_capacity(w) {
 }
 })(typeof exports !== 'undefined' && exports || this);
 
-},{}],"/Users/achavez/Websites/cps/node_modules/crossfilter/index.js":[function(require,module,exports){
+},{}],"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js":[function(require,module,exports){
 module.exports = require("./crossfilter").crossfilter;
 
-},{"./crossfilter":"/Users/achavez/Websites/cps/node_modules/crossfilter/crossfilter.js"}],"/Users/achavez/Websites/cps/node_modules/d3/d3.js":[function(require,module,exports){
+},{"./crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\crossfilter.js"}],"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js":[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.3"
@@ -10871,7 +10871,7 @@ module.exports = require("./crossfilter").crossfilter;
   if (typeof define === "function" && define.amd) define(d3); else if (typeof module === "object" && module.exports) module.exports = d3;
   this.d3 = d3;
 }();
-},{}],"/Users/achavez/Websites/cps/node_modules/dc/dc.js":[function(require,module,exports){
+},{}],"c:\\wamp\\www\\cps\\node_modules\\dc\\dc.js":[function(require,module,exports){
 /*!
  *  dc 2.0.0-alpha.5
  *  http://dc-js.github.io/dc.js/
@@ -19518,14 +19518,14 @@ return dc;}
 }
 )();
 
-},{"crossfilter":"/Users/achavez/Websites/cps/node_modules/crossfilter/index.js","d3":"/Users/achavez/Websites/cps/node_modules/d3/d3.js"}],"/Users/achavez/Websites/cps/node_modules/dc/index.js":[function(require,module,exports){
+},{"crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js","d3":"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js"}],"c:\\wamp\\www\\cps\\node_modules\\dc\\index.js":[function(require,module,exports){
 // Import DC and dependencies
 
 d3 = require("d3");
 crossfilter = require("crossfilter");
 module.exports = require("./dc");
 
-},{"./dc":"/Users/achavez/Websites/cps/node_modules/dc/dc.js","crossfilter":"/Users/achavez/Websites/cps/node_modules/crossfilter/index.js","d3":"/Users/achavez/Websites/cps/node_modules/d3/d3.js"}],"/Users/achavez/Websites/cps/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
+},{"./dc":"c:\\wamp\\www\\cps\\node_modules\\dc\\dc.js","crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js","d3":"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js"}],"c:\\wamp\\www\\cps\\node_modules\\jquery\\dist\\jquery.js":[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
@@ -28732,7 +28732,7 @@ return jQuery;
 
 }));
 
-},{}],"/Users/achavez/Websites/cps/src/js/explorer.js":[function(require,module,exports){
+},{}],"c:\\wamp\\www\\cps\\src\\js\\explorer.js":[function(require,module,exports){
 var $ = require('jquery'),
     d3 = require('d3'),
     dc = require('dc'),
@@ -28799,8 +28799,9 @@ d3.json('data/cps-reports.json', function (data) {
     if(d.prevRmv) {
       return 'Yes';
     }
-    return 'No';
-    return d.prevRmv;
+    else {
+      return 'No';
+    }
   });
   var prevRmvGroup = prevRmv.group();
 
@@ -29005,4 +29006,4 @@ d3.json('data/cps-reports.json', function (data) {
   dc.renderAll();
 });
 
-},{"crossfilter":"/Users/achavez/Websites/cps/node_modules/crossfilter/index.js","d3":"/Users/achavez/Websites/cps/node_modules/d3/d3.js","dc":"/Users/achavez/Websites/cps/node_modules/dc/index.js","jquery":"/Users/achavez/Websites/cps/node_modules/jquery/dist/jquery.js"}]},{},["/Users/achavez/Websites/cps/src/js/explorer.js"]);
+},{"crossfilter":"c:\\wamp\\www\\cps\\node_modules\\crossfilter\\index.js","d3":"c:\\wamp\\www\\cps\\node_modules\\d3\\d3.js","dc":"c:\\wamp\\www\\cps\\node_modules\\dc\\index.js","jquery":"c:\\wamp\\www\\cps\\node_modules\\jquery\\dist\\jquery.js"}]},{},["c:\\wamp\\www\\cps\\src\\js\\explorer.js"]);

@@ -64,8 +64,9 @@ d3.json('data/cps-reports.json', function (data) {
     if(d.prevRmv) {
       return 'Yes';
     }
-    return 'No';
-    return d.prevRmv;
+    else {
+      return 'No';
+    }
   });
   var prevRmvGroup = prevRmv.group();
 

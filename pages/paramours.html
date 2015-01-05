@@ -2,13 +2,20 @@
   "template" : "story",
   "title": "Paramours",
   "description": "This is a starter template",
-  "thumbnail": "assets/thumbnail.jpg"
+  "thumbnail": "assets/thumbnail.jpg",
+  "highlights": [
+    "The newspaper’s analysis found cases in which a boyfriend abused children in different families.",
+    "Child abuse regulators have not tracked abusive boyfriends as they move from family to family.",
+    "Even parents who promise regulators they will keep paramours and children apart don’t always keep that vow."
+  ]
 }
 ---
 <h6>Part 2: What is part 2</h6>
 {{#markdown}}
   # Paramours ipsum dolor sit amet, consectetur
   ## Suspendisse imperdiet at magna eu blandit. Lorem ipsum.
+
+  {{> highlights}}
 
   <p class="author">By Eric Dexheimer and Andrea Ball / Published January 12, 2014</p>
 
@@ -88,5 +95,5 @@
 
   ---
 
-  <p class="author">Contact Eric Dexheimer at 512-445-1774. Contact Andrea Ball at 512-912-2506.</p>
+  <p class="tagline">Contact Eric Dexheimer at 512-445-1774. Contact Andrea Ball at 512-912-2506.</p>
 {{/markdown}}
