@@ -12,7 +12,7 @@ new (Backbone.View.extend({
   },
 
   render: function() {
-    var now = moment("10-31-2014", "MM-DD-YYYY");
+    var now = moment("11-15-2014", "MM-DD-YYYY");
 
     var year_diffs = this.collection.chain()
       .filter(function(model) {
