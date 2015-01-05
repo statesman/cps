@@ -1,7 +1,7 @@
 # All
 - **TODO**: Add info boxes from NewsEngin
 - **TODO**: Add Story Highlights partial and content from NewsEngin
-- **TODO**: Child popup
+- **TODO**: Show individual child info
 
 # Day 1
 
@@ -17,14 +17,12 @@
 - **TODO**: "80 cases in which CPS already had an open investigation when the death occurred"
 - **TODO**: "Heavy caseloads are a concern"
 - **TODO**: "85 families had previously received family based safety services; 36 had open cases at the time of the child’s death"
-- mentioned: Billy Hasel (suspect, Anderson Co.); Sania Sandoval (child); Leosha Barnett (child); Christopher Roedel (child); Kole Clayton (child); Zachary Dominguez (child); Jacob Hovorak (child); Deondra Garner (child); Malachi Cosby (child),  Crispen Hanson (suspect, Fort Bliss)
 
 ### Undercounting
-- mentioned: Dakylie Hamilton (child), DeSean Hamilton (child)
 
 ### Brandon White
 - **TODO**: White case timeline?
-- mentioned: Brandon White (child)
+- **TODO**: Brandon White db link
 
 # Day 2
 
@@ -33,7 +31,6 @@
 - **TODO**: Leroy Hutta timeline infobox?, Michael Allen Seton timeline infobox?
 - **TODO**: database breakout for 137 paramour cases
 - **TODO**: Document link to post-Colton Turner CPS report?
-- mentioned: Leroy Hutta (suspect), De'Jhane Pollard (child); Michael Allen Seton (suspect), Dustyn Roff (child); Melinda Lynn Muniz (suspect), Grace Ford (child); Laura Kolb (suspect), Taylor Moore (child); Carinelius Simmons (suspect), Jabraylon Bables (child); Nathaniel Flowers (suspect), Kameron Deshown Kelly (child); John Pickens (suspect), Tre'Allen Williams (child); Kerry Woodard (suspect), Zikeishun Lane (child)
 
 ### Missing families
 - mentioned: Colton Turner (child), Megan Work (suspect), Michael Turner (suspect); Devonte Williams (child), Lisa Ann Coleman (suspect), Marcella Williams (suspect) {didn't mug these because the story is about FINDRS, not crimes and Colton is in a memorial picture used in the story}
@@ -46,15 +43,11 @@
 - **TODO:** database breakout for 15 child homicides still pending after 3+ years
 - ~~**TODO:** Pullquote with “It’s like getting a knife and carving me all up again,” she said. “I’m so angry I’m so angry I’m so angry I’m so angry.”?~~
 - **TODO:** Pie chart with age breakdown for first graf in "Parents scuttle cases"
-- mentioned: Jacob Jones (child), Monique Johnson (suspect); Keyaria Bowens (child); Abigail Couvillon (child); Xavier Graham (child); Aiden Walker (child); Adrian Joe Acosta (suspect), Adrian Limon (child); Brett Sealy (suspect), Alessa Jade (child); Romeo Wright (child); Jaden Sanders (child), Aliesha Sams (suspect), Anthony Arista (suspect); Deondra Garcia (suspect), Erica Johnson (suspect); Emily Lirette (child); Brandel Goebel (child); Anna Gonzales (child), Juanita Gonzales (suspect); Daiyzha Johnson-Wright (child); Jayden McDaniel (child)
 
 # Day 3
 
 ### Wrongdoing
-- Bit Whitaker (Abilene CPS person, indicted in Taylor Co.)
-- Laura Ard, Natalie Ausbie-Reynolds and Rebekah Thonginh-Ross (Greenville CPS workers)
 - "Ross told officials she did it because she was under pressure to close cases and that she was only following Ard’s orders, according to a report by an inspector general investigator."
-- mentioned: Tamryn Klapheke (child); Alicia Moore (child)
 
 ### Caseworker violence
 - worker assault numbers chart
@@ -72,9 +65,7 @@
 - “These sweeping reforms have yielded tremendous improvement in the services that protect the most vulnerable Texans,” they wrote in a report to legislators.
 - "In 2012, the state ranked 47th in the country for its per capita spending — $175 — on child protection and welfare programs, according to the Center for Public Policy Priorities"
 - CPS released a comprehensive review of the agency by the Stephen Group, which offered numerous suggestions on how to improve morale and supervision at the organization
-- mentioned: Jakaela Newhouse (child); Adrian Bosques (child)
 - In XX instances, a child had been previously removed from the home prior to his death
 
 ### Previous removals
 - “The impact of each prior removal due to parents who have abused alcohol or drugs increase the odds of deaths by a multiple of nearly 15,”: http://www.dcf.state.fl.us/newsroom/pressreleases/docs/20140106_pressrelease_attachments.pdf
-- mentioned: Ethan Alatamirano (child), Janie Alatamirano (suspect, Bexar Co.), Michael Pastran (suspect, Bexar Co.); Jakaela Newhouse (child), Curtis James Adams (suspect, ); Adrian Bosque (child)
