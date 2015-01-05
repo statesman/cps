@@ -2,6 +2,7 @@
 - **TODO**: Add info boxes from NewsEngin
 - **TODO**: Add Story Highlights partial and content from NewsEngin
 - **TODO**: Show individual child info
+- **TODO**: Table of contents
 
 # Day 1
 
