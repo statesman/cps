@@ -11,4 +11,6 @@ $.getJSON('data/deathsByCounty.json', function(data) {
     property: 'count',
     colors: ['#deebf7', '#9ecae1', '#3182bd']
   });
+  countyMap.sync(countyMap2);
+  countyMap2.sync(countyMap);
 });

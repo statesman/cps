@@ -10,7 +10,7 @@
  *   - colors: an array that'll be interpolated into a color scale
  */
 
-var L = require('leaflet'),
+var L = require('./map-sync'),
     _ = require('underscore'),
     numeral = require('numeral'),
     chroma = require('chroma-js');
@@ -102,6 +102,8 @@ var ChloroMap = function(el, geojson, options) {
   };
 
   this.legend.addTo(this.map);
+
+  return this.map;
 };
 
 ChloroMap.prototype.getColor = function(d) {
