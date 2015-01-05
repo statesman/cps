@@ -84,6 +84,7 @@ with open('../data/cps-reports.csv', 'rb') as input_file:
       'dod': date_of_death,
       'county': county,
       'prevInv': previous_investigations,
+      'prevRmv': previous_removal,
       'cod': cause_of_death,
       'drugsAlc': drug_alcohol,
       'justice': justice,

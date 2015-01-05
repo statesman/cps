@@ -28758,7 +28758,7 @@ var overview = new Overview({
 });
 */
 
-var genderChart = dc.pieChart('#gender-chart'),
+var prevRmvChart = dc.pieChart('#previous-removals-chart'),
 //    dayOfWeekChart = dc.rowChart('#day-of-week-chart'),
     prevInvChart = dc.barChart('#previous-investigations-chart'),
     ageChart = dc.barChart('#age-chart'),
@@ -28773,7 +28773,7 @@ function resetHandler(e, chart) {
   dc.redrawAll();
 }
 
-$('#gender-chart .reset').click(genderChart, resetHandler);
+$('#previous-removals-chart .reset').click(prevRmvChart, resetHandler);
 //$('#day-of-week-chart .reset').click(dayOfWeekChart, resetHandler);
 $('#previous-investigations-chart .reset').click(prevInvChart, resetHandler);
 $('#age-chart .reset').click(ageChart, resetHandler);
@@ -28795,10 +28795,14 @@ d3.json('data/cps-reports.json', function (data) {
   var all = ndx.groupAll();
 
   // Gender filter/groups
-  var gender = ndx.dimension(function (d) {
-    return d.gender;
+  var prevRmv = ndx.dimension(function (d) {
+    if(d.prevRmv) {
+      return 'Yes';
+    }
+    return 'No';
+    return d.prevRmv;
   });
-  var genderGroup = gender.group();
+  var prevRmvGroup = prevRmv.group();
 
   // Day of week filter/groups
   var dayOfWeek = ndx.dimension(function (d) {
@@ -28861,20 +28865,12 @@ d3.json('data/cps-reports.json', function (data) {
   /********************/
   /* Gender pie chart */
   /********************/
-  genderChart
+  prevRmvChart
     .width(180) // (optional) define chart width, :default = 200
     .height(180) // (optional) define chart height, :default = 200
     .radius(80) // define pie radius
-    .dimension(gender) // set dimension
-    .group(genderGroup) // set group
-    .colors(function(d, i) {
-      var colors = {
-        M: '#6595EC',
-        F: '#FFABF1'
-      };
-      return colors[d];
-    })
-    .innerRadius(30)
+    .dimension(prevRmv) // set dimension
+    .group(prevRmvGroup) // set group
     .renderLabel(true)
     .transitionDuration(500);
 
