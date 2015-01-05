@@ -88,58 +88,45 @@
 </nav>
 
 <div id="explorer-wrapper" class="container">
-<div id="explorer-intro" class="text-center">
+
+<div class="col-xs-12 fade-in explorer-header">
+  <h3>Child fatality database</h3>
+</div>
+
+<div id="explorer-intro" class="col-xs-12 clearfix text-center">
   <h1 class="intro">Project title</h1>
   <h2 class="intro">Data explorer</h2>
   <hr class="intro" />
   <div id="grid-wrapper" class="clearfix">
-    <div id="grid" class="col-xs-12"></div>
-    <div id="grid-2" class="col-xs-12"></div>
+    <div id="grid"></div>
+    <div id="grid-2"></div>
   </div>
 
-  <p class="intro">An unprecedented American-Statesman analysis of every one of the cases — a detailed review of thousands of pages of heart-rending documentation the state itself does not perform — found that, in important ways, Texas’s child protection workers effectively have been operating with blinders, missing deadly patterns and key pieces of information that could help protect kids. <a href="#">See the reports</a></p>
+  <p class="intro">An unprecedented American-Statesman analysis of every one of the cases — a detailed review of thousands of pages of heart-rending documentation the state itself does not perform — found that, in important ways, Texas’s child protection workers effectively have been operating with blinders, missing deadly patterns and key pieces of information that could help protect kids. <br /><a href="#"><i class="fa fa-area-chart"></i> Explore the database</a></p>
 </div>
 
-<div id="explorer" class="clearfix">
-  <div>
-    <div class="col-xs-4">
-      <div id="gender-chart">
-        <h3>Gender</h3>
-        <p><strong>Current filter: <span class='filter'></span></strong>   <a class='reset' href='javascript:genderChart.filterAll();dc.redrawAll();' style='display: none;'>reset</a></p>
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div id="day-of-week-chart">
-        <h3>Day of week</h3>
-        <p><strong>Current filter: <span class='filter'></span></strong>   <a class='reset' href='javascript:genderChart.filterAll();dc.redrawAll();' style='display: none;'>reset</a></p>
-      </div>
-    </div>
-    <div class="col-xs-4">
-      <div id="age-chart">
-        <h3>Age</h3>
-        <p><strong>Current filter: <span class='filter'></span></strong>   <a class='reset' href='javascript:genderChart.filterAll();dc.redrawAll();' style='display: none;'>reset</a></p>
-      </div>
-    </div>
-    <div class="col-xs-8">
-      <div id="previous-investigations-chart">
-        <h3>Previous investigations</h3>
-        <p><strong>Current filter: <span class='filter'></span></strong>   <a class='reset' href='javascript:genderChart.filterAll();dc.redrawAll();' style='display: none;'>reset</a></p>
-      </div>
-    </div>
-    <div class="col-xs-12">
-      <div id="dod-chart">
-        <h3>Date of death</h3>
-        <p><strong>Current filter: <span class='filter'></span></strong>   <a class='reset' href='javascript:genderChart.filterAll();dc.redrawAll();' style='display: none;'>reset</a></p>
-      </div>
-    </div>
+<div id="explorer" class="clearfix fade-in col-xs-12">
+  <div id="gender-chart" class="explorer-chart">
+    <h2>Gender <small><a class='reset' href='#' style='display: none;'>reset</a></small></h2>
   </div>
-  <div>
-    <div class="col-xs-12">
-      <table id='data-table' class='table'>
-        <!-- data rows will filled in here -->
-      </table>
-    </div>
+  <!--
+  <div id="day-of-week-chart" class="explorer-chart">
+    <h3>Day of week <small><a class='reset' href='#' style='display: none;'>reset</a></small></h3>
   </div>
+-->
+  <div id="age-chart" class="explorer-chart">
+    <h2>Age <small><a class='reset' href='#' style='display: none;'>reset</a></small></h2>
+  </div>
+  <div id="previous-investigations-chart" class="explorer-chart">
+    <h2>Previous investigations <small><a class='reset' href='#' style='display: none;'>reset</a></small></h2>
+  </div>
+  <div id="dod-chart" class="explorer-chart">
+    <h2>Date of death <small><a class='reset' href='#' style='display: none;'>reset</a></small></h2>
+  </div>
+  <h3>Results</h3>
+  <table id='data-table' class='table'>
+    <!-- data rows will filled in here -->
+  </table>
 </div>
 </div>
 

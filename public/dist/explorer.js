@@ -28741,8 +28741,9 @@ var $ = require('jquery'),
 var intro = $('.intro');
 intro.find('a').on('click', function(e) {
   e.preventDefault();
+  $('.explorer-header').show();
   intro.slideUp();
-  $("#explorer").animate({
+  $(".fade-in").animate({
     opacity: 1
   });
 });
@@ -28758,12 +28759,25 @@ var overview = new Overview({
 */
 
 var genderChart = dc.pieChart('#gender-chart'),
-    dayOfWeekChart = dc.rowChart('#day-of-week-chart'),
+//    dayOfWeekChart = dc.rowChart('#day-of-week-chart'),
     prevInvChart = dc.barChart('#previous-investigations-chart'),
     ageChart = dc.barChart('#age-chart'),
     volumeChart = dc.barChart('#dod-chart'),
     dataGrid = dc.dataGrid('#grid'),
     dataGrid2 = dc.dataGrid('#grid-2');
+
+// Handle filter resets
+function resetHandler(e, chart) {
+  e.preventDefault();
+  e.data.filterAll();
+  dc.redrawAll();
+}
+
+$('#gender-chart .reset').click(genderChart, resetHandler);
+//$('#day-of-week-chart .reset').click(dayOfWeekChart, resetHandler);
+$('#previous-investigations-chart .reset').click(prevInvChart, resetHandler);
+$('#age-chart .reset').click(ageChart, resetHandler);
+$('#dod-chart .reset').click(volumeChart, resetHandler);
 
 d3.json('data/cps-reports.json', function (data) {
 
@@ -28868,14 +28882,16 @@ d3.json('data/cps-reports.json', function (data) {
   /*********************/
   /* Day of week chart */
   /*********************/
+  /*
   dayOfWeekChart
     .width(180)
     .height(180)
-    .margins({top: 20, left: 10, right: 10, bottom: 20})
+    .margins({top: 0, left: 5, right: 0, bottom: 20})
     .group(dayOfWeekGroup)
     .dimension(dayOfWeek)
+    .gap(1)
     .colors(function() {
-      return '#395271';
+      return '#1f77b4';
     })
     .label(function (d) {
       return d.key.split('.')[1];
@@ -28885,15 +28901,16 @@ d3.json('data/cps-reports.json', function (data) {
     })
     .elasticX(true)
     .xAxis().ticks(4);
+  */
 
 
   /***************************/
   /* Previous investigations */
   /***************************/
   prevInvChart
-    .width(420)
+    .width(360)
     .height(180)
-    .margins({top: 10, right: 50, bottom: 30, left: 40})
+    .margins({top: 10, right: 0, bottom: 19, left: 33})
     .dimension(prevInv)
     .group(prevInvGroup)
     .elasticY(true)
@@ -28910,9 +28927,9 @@ d3.json('data/cps-reports.json', function (data) {
   /* Ages */
   /********/
   ageChart
-    .width(420)
+    .width(360)
     .height(180)
-    .margins({top: 10, right: 50, bottom: 30, left: 40})
+    .margins({top: 10, right: 0, bottom: 19, left: 33})
     .dimension(age)
     .group(ageGroup)
     .elasticY(true)
@@ -28930,19 +28947,21 @@ d3.json('data/cps-reports.json', function (data) {
   /*****************/
 
   volumeChart
-    .width(990)
+    .width(910)
     .height(60)
-    .margins({top: 0, right: 50, bottom: 20, left: 40})
+    .margins({top: 0, right: 0, bottom: 20, left: 0})
     .dimension(dateDimension)
     .group(monthsGroup)
+    .gap(0)
     .centerBar(true)
-    .gap(1)
     .x(d3.time.scale().domain(d3.extent(data, function(d) {
       return d.dod;
     })))
     .round(d3.time.month.round)
     .alwaysUseRounding(true)
-    .xUnits(d3.time.weeks);
+    .xUnits(d3.time.weeks)
+    .xAxis().ticks(5);
+  volumeChart.yAxis().ticks(0);
 
 
   /**************/
