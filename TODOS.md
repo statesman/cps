@@ -1,6 +1,6 @@
 # All
 - **TODO**: Add info boxes from NewsEngin
-- **TODO**: Add Story Highlights partial and content from NewsEngin
+- **TODO**: Add Story Highlights partial and content from NewsEngin: violence, turnover
 - **TODO**: Show individual child info
 - **TODO**: Table of contents
 
@@ -19,8 +19,6 @@
 - **TODO**: "Heavy caseloads are a concern"
 - **TODO**: "85 families had previously received family based safety services; 36 had open cases at the time of the child’s death"
 
-### Undercounting
-
 ### Brandon White
 - **TODO**: White case timeline?
 - **TODO**: Brandon White db link
@@ -31,14 +29,12 @@
 - **TODO**: Hutta documents?
 - **TODO**: Leroy Hutta timeline infobox?, Michael Allen Seton timeline infobox?
 - **TODO**: database breakout for 137 paramour cases
-- **TODO**: Document link to post-Colton Turner CPS report?
 
 ### Missing families
 - mentioned: Colton Turner (child), Megan Work (suspect), Michael Turner (suspect); Devonte Williams (child), Lisa Ann Coleman (suspect), Marcella Williams (suspect) {didn't mug these because the story is about FINDRS, not crimes and Colton is in a memorial picture used in the story}
 - **TODO**: database breakout for missing families
 
 ### No arrest
-- **TODO:** Monique Johnson court documents?
 - **TODO:** database breakout for no-arrest numbers
 - **TODO:** database breakout for Bell County
 - **TODO:** database breakout for 15 child homicides still pending after 3+ years
@@ -47,25 +43,16 @@
 
 # Day 3
 
-### Wrongdoing
-
 ### Caseworker violence
 - worker assault numbers chart
 - violence against worker reports
 
 ### Turnover
 - turnover chart
-- : “State officials say investigators generally juggle about 20 cases at a time, but a state-commissioned study recently showed stated that the real numbers vary wildly.” Referring to the Stephen report {STephens report}
 - "Since 2005, CPS has hired more than 3,100 employees, reaching 8,234 in 2013. Its staff budget has nearly doubled, from $241 million to $469 million, over that time. Overall turnover for staffers is down from 29.3 percent to 25.5 percent."
 - link bulleted findings to relevant reports
-- "The state also hasn’t tried hard hard enough to fixpoor management practices that contribute to high caseworker turnover, according to a recent report by the Texas Sunset Commission, which evaluates the effectiveness of state agencies."
 - " violence against caseworkers has grown"
 
 ### Overhaul strategy
-- “These sweeping reforms have yielded tremendous improvement in the services that protect the most vulnerable Texans,” they wrote in a report to legislators.
 - "In 2012, the state ranked 47th in the country for its per capita spending — $175 — on child protection and welfare programs, according to the Center for Public Policy Priorities"
-- CPS released a comprehensive review of the agency by the Stephen Group, which offered numerous suggestions on how to improve morale and supervision at the organization
 - In XX instances, a child had been previously removed from the home prior to his death
-
-### Previous removals
-- “The impact of each prior removal due to parents who have abused alcohol or drugs increase the odds of deaths by a multiple of nearly 15,”: http://www.dcf.state.fl.us/newsroom/pressreleases/docs/20140106_pressrelease_attachments.pdf

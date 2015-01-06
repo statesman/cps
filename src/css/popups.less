@@ -41,3 +41,22 @@ a.child-link {
     }
   }
 }
+
+a.doc-link {
+  background: @gray-lighter;
+  padding: 3px 6px;
+  font-weight: normal;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  // Put an icon after every doc link
+  &:after {
+    margin-left: 5px;
+    .fa-icon();
+    content: @fa-var-file-text;
+  }
+}
