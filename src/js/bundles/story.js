@@ -1,6 +1,9 @@
-window.jQuery = window.$ = require('jquery');
+var $ = require('jquery');
+
+window.jQuery = window.$ = $;
 
 require('../lib/navbar');
+require('../lib/hero');
 
 var imagesLoaded = require('imagesloaded'),
     Slider = require('../lib/slider'),

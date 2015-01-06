@@ -65,7 +65,7 @@ module.exports = function(type) {
 
       // Include a subtitle i there is one
       var linktext = '';
-      if(type === 'super') {
+      if(type === 'super' || type === 'superHero') {
         linktext = '<strong>' + child.title + '</strong><br />';
         if(_.has(child, 'subtitle')) {
           linktext += child.subtitle
@@ -75,7 +75,7 @@ module.exports = function(type) {
         linktext = child.title;
       }
 
-      links += '<li' + (child.file === this.name ? ' class="active"' : '') + '><a href="' + child.file + '.html">' + linktext + '</a></li>';
+      links += '<li' + (child.file === this.name ? ' class="active"' : '') + '><a href="' + child.file + '.html' + (type === 'superHero' ? '#skip-hero' : '') + '">' + linktext + '</a></li>';
     }, this);
   }
 

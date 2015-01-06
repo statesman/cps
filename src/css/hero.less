@@ -8,12 +8,20 @@
     .img-overlay {
       max-width: 300px;
       position: absolute;
-      right: 40px;
-      bottom: 15px;
-      text-align: right;
       color: #fff;
       color: rgba(255,255,255,0.9);
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+      &.top-left {
+        text-align: left;
+        left: 40px;
+        top: 25px;
+      }
+      &.bottom-right {
+        text-align: right;
+        right: 40px;
+        bottom: 15px;
+      }
     }
   }
 
@@ -68,4 +76,9 @@
 
     }
   }
+}
+
+#skip-hero {
+  top: -45px;
+  position: relative;
 }

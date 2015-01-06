@@ -17,5 +17,8 @@
     "bootstrap": "~3.3.0",
     "font-awesome": "~4.2.0",
     "Slides": "nathansearles/Slides#SlidesJS-3"
+  },
+  "devDependencies": {
+    "animate.less": "*"
   }
 }
