@@ -1,0 +1,16 @@
+<div class="col-xs-12 col-sm-4">
+  <h6>{{title}}</h6>
+  <h2>{{subtitle}}</h2>
+  <img class="img-responsive" src="assets/call-center.jpg" />
+
+  <ul class="list-unstyled">
+    {{#each children}}
+      <li>
+        <a href="{{url}}">
+          <h4>{{pageData.title}}</h4>
+        </a>
+        <p>{{pageData.description}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</div>
