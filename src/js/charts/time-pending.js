@@ -27,8 +27,11 @@ new (Backbone.View.extend({
         if (el[0] === "0") {
           label = '< 1 year';
         }
+        else if(el[0] === "5") {
+          label = '5+ years';
+        }
         else {
-          label = el[0] + '+ years';
+          label = el[0] + '-' + (parseInt(el[0], 10) + 1).toString() + ' years';
         }
         return [label, el[1]];
       })
