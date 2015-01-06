@@ -19,6 +19,9 @@ module.exports = function(part, image, context) {
     }
   }, this);
 
+  // Add the image
+  selected.image = image;
+
   // Hydrate the nav items with frontmatter data
   _.each(selected.children, function(navItem, i) {
     selected.children[i].pageData = context.data.root.pages[navItem.file];
