@@ -28642,6 +28642,11 @@ ChloroMap.prototype.fit = function() {
 };
 
 ChloroMap.prototype.highlightFeature = function(e) {
+  this.map.fire('countyHover', {
+    feature: feature,
+    layer: layer
+  });
+
   var layer = e.target;
 
   this.info.update(layer.feature.properties);
@@ -28814,6 +28819,10 @@ $.getJSON('data/deathsByCounty.json', function(data) {
   var countyMap = new ChloroMap('county-by-county', data, {
     property: 'perCapita'
   });
+  countyMap.on('countyHover', function(e) {
+    console.log(e);
+  });
+
   var countyMap2 = new ChloroMap('county-by-county-count', data, {
     property: 'count',
     colors: ['#deebf7', '#9ecae1', '#3182bd']

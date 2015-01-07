@@ -20624,9 +20624,8 @@ $.getJSON('data/cps-reports.json', function(data) {
 module.exports = AAS;
 
 },{"../collections/children":29}],31:[function(require,module,exports){
-
-
-},{}],32:[function(require,module,exports){
+module.exports=require(6)
+},{"c:\\wamp\\www\\cps\\node_modules\\grunt-browserify\\node_modules\\browserify\\lib\\_empty.js":6}],32:[function(require,module,exports){
 var $ = require('jquery');
 
 // Show the chapters when they're expanded on mobile
