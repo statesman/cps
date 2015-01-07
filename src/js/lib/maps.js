@@ -7,6 +7,12 @@ $.getJSON('data/deathsByCounty.json', function(data) {
   var countyMap = new ChloroMap('county-by-county', data, {
     property: 'perCapita'
   });
+  /*
+  countyMap.on('countyHover', function(e) {
+    console.log(e);
+  });
+  */
+
   var countyMap2 = new ChloroMap('county-by-county-count', data, {
     property: 'count',
     colors: ['#deebf7', '#9ecae1', '#3182bd']

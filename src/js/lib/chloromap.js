@@ -125,6 +125,11 @@ ChloroMap.prototype.fit = function() {
 };
 
 ChloroMap.prototype.highlightFeature = function(e) {
+  this.map.fire('countyHover', {
+    feature: feature,
+    layer: layer
+  });
+
   var layer = e.target;
 
   this.info.update(layer.feature.properties);
