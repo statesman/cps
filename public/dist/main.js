@@ -28534,6 +28534,9 @@ var L = require('./map-sync'),
 
 var ChloroMap = function(el, geojson, options) {
 
+  // Parnet?
+  this.child = options.child || false;
+
   // Set some default options if none are set
   this.property = options.property || 'count';
   this.colors = options.colors || ['#fef0d9', '#fdbb84', '#b30000'];
@@ -28553,12 +28556,21 @@ var ChloroMap = function(el, geojson, options) {
   this.colorScale = chroma.scale(this.colors).correctLightness(true).domain(this.scale, 25, 'log');
 
   // Setup the basemap, with tiles and geojson data layer
-  this.map = L.map(el);
+  this.map = L.map(el, {
+    zoomControl: this.child
+  });
 
   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 18
+    maxZoom: 18,
+    scrollWheelZoom: false,
+    attributionControl: false
   }).addTo(this.map);
 
+
+  // Create an object to hold our layer refs
+  this.counties = {};
+
+  // And add the data
   this.dataLayer = L.geoJson(geojson, {
     style: $.proxy(this.style, this),
     onEachFeature: $.proxy(this.onEachFeature, this)
@@ -28569,32 +28581,33 @@ var ChloroMap = function(el, geojson, options) {
   this.fit();
   $(window).resize(_.debounce($.proxy(this.fit, this), 350));
 
+  if(!this.child) {
+    // Setup the info window
+    this.info = L.control();
 
-  // Setup the info window
-  this.info = L.control();
+    this.info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+    };
 
-  this.info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-  };
+    // Method to updat the info window; when passed a falsy value, passes help text
+    this.info.update = function (props) {
+      var text = '';
+      if(props) {
+        text += '<h4>' + props.name + '</h4>';
+        text += '<b>Per capita:</b> ' + numeral(props.perCapita).format('0.00') + '<br />';
+        text += '<b>Total deaths:</b> ' + props.count + '<br />';
+        text += '<b>Under 18 population:</b> ' + numeral(props.under18).format('0,0');
+      }
+      else {
+        text += 'Hover over a region';
+      }
+      this._div.innerHTML = text;
+    };
 
-  // Method to updat the info window; when passed a falsy value, passes help text
-  this.info.update = function (props) {
-    var text = '';
-    if(props) {
-      text += '<h4>' + props.name + '</h4>';
-      text += '<b>Per capita:</b> ' + numeral(props.perCapita).format('0.00') + '<br />';
-      text += '<b>Total deaths:</b> ' + props.count + '<br />';
-      text += '<b>Under 18 population:</b> ' + numeral(props.under18).format('0,0');
-    }
-    else {
-      text += 'Hover over a region';
-    }
-    this._div.innerHTML = text;
-  };
-
-  this.info.addTo(this.map);
+    this.info.addTo(this.map);
+  }
 
 
   // Setup the legend
@@ -28620,6 +28633,22 @@ var ChloroMap = function(el, geojson, options) {
 
   this.legend.addTo(this.map);
 
+
+  // Listen for countySelect events
+  this.map.on('countyselect', $.proxy(function(e) {
+    var fakeE = {
+      target: this.counties[e.county]
+    };
+    this.highlightFeature(fakeE);
+  }, this));
+  this.map.on('countydeselect', $.proxy(function(e) {
+    var fakeE = {
+      target: this.counties[e.county]
+    };
+    this.resetHighlightFeature(fakeE);
+  }, this));
+
+
   return this.map;
 };
 
@@ -28642,14 +28671,11 @@ ChloroMap.prototype.fit = function() {
 };
 
 ChloroMap.prototype.highlightFeature = function(e) {
-  this.map.fire('countyHover', {
-    feature: feature,
-    layer: layer
-  });
-
   var layer = e.target;
 
-  this.info.update(layer.feature.properties);
+  if(!this.child) {
+    this.info.update(layer.feature.properties);
+  }
 
   layer.setStyle({
     weight: 3
@@ -28662,13 +28688,30 @@ ChloroMap.prototype.highlightFeature = function(e) {
 
 ChloroMap.prototype.resetHighlightFeature = function(e) {
   this.dataLayer.resetStyle(e.target);
-  this.info.update();
+
+  if(!this.child) {
+    this.info.update();
+  }
 };
 
 ChloroMap.prototype.onEachFeature = function(feature, layer) {
+  // Store the county layer by name so we can select it later
+  this.counties[feature.properties.name] = layer;
+
+  // Bind our event handler and fire some custom events
   layer.on({
-    mouseover: $.proxy(this.highlightFeature, this),
-    mouseout: $.proxy(this.resetHighlightFeature, this)
+    mouseover: $.proxy(function(e) {
+      this.highlightFeature(e);
+      this.map.fire('countymouseover', {
+        county: feature.properties.name
+      });
+    }, this),
+    mouseout: $.proxy(function(e) {
+      this.resetHighlightFeature(e);
+      this.map.fire('countymouseout', {
+        county: feature.properties.name
+      });
+    }, this)
   });
 };
 
@@ -28817,18 +28860,28 @@ var ChloroMap = require('./chloromap');
 
 $.getJSON('data/deathsByCounty.json', function(data) {
   var countyMap = new ChloroMap('county-by-county', data, {
-    property: 'perCapita'
+    property: 'perCapita',
+    child: true
   });
-  /*
-  countyMap.on('countyHover', function(e) {
-    console.log(e);
-  });
-  */
-
   var countyMap2 = new ChloroMap('county-by-county-count', data, {
     property: 'count',
     colors: ['#deebf7', '#9ecae1', '#3182bd']
   });
+
+  countyMap.on('countymouseover', function(e) {
+    countyMap2.fire('countyselect', e);
+  });
+  countyMap.on('countymouseout', function(e) {
+    countyMap2.fire('countydeselect', e);
+  });
+
+  countyMap2.on('countymouseover', function(e) {
+    countyMap.fire('countyselect', e);
+  });
+  countyMap2.on('countymouseout', function(e) {
+    countyMap.fire('countydeselect', e);
+  });
+
   countyMap.sync(countyMap2);
   countyMap2.sync(countyMap);
 });
