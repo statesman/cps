@@ -1,6 +1,7 @@
 var $ = require('jquery'),
     d3 = require('d3'),
     dc = require('dc'),
+    _ = require('underscore');
     crossfilter = require('crossfilter');
 
 var intro = $('.intro');
@@ -24,7 +25,7 @@ var overview = new Overview({
 */
 
 var prevRmvChart = dc.pieChart('#previous-removals-chart'),
-//    dayOfWeekChart = dc.rowChart('#day-of-week-chart'),
+    codChart = dc.rowChart('#cod-chart'),
     prevInvChart = dc.barChart('#previous-investigations-chart'),
     ageChart = dc.barChart('#age-chart'),
     volumeChart = dc.barChart('#dod-chart'),
@@ -38,7 +39,7 @@ function resetHandler(e, chart) {
 }
 
 $('#previous-removals-chart .reset').click(prevRmvChart, resetHandler);
-//$('#day-of-week-chart .reset').click(dayOfWeekChart, resetHandler);
+$('#cod-chart .reset').click(codChart, resetHandler);
 $('#previous-investigations-chart .reset').click(prevInvChart, resetHandler);
 $('#age-chart .reset').click(ageChart, resetHandler);
 $('#dod-chart .reset').click(volumeChart, resetHandler);
@@ -69,13 +70,26 @@ d3.json('data/cps-reports.json', function (data) {
   });
   var prevRmvGroup = prevRmv.group();
 
-  // Day of week filter/groups
-  var dayOfWeek = ndx.dimension(function (d) {
-    var day = d.dod.getDay();
-    var name = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    return day + '.' + name[day];
+  // Cause of death filter/groups
+  var topCods = [
+    'Blunt force trauma',
+    'Drowning',
+    'Gunshot',
+    'Co-sleeping',
+    'Suffocation',
+    'Left in car',
+    'Hit by car',
+    'Vehicle accident',
+    'Medical',
+    'Overdose'
+  ];
+  var cod = ndx.dimension(function (d) {
+    if($.inArray(d.cod, topCods) === -1) {
+      return 'Other';
+    }
+    return d.cod;
   });
-  var dayOfWeekGroup = dayOfWeek.group();
+  var codGroup = cod.group();
 
   // Previous removals filter/groups
   var prevInv = ndx.dimension(function (d) {
@@ -131,26 +145,24 @@ d3.json('data/cps-reports.json', function (data) {
   /*********************/
   /* Day of week chart */
   /*********************/
-  /*
-  dayOfWeekChart
+  codChart
     .width(180)
-    .height(180)
-    .margins({top: 0, left: 5, right: 0, bottom: 20})
-    .group(dayOfWeekGroup)
-    .dimension(dayOfWeek)
+    .height(312)
+    .margins({top: 0, left: 5, right: 10, bottom: 20})
+    .group(codGroup)
+    .dimension(cod)
     .gap(1)
     .colors(function() {
       return '#1f77b4';
     })
     .label(function (d) {
-      return d.key.split('.')[1];
+      return d.key;
     })
     .title(function (d) {
       return d.value;
     })
     .elasticX(true)
     .xAxis().ticks(4);
-  */
 
 
   /***************************/
@@ -159,17 +171,25 @@ d3.json('data/cps-reports.json', function (data) {
   prevInvChart
     .width(360)
     .height(180)
-    .margins({top: 10, right: 0, bottom: 19, left: 33})
+    .margins({top: 10, right: 10, bottom: 19, left: 33})
     .dimension(prevInv)
     .group(prevInvGroup)
     .elasticY(true)
-    .centerBar(true)
-    .round(dc.round.floor)
-    .alwaysUseRounding(true)
-    .x(d3.scale.linear().domain(d3.extent(data, function(d) {
-      return d.prevInv;
-    })))
+    .centerBar(false)
+    .x(d3.scale.linear()
+      .domain([0, 10])
+      .clamp(true))
     .renderHorizontalGridLines(true);
+  prevInvChart.xAxis()
+    .tickFormat(function(d) {
+      if(d === 9) {
+        return '9+';
+      }
+      else if(d === 10) {
+        return null;
+      }
+      return d;
+    });
 
 
   /********/
@@ -178,13 +198,11 @@ d3.json('data/cps-reports.json', function (data) {
   ageChart
     .width(360)
     .height(180)
-    .margins({top: 10, right: 0, bottom: 19, left: 33})
+    .margins({top: 10, right: 10, bottom: 19, left: 33})
     .dimension(age)
     .group(ageGroup)
     .elasticY(true)
-    .centerBar(true)
-    .round(dc.round.floor)
-    .alwaysUseRounding(true)
+    .centerBar(false)
     .x(d3.scale.linear().domain(d3.extent(data, function(d) {
       return d.age_years;
     })))
@@ -196,7 +214,7 @@ d3.json('data/cps-reports.json', function (data) {
   /*****************/
 
   volumeChart
-    .width(910)
+    .width(890)
     .height(60)
     .margins({top: 0, right: 0, bottom: 20, left: 0})
     .dimension(dateDimension)
