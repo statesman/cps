@@ -19,6 +19,7 @@
     "Slides": "nathansearles/Slides#SlidesJS-3"
   },
   "devDependencies": {
-    "animate.less": "*"
+    "animate.less": "*",
+    "finchjs": "~0.5.14"
   }
 }
