@@ -28763,8 +28763,7 @@ var prevRmvChart = dc.pieChart('#previous-removals-chart'),
     prevInvChart = dc.barChart('#previous-investigations-chart'),
     ageChart = dc.barChart('#age-chart'),
     volumeChart = dc.barChart('#dod-chart'),
-    dataGrid = dc.dataGrid('#grid'),
-    dataGrid2 = dc.dataGrid('#grid-2');
+    dataGrid = dc.dataGrid('#grid');
 
 // Handle filter resets
 function resetHandler(e, chart) {
@@ -28849,18 +28848,6 @@ d3.json('data/cps-reports.json', function (data) {
     .html(function(d) {
       return '<i class="fa fa-child overview-item active gender-' + d.gender + '"></i>';
     });
-  dataGrid2
-    .dimension(dateDimension)
-    .group(function (d) {
-      return d.dod.getFullYear();
-    })
-    .htmlGroup(function(d) {
-      return null;
-    })
-    .html(function(d) {
-      return '<i class="fa fa-child overview-item gender-' + d.gender + '"></i>';
-    });
-  dataGrid2._doRedraw = function () {};
 
 
   /********************/
