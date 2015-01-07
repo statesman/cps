@@ -17,6 +17,41 @@
   }
 }
 
+.explorer-slices {
+  margin-bottom: @line-height-computed / 2;
+
+  h4 {
+    font-family: @font-family-sans-serif;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 15.5px;
+    line-height: 20px;
+  }
+
+  > div {
+    border-right: 1px solid @gray-lighter;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 19px;
+    margin-bottom: 5px;
+  }
+
+  ul {
+    margin-bottom: 0;
+    a {
+      font-size: 11px;
+    }
+  }
+}
+
+.explorer-header {
+  > p {
+    font-size: 12.5px;
+  }
+}
+
 #explorer-wrapper {
   background: white;
 }
@@ -42,7 +77,8 @@ p.intro {
 
   .overview-item {
     color: @gray-lighter;
-    font-size: 15px;
+    font-size: 18px;
+    margin-right: 1px;
     float: left;
     cursor: pointer;
 
@@ -61,7 +97,7 @@ p.intro {
 
   #grid-wrapper {
     position: relative;
-    height: 150px;
+    height: 190px;
     #grid, #grid-2 {
       width: 100%;
     }

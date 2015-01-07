@@ -20,10 +20,28 @@ function setup() {
     charts.dc.redrawAll();
   });
 
-  finch.route("/previous-removals", function() {
+  finch.route("/previous-investigations-any", function() {
     $('body').addClass('explorer-active');
 
-    charts.prevInv.filter(charts.dc.filters.RangedFilter(3, 10));
+    charts.dc.filterAll();
+    charts.prevInv.filter(charts.dc.filters.RangedFilter(1, Infinity));
+    charts.dc.redrawAll();
+  });
+
+  finch.route("/previous-investigations", function() {
+    $('body').addClass('explorer-active');
+
+    charts.dc.filterAll();
+    charts.prevInv.filter(charts.dc.filters.RangedFilter(3, Infinity));
+    charts.dc.redrawAll();
+  });
+
+  finch.route("/no-weapons", function() {
+    $('body').addClass('explorer-active');
+
+    charts.dc.filterAll();
+    charts.cod.filter('Blunt force trauma');
+    charts.cod.filter('Suffocation');
     charts.dc.redrawAll();
   });
 

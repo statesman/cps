@@ -9,12 +9,15 @@
 - In 146 cases — a little more than one of every five reviewed by the paper — a child had been taken from one of his or her caretakers out of safety concerns prior to the fatality. In 41 of those instances, it was the same child who later died.
 - **TODO**: Add call times interactive
 - **TODO**: In Texas, 80 children died between 2009 and 2013 with cases already opened by child protection workers.
-- sync up maps
+- "Four of every ten of the fatalities were under the age of 1; more than 80 percent were under 4 years of age."
+- "More boys died of maltreatment than girls by a margin of XXXX. In XX percent of the cases, a parent was the primary person responsible; in XX percent, it was a boy- or girlfriend."
 
 ### Missteps
 - **TODO**: The newspaper’s analysis found that nearly half of the children who died were already on CPS’s radar. Of those 380 fatalities, 165 families — more than a quarter — had been the subject of a CPS investigation at least 3 times
 - **TODO**: "80 cases in which CPS already had an open investigation when the death occurred"
 - **TODO**: "Heavy caseloads are a concern"
+- **TODO**: Heavy caseloads are a concern, but a report issued this past summer by The Stephen Group, a consultant hired to evaluate CPS, found deeper problems. Thanks primarily to a growing blizzard of paperwork requirements, for example, the agency’s caseworkers spent only about a quarter of their time with clients, meaning less time to thoroughly evaluate families.
+- **TODO**: Of the children who died of abuse or neglect between September 2009 and August 2013, 85 families had previously received family based safety services; 36 had open cases at the time of the child’s death.
 - **TODO**: "85 families had previously received family based safety services; 36 had open cases at the time of the child’s death"
 
 ### Brandon White
@@ -27,6 +30,8 @@
 - **TODO**: Hutta documents?
 - **TODO**: Leroy Hutta timeline infobox?, Michael Allen Seton timeline infobox?
 - **TODO**: database breakout for 137 paramour cases
+- **TODO**: of every child abuse and neglect death in Texas between 2009 and 2013 found that in 137 of the cases — about one in every five fatalities — a boy- or girlfriend of a parent was at least partially responsible for the death
+- **TODO**:  paramours responsible for Texas’s child abuse deaths are men
 
 ### Missing families
 - mentioned: Colton Turner (child), Megan Work (suspect), Michael Turner (suspect); Devonte Williams (child), Lisa Ann Coleman (suspect), Marcella Williams (suspect) {didn't mug these because the story is about FINDRS, not crimes and Colton is in a memorial picture used in the story}
@@ -37,9 +42,15 @@
 - **TODO:** database breakout for Bell County
 - **TODO:** database breakout for 15 child homicides still pending after 3+ years
 - ~~**TODO:** Pullquote with “It’s like getting a knife and carving me all up again,” she said. “I’m so angry I’m so angry I’m so angry I’m so angry.”?~~
+- **TODO:** The paper found that one of every five of child abuse beating or strangulation deaths — the way most children are killed — have been left unsolved, leaving relatives, law enforcement and local communities bereft of closure or justice.
 - **TODO:** Pie chart with age breakdown for first graf in "Parents scuttle cases"
+- **TODO:** vast majority of children are killed by their caretakers
+- **TODO:** About three-quarters of all child abuse deaths involve infants and toddlers, who often have little of the public interactions of older kids, such as school, activities and play dates. That means their injuries can remain hidden for long stretches of time. Frequently, the only person who sees the abuse is the perpetrator.
 
 # Day 3
+
+### Previous removals
+- "In XX instances, a child had been previously removed from the home prior to his death."
 
 ### Caseworker violence
 - worker assault numbers chart
