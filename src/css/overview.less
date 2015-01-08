@@ -1,0 +1,152 @@
+body.overview {
+  > .container {
+    background: white;
+    .box-shadow(0 0 25px rgba(0,0,0,0.05));
+  }
+
+  #overview-text {
+    margin-top: 70px;
+  }
+
+  .overview-inner {
+    width: 70%;
+    margin-left: 15%;
+
+    ul {
+      li {
+        font-family: @font-family-serif-2;
+        font-size: 14px;
+        margin-bottom: 14px;
+
+        .fa-li {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .photo-block {
+      margin-left: -8%;
+      margin-right: -8%;
+      margin-top: @line-height-computed * 1.75;
+      margin-bottom: @line-height-computed * 1.75;
+    }
+  }
+
+  header {
+    margin: @line-height-computed*3 0 @line-height-computed*2;
+    text-align: center;
+    margin: 69px 0 0;
+    text-shadow: 0 0 20px white;
+    h1 {
+      font-size: 70px;
+      font-weight: 100;
+      margin: 5px 0;
+      font-family: 'Alfa Slab One';
+    }
+    h2 {
+      font-size: 28px;
+      line-height: 40px;
+    }
+    hr {
+      border-color: @gray-light;
+      max-width: 9em;
+    }
+    > * {
+      position: relative;
+      z-index: 100;
+    }
+  }
+
+  .animated-entrance {
+    opacity: 0;
+  }
+
+  #scroll-prompt {
+    color: @gray-light;
+    font-size: 100px;
+    position: fixed;
+    bottom: @line-height-computed;
+    width: 100%;
+    text-align: center;
+  }
+
+  @boy-color: #6595EC;
+  @girl-color: #FFABF1;
+
+  //@boy-color: #333;
+  //@girl-color: #333;
+
+  #child-wrapper {
+    position: relative;
+    height: 1000px;
+    margin-bottom: -1000px;
+    width: 100%;
+    margin-left: 0;
+    opacity: .8;
+
+    display: none;
+    .fa-child {
+      position: absolute;
+
+      &.children-depth-1 {
+        font-size: 10px;
+        opacity: .36;
+        color: transparent;
+
+        &.boy {
+          text-shadow: 0 0 8px @boy-color;
+        }
+        &.girl {
+          text-shadow: 0 0 8px @girl-color;
+        }
+      }
+      &.children-depth-2 {
+        font-size: 12px;
+        opacity: .42;
+        color: transparent;
+
+        &.boy {
+          text-shadow: 0 0 6px @boy-color;
+        }
+        &.girl {
+          text-shadow: 0 0 6px @girl-color;
+        }
+      }
+      &.children-depth-3 {
+        font-size: 14px;
+        opacity: .48;
+        color: transparent;
+
+        &.boy {
+          text-shadow: 0 0 4px @boy-color;
+        }
+        &.girl {
+          text-shadow: 0 0 4px @girl-color;
+        }
+      }
+      &.children-depth-4 {
+        font-size: 16px;
+        opacity: .54;
+        color: transparent;
+
+        &.boy {
+          text-shadow: 0 0 2px @boy-color;
+        }
+        &.girl {
+          text-shadow: 0 0 2px @girl-color;
+        }
+      }
+      &.children-depth-5 {
+        font-size: 18px;
+        opacity: .6;
+
+        &.boy {
+          color: @boy-color;
+        }
+        &.girl {
+          color: @girl-color;
+        }
+      }
+    }
+  }
+}

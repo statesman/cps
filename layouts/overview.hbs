@@ -5,21 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-  <title id="maintitle">{{page.title}}</title>
+  <title>{{page.title}}</title>
 
   <link rel="icon" type="image/png" href="//projects.statesman.com/common/favicon.ico">
+
+  <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One&text=MisedSgn.FatlCoquc' rel='stylesheet' type='text/css'>
 
   {{> styles}}
 
   {{> cmg-header-scripts}}
 </head>
-<body class="explorer loading">
+<body class="overview">
+  {{> navbar-super}}
 
   {{{body}}}
 
-  <script src="dist/explorer.js"></script>
-
   {{> cmg-footer-scripts}}
+
+  {{> scripts}}
 
 </body>
 </html>

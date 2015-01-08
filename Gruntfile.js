@@ -137,7 +137,9 @@ module.exports = function(grunt) {
           'public/dist/undercounting.js': './src/js/undercounting.js',
           // Part 2
           'public/dist/no-arrest.js': './src/js/no-arrest.js',
-          'public/dist/explorer.js': './src/js/explorer.js'
+          'public/dist/explorer.js': './src/js/explorer.js',
+          // Overview
+          'public/dist/index.js': './src/js/index.js'
         }
       }
     },
