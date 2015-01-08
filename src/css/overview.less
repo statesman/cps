@@ -131,4 +131,39 @@ body.overview {
     }
   }
 
+  .overview-contents {
+    .overview-contents-item {
+      margin-top: @line-height-computed;
+      padding-top: @line-height-computed * 2;
+      border-top: 1px solid @gray-lighter;
+    }
+
+    h2 {
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 22px;
+      font-style: normal;
+      font-weight: bold;
+
+      @media (min-width: @screen-sm-min) {
+        margin-top: 0;
+      }
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      font-weight: normal;
+    }
+
+    @media (min-width: @screen-sm-min) {
+      margin-left: -8%;
+      margin-right: -8%;
+    }
+
+    p {
+      font-size: 13.5px;
+    }
+  }
+
 }
