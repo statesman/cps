@@ -73,8 +73,6 @@
 
 - responsive sizing for graphics
 - + ?? more below table
-- case count
-- clean up opening animation
 - improve rounding function
 
 

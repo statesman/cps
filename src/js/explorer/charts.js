@@ -51,14 +51,6 @@ function Charts(cb) {
       else {
         return 'No';
       }
-      /*
-      if(d.prevRmv) {
-        return 'Yes';
-      }
-      else {
-        return 'No';
-      }
-      */
     });
     var prevRmvGroup = prevRmv.group();
 
@@ -152,7 +144,6 @@ function Charts(cb) {
       .gap(3)
       .colors(function() {
         return 'rgba(132, 178, 217, 0.6)';
-        //return '#80b1d3';
       })
       .label(function (d) {
         return d.key;
@@ -181,7 +172,6 @@ function Charts(cb) {
       .gap(3)
       .colors(function(d, l) {
         return 'rgba(132, 178, 217, 0.6)';
-        //return '#80b1d3';
       })
       .renderHorizontalGridLines(true);
     this.prevInv.xAxis()
