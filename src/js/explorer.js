@@ -9,19 +9,6 @@ function filterClasses(activeFilter) {
 }
 
 chartSetup(function(charts) {
-
-  // Setup the event handling for the slide-in intro
-  var intro = $('.intro');
-  intro.find('a').on('click', function(e) {
-    e.preventDefault();
-    $('.explorer-header').show();
-    intro.slideUp();
-    $(".fade-in").animate({
-      opacity: 1
-    });
-  });
-
-
   // Because there's no easy way to filter through the filter events
   // to determine which we trigger and which the user triggers, we
   // set the ignoreFilter boolean before each event to act as a filter

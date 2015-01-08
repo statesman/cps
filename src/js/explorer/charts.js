@@ -145,7 +145,7 @@ function Charts(cb) {
       .dimension(cod)
       .gap(3)
       .colors(function() {
-        return '#e5f5f9';
+        return 'rgba(132, 178, 217, 0.6)';
         //return '#80b1d3';
       })
       .label(function (d) {
@@ -164,7 +164,7 @@ function Charts(cb) {
     this.prevInv
       .width(335)
       .height(180)
-      .margins({top: 10, right: 10, bottom: 19, left: 33})
+      .margins({top: 10, right: 10, bottom: 24, left: 33})
       .dimension(prevInv)
       .group(prevInvGroup)
       .elasticY(true)
@@ -174,7 +174,7 @@ function Charts(cb) {
       .clamp(true))
       .gap(3)
       .colors(function() {
-        return '#e5f5f9';
+        return 'rgba(132, 178, 217, 0.6)';
         //return '#80b1d3';
       })
       .renderHorizontalGridLines(true);
@@ -195,7 +195,7 @@ function Charts(cb) {
     this.age
       .width(335)
       .height(180)
-      .margins({top: 10, right: 10, bottom: 19, left: 33})
+      .margins({top: 10, right: 10, bottom: 24, left: 33})
       .dimension(age)
       .group(ageGroup)
       .centerBar(true)
@@ -203,7 +203,7 @@ function Charts(cb) {
       .gap(3)
       .colors(function() {
         //return '#80b1d3';
-        return '#e5f5f9';
+        return 'rgba(132, 178, 217, 0.6)';
       })
       .x(d3.scale.linear().domain(d3.extent(data, function(d) {
         return d.age_years;
@@ -230,7 +230,7 @@ function Charts(cb) {
       })))
       .colors(function() {
         //return '#80b1d3';
-        return '#e5f5f9';
+        return 'rgba(132, 178, 217, 0.6)';
       })
       .round(d3.time.month.round)
       .alwaysUseRounding(true)
