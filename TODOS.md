@@ -69,6 +69,15 @@
 - In XX instances, a child had been previously removed from the home prior to his death
 
 
+# Explorer
+
+- responsive sizing for graphics
+- + ?? more below table
+- case count
+- clean up opening animation
+- improve rounding function
+
+
 # Extras to add
 
 ### About this story

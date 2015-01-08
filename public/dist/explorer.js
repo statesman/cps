@@ -31456,7 +31456,7 @@ function Charts(cb) {
     /* Previous investigations */
     /***************************/
     this.prevInv
-      .width(345)
+      .width(335)
       .height(180)
       .margins({top: 10, right: 10, bottom: 19, left: 33})
       .dimension(prevInv)
@@ -31485,7 +31485,7 @@ function Charts(cb) {
     /* Ages */
     /********/
     this.age
-      .width(345)
+      .width(335)
       .height(180)
       .margins({top: 10, right: 10, bottom: 19, left: 33})
       .dimension(age)
@@ -31567,6 +31567,15 @@ function Charts(cb) {
       .size(25)
       .renderlet(function (table) {
         table.selectAll('.dc-table-group').classed('active', true);
+      });
+
+    var countText = '<strong>%filter-count</strong><br /> of %total-count selected';
+    var topCount = dc.dataCount('#total')
+      .dimension(ndx)
+      .group(all)
+      .html({
+        some: countText,
+        all: countText
       });
 
     /* Render the charts */

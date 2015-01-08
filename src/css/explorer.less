@@ -30,6 +30,10 @@
 
   > div {
     border-right: 1px solid @gray-lighter;
+    margin-right: -1px;
+    &:last-child {
+      border-right: none;
+    }
   }
 
   p {
@@ -129,7 +133,7 @@ text {
 }
 
 .dc-chart {
-  margin-right: 15px;
+  margin-right: 25px;
 }
 @media (min-width: @screen-lg-min) {
   #previous-investigations-chart,
@@ -162,4 +166,14 @@ text {
 }
 a.filter-clear{
   color: #ca3a29;
+}
+
+#total {
+  text-align: center;
+  font-size: 18px;
+
+  strong {
+    font-size: 70px;
+    line-height: 80px;
+  }
 }
