@@ -93,51 +93,15 @@ module.exports = function(grunt) {
       prod: {
         files: {
           'public/dist/scripts.js': [
-            //'bower_components/jquery/dist/jquery.js',
-            'bower_components/bootstrap/js/tooltip.js',
-            'bower_components/bootstrap/js/popover.js',
-            //'bower_components/underscore/underscore.js',
-            //'bower_components/backbone/backbone.js',
-            'bower_components/imagesloaded/imagesloaded.pkgd.js',
-            'bower_components/Slides/source/jquery.slides.js',
-            'bower_components/highcharts/highcharts.js',
-            'bower_components/leaflet/dist/leaflet.js',
-            'bower_components/handlebars/handlebars.runtime.js',
-            'bower_components/moment/moment.js',
-            'bower_components/chroma-js/chroma.js',
-            'bower_components/numeral/numeral.js',
             // Pre-processed Handlebars templates
             'build/templates.js',
-            // Backbone models
-            'src/js/models/child.js',
-            'src/js/collections/children.js',
-            // Load up the collection
-            'src/js/init.js',
-            'src/js/views/child-popup.js',
             // Charts (Backbone views)
-            'src/js/charts/chart-styles.js',
-            'src/js/charts/no-justice.js',
-            'src/js/charts/time-pending.js',
             'src/js/charts/staff-costs.js',
-            'src/js/charts/causes-of-death.js',
             'src/js/charts/turnover-rate.js',
-            'src/js/charts/reported-vs-unreported.js',
             'src/js/charts/caseloads.js',
             'src/js/charts/total-staff.js',
-            // Maps (first the class, then instances)
-            'src/js/chloromap.js',
-            'src/js/maps.js',
             // A few misc. standalone modules
             'src/js/call-time.js',
-            'src/js/navbar.js',
-            'src/js/slider.js',
-            // Lastly, run the setup for everything
-            'src/js/main.js'
-          ],
-          'public/dist/viewer.js': [
-            'bower_components/jquery/dist/jquery.js',
-            'src/js/navbar.js',
-            'src/js/dc-viewer.js'
           ]
         }
       }
@@ -248,81 +212,81 @@ module.exports = function(grunt) {
             },
             {
               title: "Part 1",
-              subtitle: "Explaining story 1",
+              subtitle: "Gaps in protection",
               file: "main",
               children: [
                 {
-                  title: "CPS main",
-                  subtitle: "Explaining story 1",
+                  title: "Statesman analysis",
+                  subtitle: "800 fatality reports reviewed",
                   file: "main"
                 },
                 {
-                  title: "Missteps",
-                  subtitle: "Explaining story 1",
+                  title: "Repeated contact",
+                  subtitle: "Families already on state's radar",
                   file: "missteps"
                 },
                 {
-                  title: "Undercounting",
-                  subtitle: "Explaining story 1",
+                  title: "Lack of disclosure",
+                  subtitle: "Many deaths not publicly reported",
                   file: "undercounting"
                 },
                 {
-                  title: "Brandon White",
-                  subtitle: "Explaining story 1",
+                  title: "Abuse repeatedly ruled out",
+                  subtitle: "CPS called 23 times before teen's death",
                   file: "brandon-white"
                 }
               ]
             },
             {
               title: "Part 2",
-              subtitle: "Part 2 description",
+              subtitle: "Stumbling blocks",
               file: "no-arrest",
               children: [
                 {
-                  title: "No arrest",
-                  subtitle: "Explaining story 1",
+                  title: "Cases remain open",
+                  subtitle: "Some last years; others unsolved",
                   file: "no-arrest"
                 },
                 {
-                  title: "Paramours",
-                  subtitle: "Explaining story 1",
+                  title: "Parents' 'paramours'",
+                  subtitle: "Unmarried partners are red flags",
                   file: "paramours"
                 },
                 {
                   title: "Missing families",
-                  subtitle: "Explaining story 1",
+                  subtitle: "Caregivers elude caseworkers",
                   file: "missing-families"
                 }
               ]
             },
             {
               title: "Part 3",
-              subtitle: "And this is story 3",
+              subtitle: "Inside CPS",
               file: "wrongdoing",
               children: [
                 {
-                  title: "Wrongdoing",
-                  subtitle: "Explaining story 1",
+                  title: "Misconduct",
+                  subtitle: "Employees caught lying",
                   file: "wrongdoing"
                 },
                 {
-                  title: "Caseworker violence",
-                  subtitle: "Explaining story 1",
+                  title: "In harm's way",
+                  subtitle: "Caseworkers face violence, threats",
                   file: "caseworker-violence"
                 },
                 {
-                  title: "Turnover",
-                  subtitle: "Explaining story 1",
+                  title: "High turnover",
+                  subtitle: "Many leave amid job's stress",
                   file: "turnover"
                 },
                 {
-                  title: "Overhaul strategy",
-                  subtitle: "Explaining story 1",
+                  title: "Another overhaul",
+                  subtitle: "Focus is on internal issues",
                   file: "overhaul-strategy"
                 },
                 {
-                  title: "Previous removals",
-                  subtitle: "Explaining story 1",
+                  title: "Anticipating tragedies",
+                  subtitle: "Using trends, analytics",
                   file: "previous-removals"
                 },
               ]
