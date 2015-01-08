@@ -5,12 +5,24 @@ body.overview {
   }
 
   #overview-text {
-    margin-top: 70px;
+    margin-top: @line-height-computed;
+    @media (min-width: @screen-sm-min) {
+      margin-top: 70px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      .lead {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+    }
   }
 
   .overview-inner {
-    width: 70%;
-    margin-left: 15%;
+    @media (min-width: @screen-sm-min) {
+      width: 70%;
+      margin-left: 15%;
+    }
 
     ul {
       li {
@@ -35,19 +47,47 @@ body.overview {
   header {
     margin: @line-height-computed*3 0 @line-height-computed*2;
     text-align: center;
-    margin: 69px 0 0;
+    margin: 0;
+    margin-top: 20px;
+    @media (min-width: @screen-md-min) {
+      margin-top: 40px;
+    }
+    @media (min-width: @screen-lg-min) {
+      margin-top: 70px;
+    }
     text-shadow: 0 0 20px white;
     h1 {
-      font-size: 70px;
-      font-weight: 100;
       margin: 5px 0;
       font-family: 'Alfa Slab One';
+      font-weight: 100;
+      @media (min-width: @screen-md-min) {
+        font-size: 60px;
+      }
+      @media (min-width: @screen-lg-min) {
+        font-size: 70px;
+      }
     }
     h2 {
-      font-size: 28px;
-      line-height: 40px;
+      @media (min-width: @screen-sm-min) {
+        font-size: 18px;
+        line-height: 28px;
+        width: 75%;
+        margin-left: 12.5%;
+      }
+      @media (min-width: @screen-md-min) {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      @media (min-width: @screen-lg-min) {
+        font-size: 28px;
+        line-height: 40px;
+      }
     }
     hr {
+      @media (max-width: @screen-sm-max) {
+        margin-top: @line-height-computed;
+        margin-bottom: @line-height-computed;
+      }
       border-color: @gray-light;
       max-width: 9em;
     }
@@ -70,83 +110,25 @@ body.overview {
     text-align: center;
   }
 
-  @boy-color: #6595EC;
-  @girl-color: #FFABF1;
-
-  //@boy-color: #333;
-  //@girl-color: #333;
-
-  #child-wrapper {
-    position: relative;
-    height: 1000px;
-    margin-bottom: -1000px;
-    width: 100%;
-    margin-left: 0;
-    opacity: .8;
-
-    display: none;
-    .fa-child {
-      position: absolute;
-
-      &.children-depth-1 {
-        font-size: 10px;
-        opacity: .36;
-        color: transparent;
-
-        &.boy {
-          text-shadow: 0 0 8px @boy-color;
-        }
-        &.girl {
-          text-shadow: 0 0 8px @girl-color;
-        }
-      }
-      &.children-depth-2 {
-        font-size: 12px;
-        opacity: .42;
-        color: transparent;
-
-        &.boy {
-          text-shadow: 0 0 6px @boy-color;
-        }
-        &.girl {
-          text-shadow: 0 0 6px @girl-color;
-        }
-      }
-      &.children-depth-3 {
-        font-size: 14px;
-        opacity: .48;
-        color: transparent;
-
-        &.boy {
-          text-shadow: 0 0 4px @boy-color;
-        }
-        &.girl {
-          text-shadow: 0 0 4px @girl-color;
-        }
-      }
-      &.children-depth-4 {
-        font-size: 16px;
-        opacity: .54;
-        color: transparent;
-
-        &.boy {
-          text-shadow: 0 0 2px @boy-color;
-        }
-        &.girl {
-          text-shadow: 0 0 2px @girl-color;
-        }
-      }
-      &.children-depth-5 {
-        font-size: 18px;
-        opacity: .6;
-
-        &.boy {
-          color: @boy-color;
-        }
-        &.girl {
-          color: @girl-color;
-        }
-      }
+  .image-pack {
+    margin-top: @line-height-computed;
+    margin-bottom: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    @media (min-width: @screen-md-min) {
+      width: 55%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: @line-height-computed * 2;
+      margin-bottom: -250 + @line-height-computed * 2;
+    }
+    .center-block();
+    > img {
+      opacity: 0;
+      max-width: 30%;
+      height: auto;
+      margin: 0 2px;
     }
   }
+
 }
