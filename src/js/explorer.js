@@ -1,6 +1,27 @@
 var $ = require('jquery'),
     finch = require('../../bower_components/finchjs/finch').Finch,
-    chartSetup = require('./explorer/charts');
+    chartSetup = require('./explorer/charts'),
+    Spinner = require('spin.js');
+
+var opts = {
+  lines: 13,
+  length: 20,
+  width: 10,
+  radius: 30,
+  corners: 1,
+  direction: 1,
+  color: '#333',
+  speed: 1,
+  trail: 60,
+  shadow: false,
+  hwaccel: false,
+  className: 'spinner',
+  zIndex: 2e9,
+  top: '50%',
+  left: '50%'
+};
+var target = document.getElementById('spinner');
+var spinner = new Spinner(opts).spin(target);
 
 function filterClasses(activeFilter) {
   $('body').addClass('explorer-active explorer-filtered');
@@ -9,6 +30,9 @@ function filterClasses(activeFilter) {
 }
 
 chartSetup(function(charts) {
+  spinner.stop();
+  $('body').removeClass('loading');
+
   // Because there's no easy way to filter through the filter events
   // to determine which we trigger and which the user triggers, we
   // set the ignoreFilter boolean before each event to act as a filter

@@ -33,6 +33,7 @@
     "moment": "^2.8.4",
     "numeral": "^1.5.3",
     "simplify-geojson": "0.0.2",
+    "spin.js": "^2.0.2",
     "sync-request": "^1.0.2",
     "underscore": "^1.7.0"
   },
