@@ -223,11 +223,6 @@ module.exports = function(grunt) {
                   file: "main"
                 },
                 {
-                  title: "Repeated contact",
-                  subtitle: "Families already on state's radar",
-                  file: "missteps"
-                },
-                {
                   title: "Lack of disclosure",
                   subtitle: "Many deaths not publicly reported",
                   file: "undercounting"
@@ -236,6 +231,11 @@ module.exports = function(grunt) {
                   title: "Abuse repeatedly ruled out",
                   subtitle: "CPS called 23 times before teen's death",
                   file: "brandon-white"
+                },
+                {
+                  title: "Repeated contact",
+                  subtitle: "Families already on state's radar",
+                  file: "missteps"
                 }
               ]
             },
@@ -250,14 +250,14 @@ module.exports = function(grunt) {
                   file: "no-arrest"
                 },
                 {
-                  title: "Parents' 'paramours'",
-                  subtitle: "Unmarried partners are red flags",
-                  file: "paramours"
-                },
-                {
                   title: "Missing families",
                   subtitle: "Caregivers elude caseworkers",
                   file: "missing-families"
+                },
+                {
+                  title: "Parents' 'paramours'",
+                  subtitle: "Unmarried partners are red flags",
+                  file: "paramours"
                 }
               ]
             },
@@ -270,6 +270,11 @@ module.exports = function(grunt) {
                   title: "Misconduct",
                   subtitle: "Employees caught lying",
                   file: "wrongdoing"
+                },
+                {
+                  title: "Anticipating tragedies",
+                  subtitle: "Using trends, analytics",
+                  file: "previous-removals"
                 },
                 {
                   title: "In harm's way",
@@ -285,12 +290,7 @@ module.exports = function(grunt) {
                   title: "Another overhaul",
                   subtitle: "Focus is on internal issues",
                   file: "overhaul-strategy"
-                },
-                {
-                  title: "Anticipating tragedies",
-                  subtitle: "Using trends, analytics",
-                  file: "previous-removals"
-                },
+                }
               ]
             },
             {
