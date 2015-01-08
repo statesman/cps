@@ -11,6 +11,8 @@
 - **TODO**: In Texas, 80 children died between 2009 and 2013 with cases already opened by child protection workers.
 - "Four of every ten of the fatalities were under the age of 1; more than 80 percent were under 4 years of age."
 - "More boys died of maltreatment than girls by a margin of XXXX. In XX percent of the cases, a parent was the primary person responsible; in XX percent, it was a boy- or girlfriend."
+- evaluate map placement
+- verify Blackmon is still in story
 
 ### Missteps
 - **TODO**: The newspaper’s analysis found that nearly half of the children who died were already on CPS’s radar. Of those 380 fatalities, 165 families — more than a quarter — had been the subject of a CPS investigation at least 3 times
@@ -23,6 +25,7 @@
 ### Brandon White
 - **TODO**: White case timeline?
 - **TODO**: Brandon White db link
+- fix broken popup link
 
 # Day 2
 
@@ -65,3 +68,16 @@
 ### Overhaul strategy
 - "In 2012, the state ranked 47th in the country for its per capita spending — $175 — on child protection and welfare programs, according to the Center for Public Policy Priorities"
 - In XX instances, a child had been previously removed from the home prior to his death
+
+
+# Extras to add
+
+### About this story
+
+Using the Texas open records law, the newspaper requested every child fatality report from the Department of Family and Protective Services between Sept. 2009 (the beginning of the state’s 2010 fiscal year) and March 2014. The total, representing 779 deaths the agency determined were directly caused by neglect or abuse, excluded three pending cases prosecutors from Collins, Bexar and Medina counties asked the state to withhold, as well as approximately 30 cases in which children died while in state custody, which are reported differently.
+
+The files, ranging from three to 30 pages each, were entered into a database created by American-Statesman data editor Christian McDonald from which reporters conducted their analyses. Reporters also reviewed reports evaluating the state’s child protection system over the years and interviewed numerous families, lawmakers, caseworkers, police, prosecutors, state officials and child protection experts.
+
+### Expert reporting
+
+Andrea Ball has covered CPS and other social services for the paper since 2002. Her work prompted a federal investigation concluding that poor health care killed a patient at Terrell State Hospital, and she has investigated problems at the state’s centers for people with disabilities and a questionable contract with software company 21CT. Eric Dexheimer, a member of the paper’s investigative team since 2006, has recently reported on the state’s botched efforts to combat Medicaid fraud and the large number of drug convicts exonerated by Texas.
