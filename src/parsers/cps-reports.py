@@ -88,7 +88,8 @@ with open('../data/cps-reports.csv', 'rb') as input_file:
       'cod': cause_of_death,
       'drugsAlc': drug_alcohol,
       'justice': justice,
-      'dc_id': document_cloud_id
+      'dc_id': document_cloud_id,
+      'fault': fault
     })
 
 json_out = open('../../public/data/cps-reports.json', 'w')

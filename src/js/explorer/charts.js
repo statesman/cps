@@ -45,12 +45,20 @@ function Charts(cb) {
 
     // Gender filter/groups
     var prevRmv = ndx.dimension(function (d) {
+      if(d.fault.toLowerCase().indexOf('paramour') !== -1) {
+        return 'Yes';
+      }
+      else {
+        return 'No';
+      }
+      /*
       if(d.prevRmv) {
         return 'Yes';
       }
       else {
         return 'No';
       }
+      */
     });
     var prevRmvGroup = prevRmv.group();
 
@@ -130,14 +138,14 @@ function Charts(cb) {
     /* Day of week chart */
     /*********************/
     this.cod
-      .width(180)
+      .width(190)
       .height(312)
       .margins({top: 0, left: 5, right: 10, bottom: 20})
       .group(codGroup)
       .dimension(cod)
-      .gap(1)
+      .gap(3)
       .colors(function() {
-        return '#1f77b4';
+        return '#80b1d3';
       })
       .label(function (d) {
         return d.key;
@@ -146,14 +154,14 @@ function Charts(cb) {
         return d.value;
       })
       .elasticX(true)
-      .xAxis().ticks(4);
+      .xAxis().ticks(3);
 
 
     /***************************/
     /* Previous investigations */
     /***************************/
     this.prevInv
-      .width(360)
+      .width(345)
       .height(180)
       .margins({top: 10, right: 10, bottom: 19, left: 33})
       .dimension(prevInv)
@@ -163,6 +171,9 @@ function Charts(cb) {
       .x(d3.scale.linear()
       .domain([0, 10])
       .clamp(true))
+      .colors(function() {
+        return '#80b1d3';
+      })
       .renderHorizontalGridLines(true);
     this.prevInv.xAxis()
       .tickFormat(function(d) {
@@ -171,23 +182,30 @@ function Charts(cb) {
         }
         return d;
       });
+    this.prevInv.yAxis()
+      .ticks(4);
 
 
     /********/
     /* Ages */
     /********/
     this.age
-      .width(360)
+      .width(345)
       .height(180)
       .margins({top: 10, right: 10, bottom: 19, left: 33})
       .dimension(age)
       .group(ageGroup)
       .centerBar(true)
       .elasticY(true)
+      .colors(function() {
+        return '#80b1d3';
+      })
       .x(d3.scale.linear().domain(d3.extent(data, function(d) {
         return d.age_years;
       })))
       .renderHorizontalGridLines(true);
+    this.age.yAxis()
+      .ticks(4);
 
 
     /*****************/
@@ -205,6 +223,9 @@ function Charts(cb) {
       .x(d3.time.scale().domain(d3.extent(data, function(d) {
         return d.dod;
       })))
+      .colors(function() {
+        return '#80b1d3';
+      })
       .round(d3.time.month.round)
       .alwaysUseRounding(true)
       .xUnits(d3.time.weeks)
@@ -256,11 +277,9 @@ function Charts(cb) {
     /* Render the charts */
     this.dc.renderAll();
 
-    cb();
+    cb(this);
 
   });
-
-  return this;
 
 }
 

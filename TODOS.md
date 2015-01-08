@@ -20,7 +20,6 @@
 - **TODO**: "Heavy caseloads are a concern"
 - **TODO**: Heavy caseloads are a concern, but a report issued this past summer by The Stephen Group, a consultant hired to evaluate CPS, found deeper problems. Thanks primarily to a growing blizzard of paperwork requirements, for example, the agency’s caseworkers spent only about a quarter of their time with clients, meaning less time to thoroughly evaluate families.
 - **TODO**: Of the children who died of abuse or neglect between September 2009 and August 2013, 85 families had previously received family based safety services; 36 had open cases at the time of the child’s death.
-- **TODO**: "85 families had previously received family based safety services; 36 had open cases at the time of the child’s death"
 
 ### Brandon White
 - **TODO**: White case timeline?

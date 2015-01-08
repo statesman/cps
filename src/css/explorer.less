@@ -123,3 +123,43 @@ text {
   font-family: @font-family-sans-serif;
   font-size: 12px;
 }
+
+#cod-chart {
+  margin-left: -5px;
+}
+
+.dc-chart {
+  margin-right: 15px;
+}
+@media (min-width: @screen-lg-min) {
+  #previous-investigations-chart,
+  #dod-chart {
+    margin-right: 0;
+  }
+}
+
+// Filters
+.explorer-filtered {
+  .explorer-slices {
+    > .filter {
+      opacity: .5;
+
+      &.active-filter {
+        opacity: 1;
+
+        .fa-angle-double-right {
+          display: inline;
+        }
+      }
+
+    }
+  }
+}
+.explorer-slices {
+  .fa-angle-double-right {
+    display: none;
+  }
+}
+a.filter-clear{
+  color: #ca3a29;
+}

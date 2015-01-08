@@ -290,6 +290,11 @@ module.exports = function(grunt) {
                   file: "previous-removals"
                 },
               ]
+            },
+            {
+              title: "Database",
+              subtitle: "Database subhed",
+              file: "explorer"
             }
           ]
         }
