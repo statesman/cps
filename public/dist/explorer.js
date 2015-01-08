@@ -31440,7 +31440,8 @@ function Charts(cb) {
       .dimension(cod)
       .gap(3)
       .colors(function() {
-        return '#80b1d3';
+        return '#e5f5f9';
+        //return '#80b1d3';
       })
       .label(function (d) {
         return d.key;
@@ -31466,8 +31467,10 @@ function Charts(cb) {
       .x(d3.scale.linear()
       .domain([0, 10])
       .clamp(true))
+      .gap(3)
       .colors(function() {
-        return '#80b1d3';
+        return '#e5f5f9';
+        //return '#80b1d3';
       })
       .renderHorizontalGridLines(true);
     this.prevInv.xAxis()
@@ -31492,8 +31495,10 @@ function Charts(cb) {
       .group(ageGroup)
       .centerBar(true)
       .elasticY(true)
+      .gap(3)
       .colors(function() {
-        return '#80b1d3';
+        //return '#80b1d3';
+        return '#e5f5f9';
       })
       .x(d3.scale.linear().domain(d3.extent(data, function(d) {
         return d.age_years;
@@ -31519,7 +31524,8 @@ function Charts(cb) {
         return d.dod;
       })))
       .colors(function() {
-        return '#80b1d3';
+        //return '#80b1d3';
+        return '#e5f5f9';
       })
       .round(d3.time.month.round)
       .alwaysUseRounding(true)
