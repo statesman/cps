@@ -29,3 +29,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+### Built files ###
+build/**
+public/*.html
+public/dist/*.js
+public/dist/*.css
+public/dist/*.css.map
