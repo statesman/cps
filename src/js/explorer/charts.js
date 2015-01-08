@@ -125,12 +125,18 @@ function Charts(cb) {
     /* Gender pie chart */
     /********************/
     this.prevRem
-      .width(180) // (optional) define chart width, :default = 200
-      .height(180) // (optional) define chart height, :default = 200
-      .radius(80) // define pie radius
-      .dimension(prevRmv) // set dimension
-      .group(prevRmvGroup) // set group
+      .width(180)
+      .height(180)
+      .radius(80)
+      .dimension(prevRmv)
+      .group(prevRmvGroup)
       .renderLabel(true)
+      .colors(function(d) {
+        if(d === "No") {
+          return 'rgba(132, 178, 217, 0.5)';
+        }
+        return 'rgba(132, 178, 217, 0.7)';
+      })
       .transitionDuration(500);
 
 
@@ -173,7 +179,7 @@ function Charts(cb) {
       .domain([0, 10])
       .clamp(true))
       .gap(3)
-      .colors(function() {
+      .colors(function(d, l) {
         return 'rgba(132, 178, 217, 0.6)';
         //return '#80b1d3';
       })
