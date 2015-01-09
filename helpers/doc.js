@@ -29,7 +29,8 @@ module.exports = function(id, desc, page) {
         '<p class="document-description">' + desc +'</p>' +
         '<ul class="document-links list-inline">' +
           '<li><a target="_blank" href="docs.html?doc=' + resp.document.id + '"><i class="fa fa-file-text"></i> Read report</a></li>' +
-          '<li><a target="_blank" href="' + resp.document.resources.pdf + '"><i class="fa fa-download"></i> Download PDF</a></li>' +
+          '<li class="download-doc"><a target="_blank" href="' + resp.document.resources.pdf + '"><i class="fa fa-download"></i> Download PDF</a></li>' +
+          '<li class="more-docs"><a target="_blank" href="library.html"><i class="fa fa-th-list"></i> More documents</a></li>' +
         '</p>' +
       '</div>' +
     '</div>';

@@ -1,0 +1,31 @@
+{
+  "template" : "stub",
+  "title": "Document library for \"Missed signs, fatal consequences\" | Austin American-Statesman",
+  "description": "Documents from the Austin American-Statesman",
+  "thumbnail": "assets/thumbnail.jpg"
+}
+---
+{{> navbar-thin}}
+
+<div class="container">
+  <article id="main">
+    {{#markdown}}
+    # Document library
+
+    The documents below are a few of the key documents from the American-Statesman's investigation into child abuse and neglect deaths in Texas.
+
+    The CPS-generated child fatality reports that form the basis for the project's analysis are available in the {{#ex-link ""}}interactive database{{/ex-link}}.
+
+    {{/markdown}}
+    <div id="library">
+      <div class="row">
+        {{library "1388904-stephens-grp-findings-all" "18"}}
+        {{library "1390957-cps-transformation-report" "1"}}
+        {{library "1388978-cps-child-death-investigations-and-reporting" "8"}}
+        {{library "1388911-sunset-commission-cps" "1"}}
+        {{library "1390954-senate-bill-6-180-day-progress-report" "8"}}
+        {{library "1390965-child-fatality-trend-analysis-florida-department" "8"}}
+      </div>
+    </div>
+  </article>
+</div>
