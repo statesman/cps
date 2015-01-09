@@ -7,8 +7,5 @@
 - **TODO**: Add call times interactive
 
 # Explorer
-
-- responsive sizing for graphics
 - + ?? more below table
-- improve rounding function
 - individual child info

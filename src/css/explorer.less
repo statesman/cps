@@ -43,6 +43,12 @@ body.loading {
   > div {
     border-right: 1px solid @gray-lighter;
     margin-right: -1px;
+    @media (min-width: @screen-md-min) {
+      min-height: 212px;
+    }
+    @media (min-width: @screen-lg-min) {
+      min-height: 190px;
+    }
     min-height: 170px;
     &:last-child {
       border-right: none;
@@ -63,6 +69,11 @@ body.loading {
   }
 }
 
+#explorer {
+  // So we can omve charts around if necessary and use this as the wrapper
+  position: relative;
+}
+
 .explorer-header {
   > p {
     font-size: 12.5px;
@@ -79,10 +90,19 @@ body.loading {
 
   .overview-item {
     color: @gray-lighter;
-    font-size: 18px;
     margin-right: 1px;
     float: left;
     cursor: pointer;
+
+    @media (max-width: @screen-xs-max) {
+      font-size: 10px;
+    }
+    @media (min-width: @screen-sm-min) {
+      font-size: 14px;
+    }
+    @media (min-width: @screen-md-min) {
+      font-size: 18px;
+    }
 
     &.active {
       &.gender-M {
@@ -99,7 +119,6 @@ body.loading {
 
   #grid-wrapper {
     position: relative;
-    height: 190px;
     #grid, #grid-2 {
       width: 100%;
     }
@@ -136,27 +155,23 @@ text {
     color: #ca3a29;
   }
 }
-@media (min-width: @screen-lg-min) {
-  #previous-investigations-chart,
-  #dod-chart {
-    margin-right: 0;
-  }
-}
 
 // One of our custom filters is active
 .explorer-sliced {
   .explorer-slices {
     > .filter {
-      opacity: .5;
-
+      > * {
+        opacity: .5;
+      }
       &.active-filter {
-        opacity: 1;
+        > * {
+          opacity: 1;
+        }
 
         .fa-angle-double-right {
           display: inline;
         }
       }
-
     }
   }
 }
@@ -186,5 +201,120 @@ a.filter-clear{
   strong {
     font-size: 70px;
     line-height: 80px;
+  }
+}
+
+  .dc-chart {
+    h2 {
+      @media (max-width: @screen-sm-max) {
+        margin-top: 10px;
+      }
+      margin-bottom: 5px;
+    }
+  }
+@media (max-width: @screen-xs-max) {
+  .explorer-slices > div {
+    min-height: 215px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @gray-lighter;
+
+    &:nth-child(even) {
+      border-right: none;
+    }
+    &:nth-child(5),
+    &:nth-child(6) {
+      border-bottom: none;
+    }
+  }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  // Re-stroke the filter boxes now that we've shifted them around
+  .explorer-slices > div {
+    min-height: 149px;
+    border-bottom: 1px solid @gray-lighter;
+
+    &:nth-child(3) {
+      border-right: none;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      padding-top: @line-height-computed;
+      border-bottom: none;
+    }
+  }
+
+  #grid-wrapper {
+    height: 182px;
+  }
+
+  #previous-investigations-chart,
+  #age-chart,
+  #dod-chart {
+    margin-right: 0;
+  }
+
+  // Move some charts around
+  #previous-investigations-chart {
+    position: absolute;
+    left: 425px;
+  }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  #grid-wrapper {
+    height: 216px;
+  }
+  #age-chart {
+    width: 255px;
+  }
+  #previous-investigations-chart {
+    margin-right: 0;
+    width: 255px;
+    margin-bottom: -28px;
+  }
+  #dod-chart {
+    margin-right: 0;
+  }
+  #cod-chart {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  #grid-wrapper {
+    height: 190px;
+  }
+  #previous-investigations-chart {
+    max-width: 180px;
+  }
+  #cod-chart {
+    max-width: 190px;
+  }
+  #previous-removals-chart {
+    position: relative;
+    max-width: 180px;
+
+    small {
+      position: absolute;
+      top: 55px;
+      left: 0;
+      .reset {
+        margin-left: 0;
+      }
+    }
+  }
+  #previous-investigations-chart {
+    max-width: 335px;
+    margin-right: 0;
+  }
+  #age-chart {
+    max-width: 335px;
+  }
+  #dod-chart {
+    max-width: 890px;
+    margin-right: 0;
   }
 }

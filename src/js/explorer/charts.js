@@ -1,9 +1,55 @@
 var $ = require('jquery'),
     d3 = require('d3'),
-    _ = require('underscore');
+    _ = require('underscore'),
     crossfilter = require('crossfilter');
 
 function Charts(cb) {
+
+  var self = this;
+  function renderCharts() {
+    var width = $(window).width();
+
+    // Set some defaults
+    self.prevRem.width(180);
+    self.prevRem.height(180);
+    self.cod.width(190);
+    self.cod.height(312);
+    self.prevInv.width(335);
+    self.prevInv.height(180);
+    self.age.width(335);
+    self.age.height(180);
+    self.dod.width(890);
+    self.dod.height(60);
+
+    // Then override them, if necessary by breakpoint
+
+    // Medium
+    if(width >= 992 && width < 1200) {
+      self.cod.width(150);
+      self.age.width(255);
+      self.prevInv.width(255);
+      self.dod.width(730);
+    }
+    // Small
+    if(width >= 768 && width < 992) {
+      self.prevInv.width(280);
+      self.age.width(475);
+      self.cod.height(420);
+      self.dod.width(690);
+    }
+    // Extra small
+    if(width < 768) {
+      self.prevRem.width(280);
+      self.prevRem.height(180);
+      self.prevInv.width(280);
+      self.cod.width(280);
+      self.cod.height(250);
+      self.dod.width(280);
+      self.age.width(280);
+    }
+
+    self.dc.renderAll();
+  }
 
   this.dc = require('dc');
 
@@ -120,8 +166,6 @@ function Charts(cb) {
     /* Gender pie chart */
     /********************/
     this.prevRem
-      .width(180)
-      .height(180)
       .radius(80)
       .dimension(prevRmv)
       .group(prevRmvGroup)
@@ -139,8 +183,6 @@ function Charts(cb) {
     /* Day of week chart */
     /*********************/
     this.cod
-      .width(190)
-      .height(312)
       .margins({top: 0, left: 5, right: 10, bottom: 20})
       .group(codGroup)
       .dimension(cod)
@@ -162,8 +204,6 @@ function Charts(cb) {
     /* Previous investigations */
     /***************************/
     this.prevInv
-      .width(335)
-      .height(180)
       .margins({top: 10, right: 10, bottom: 24, left: 33})
       .dimension(prevInv)
       .group(prevInvGroup)
@@ -191,8 +231,6 @@ function Charts(cb) {
     /* Ages */
     /********/
     this.age
-      .width(335)
-      .height(180)
       .margins({top: 10, right: 10, bottom: 24, left: 33})
       .dimension(age)
       .group(ageGroup)
@@ -214,8 +252,6 @@ function Charts(cb) {
     /*****************/
 
     this.dod
-      .width(890)
-      .height(60)
       .margins({top: 0, right: 0, bottom: 20, left: 0})
       .dimension(dateDimension)
       .group(monthsGroup)
@@ -285,8 +321,10 @@ function Charts(cb) {
         all: countText
       });
 
-    /* Render the charts */
-    this.dc.renderAll();
+    /* Render the charts and bind to the window resizer */
+    var debouncedRender = _.debounce(renderCharts, 500);
+    debouncedRender();
+    $(window).resize(_.debounce(debouncedRender, 500));
 
     cb(this);
 
