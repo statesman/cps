@@ -211,7 +211,7 @@ module.exports = function(grunt) {
           templates: 'layouts',
           templateExt: 'hbs',
           helpers: require('./helpers'),
-          base: 'http://projects.statesman.com/templates/immersive/',
+          base: 'http://projects.statesman.com/missed-signs/',
           nav: [
             {
               title: "Overview",
