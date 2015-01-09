@@ -24,7 +24,7 @@ var target = document.getElementById('spinner');
 var spinner = new Spinner(opts).spin(target);
 
 function filterClasses(activeFilter) {
-  $('body').addClass('explorer-active explorer-filtered');
+  $('body').addClass('explorer-active explorer-filtered explorer-sliced');
   $('.explorer-slices').find('.active-filter').removeClass('active-filter');
   $('.explorer-slices .' + activeFilter).addClass('active-filter');
 }
@@ -58,7 +58,7 @@ chartSetup(function(charts) {
   charts.dod.on("filtered", onFilter);
 
   finch.route("/", function() {
-    $('body').removeClass('explorer-filtered');
+    $('body').removeClass('explorer-filtered explorer-sliced');
 
     charts.dc.filterAll();
     charts.dc.redrawAll();
@@ -66,7 +66,8 @@ chartSetup(function(charts) {
 
   finch.route("/custom-view", function() {
     // A route for users who are just playing with the data
-    $('body').removeClass('explorer-filtered');
+    $('body').addClass('explorer-filtered');
+    $('body').removeClass('explorer-sliced');
     $('.explorer-slices').find('.active-filter').removeClass('active-filter');
   });
 

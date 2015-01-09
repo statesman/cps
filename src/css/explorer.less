@@ -143,8 +143,8 @@ text {
   }
 }
 
-// Filters
-.explorer-filtered {
+// One of our custom filters is active
+.explorer-sliced {
   .explorer-slices {
     > .filter {
       opacity: .5;
@@ -165,9 +165,19 @@ text {
     display: none;
   }
 }
+
+// The big filter clearer
 a.filter-clear{
   color: #ca3a29;
+  display: none;
 }
+// Any filter is active
+.explorer-filtered {
+  a.filter-clear {
+    display: inline;
+  }
+}
+
 
 #total {
   text-align: center;
