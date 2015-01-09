@@ -6,9 +6,6 @@
 ### Main
 - **TODO**: Add call times interactive
 
-### Brandon White
-- fix broken popup link
-
 # Day 2
 
 ### No arrest

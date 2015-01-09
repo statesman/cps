@@ -125,6 +125,10 @@ module.exports = function(grunt) {
         src: [],
         dest: 'public/dist/story-common.js'
       },
+      storyplain: {
+        src: './src/js/bundles/story.js',
+        dest: 'public/dist/story-plain.js'
+      },
       stories: {
         options: {
           external: [

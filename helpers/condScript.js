@@ -14,4 +14,7 @@ module.exports = function(filename) {
   if(exists) {
     return new Handlebars.SafeString('<script src="dist/' + filename + '.js"></script>');
   }
+  else {
+    return new Handlebars.SafeString('<script src="dist/story-plain.js"></script>');
+  }
 };
