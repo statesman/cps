@@ -282,7 +282,7 @@ module.exports = function(grunt) {
                 },
                 {
                   title: "In harm's way",
-                  subtitle: "Caseworkers face violence, threats",
+                  subtitle: "Caseworkers face violence",
                   file: "caseworker-violence"
                 },
                 {
