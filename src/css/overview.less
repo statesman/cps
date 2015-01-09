@@ -37,8 +37,12 @@ body.overview {
     }
 
     .photo-block {
-      margin-left: -8%;
-      margin-right: -8%;
+      margin-left: -15px;
+      margin-right: -15px;
+      @media (min-width: @screen-sm-min) {
+        margin-left: -8%;
+        margin-right: -8%;
+      }
       margin-top: @line-height-computed * 1.75;
       margin-bottom: @line-height-computed * 1.75;
     }
@@ -146,7 +150,7 @@ body.overview {
       font-style: normal;
       font-weight: bold;
 
-      @media (min-width: @screen-sm-min) {
+      @media (min-width: @screen-md-min) {
         margin-top: 0;
       }
     }
@@ -164,6 +168,18 @@ body.overview {
 
     p {
       font-size: 13.5px;
+    }
+  }
+
+  .expert {
+    hr {
+      margin-top: 0;
+      margin-bottom: @line-height-computed;
+    }
+
+    @media(min-width: @screen-sm-min) {
+      margin-left: -8%;
+      margin-right: -8%;
     }
   }
 
