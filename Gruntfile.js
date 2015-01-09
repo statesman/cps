@@ -142,6 +142,8 @@ module.exports = function(grunt) {
           // Part 2
           'public/dist/no-arrest.js': './src/js/no-arrest.js',
           'public/dist/explorer.js': './src/js/explorer.js',
+          // Part 3
+          'public/dist/turnover.js': './src/js/turnover.js',
           // Overview
           'public/dist/index.js': './src/js/index.js'
         }

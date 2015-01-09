@@ -5,7 +5,7 @@
 var Highcharts = require('../lib/highcharts');
 
 $(function() {
-  $('#cps-caseloads').highcharts({
+  $('#cps-caseloads-chart').highcharts({
     title: {
       text: ''
     },
@@ -29,10 +29,6 @@ $(function() {
     series: [{
       data: [43.2, 34.7, 25.3, 21.9, 20.7, 29.1, 27.4, 24.7, 19.9],
       name: 'Investigations',
-      yAxis: 0
-    }, {
-      data: [40.4, 44.5, 43.3, 37.3, 28.2, 29.5, 32, 33.7, 31.8],
-      name: 'Conservatorship',
       yAxis: 0
     }, {
       data: [5114, 5894, 7046, 8037, 8632.6, 8343.5, 8362, 8064.5, 8234],
