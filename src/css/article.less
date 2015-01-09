@@ -77,6 +77,14 @@ article {
       margin: 5px 0 0 0;
     }
 
+    // Responsive fix for extra small
+    @media (max-width: @screen-xs-max) {
+      &.slider-right {
+        max-width: 100%;
+        float: none !important;
+      }
+    }
+
     // Right-aligned photo blocks
     @media (min-width: @screen-sm-min) {
       &.photo-block-right {
@@ -213,6 +221,10 @@ article {
       margin-left: auto;
       margin-right: auto;
     }
+  }
+
+  .tagline {
+    font-style: italic;
   }
 
   &#main {
