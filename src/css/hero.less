@@ -34,7 +34,30 @@
       }
 
       h6+h1 {
-        margin-top: 13px;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  h6 {
+    border-bottom: none;
+    display: block;
+    font-size: 12.5px;
+    line-height: 17px;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  &.hero-p3 {
+
+    .img-wrapper .img-overlay {
+      // Move p3 hero to top right on small breakpoint devices
+      @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        color: #fff;
+        color: rgba(255,255,255,0.95);
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.65);
+        top: 30px;
+        max-width: 300px;
+        bottom: auto;
       }
     }
   }
@@ -43,6 +66,15 @@
     text-align: center;
     margin: @line-height-computed auto;
     width: 75%;
+
+    h1 {
+      margin-top: 8px;
+      margin-bottom: 29px;
+      font-size: 37px;
+    }
+    h6 {
+      margin-bottom: 8px;
+    }
 
     @media (min-width: @screen-sm-min) {
       display: none;
