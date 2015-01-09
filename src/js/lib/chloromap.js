@@ -40,13 +40,13 @@ var ChloroMap = function(el, geojson, options) {
 
   // Setup the basemap, with tiles and geojson data layer
   this.map = L.map(el, {
+    scrollWheelZoom: false,
+    attributionControl: false,
     zoomControl: this.child
   });
 
   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    scrollWheelZoom: false,
-    attributionControl: false
+    maxZoom: 18
   }).addTo(this.map);
 
 
