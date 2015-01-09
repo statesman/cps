@@ -322,9 +322,9 @@ function Charts(cb) {
       });
 
     /* Render the charts and bind to the window resizer */
-    var debouncedRender = _.debounce(renderCharts, 500);
+    var debouncedRender = _.debounce(renderCharts, 500, this);
     debouncedRender();
-    $(window).resize(_.debounce(debouncedRender, 500));
+    $(window).resize(debouncedRender);
 
     cb(this);
 
