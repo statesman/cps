@@ -77,6 +77,9 @@ function Charts(cb) {
 
     // Previous removals filter/groups
     var prevInv = ndx.dimension(function (d) {
+      if(d.prevInv >= 10) {
+        return 10;
+      }
       return d.prevInv;
     });
     var prevInvGroup = prevInv.group();
@@ -167,8 +170,7 @@ function Charts(cb) {
       .elasticY(true)
       .centerBar(true)
       .x(d3.scale.linear()
-      .domain([0, 10])
-      .clamp(true))
+        .domain([-0.5, 10.5]))
       .gap(3)
       .colors(function(d, l) {
         return 'rgba(132, 178, 217, 0.6)';
@@ -201,9 +203,7 @@ function Charts(cb) {
         //return '#80b1d3';
         return 'rgba(132, 178, 217, 0.6)';
       })
-      .x(d3.scale.linear().domain(d3.extent(data, function(d) {
-        return d.age_years;
-      })))
+      .x(d3.scale.linear().domain(d3.extent([-0.5, 17.5])))
       .renderHorizontalGridLines(true);
     this.age.yAxis()
       .ticks(4);
