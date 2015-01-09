@@ -12,6 +12,9 @@ var ChildPopup = Backbone.View.extend({
   initialize: function() {
     // Enable the close button on child popovers
     this.$el.one('shown.bs.popover', $.proxy(this.closeHandler, this));
+
+    var dateObj = this.model.get('dod').clone();
+    this.model.set('dod_formatted', dateObj.format('MMM D, YYYY'));
   },
 
   // Manually open/close the Bootstrap popup
