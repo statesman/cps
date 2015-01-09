@@ -13,10 +13,15 @@ new (Backbone.View.extend({
     // Format data for
     var counts = this.collection.chain()
       .countBy(function(model) {
-        var justice = model.get('justice');
-        return justice.substr(0,1).toUpperCase() + justice.substr(1);
+        var labels = {
+          yes: 'Solved',
+          no: 'Unsolved',
+          pending: 'Pending',
+          'records unavailable': 'Records unavailable'
+        };
+        return labels[model.get('justice')];
       })
-      .omit("")
+      .omit("undefined")
       .pairs()
       .sortBy(function(el) {
         return -el[1];
