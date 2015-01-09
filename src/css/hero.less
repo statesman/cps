@@ -158,6 +158,37 @@
 
     }
   }
+
+  // Special widths for overflowing hero navs
+  &.hero-p1 {
+    .hero-nav li {
+      @media (min-width: @screen-sm-min) and (max-width: @screen-md-max) {
+        max-width: 25%;
+        min-height: 134px;
+        float: left;
+      }
+    }
+  }
+  &.hero-p2 {
+    .hero-nav li {
+      @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        max-width: 33%;
+        float: left;
+      }
+    }
+  }
+  &.hero-p3 {
+    .hero-nav li {
+      @media (min-width: @screen-sm-min) and (max-width: @screen-md-max) {
+        max-width: 20%;
+        float: left;
+        min-height: 157px;
+      }
+      @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        min-height: 134px;
+      }
+    }
+  }
 }
 
 #skip-hero {
