@@ -93,6 +93,29 @@ article {
       }
     }
 
+    // Responsive fix for video extra small
+    @media (max-width: @screen-xs-max) {
+      &.photo-block-right-video {
+        max-width: 100%;
+        float: none !important;
+      }
+    }
+
+    // Right-aligned video blocks small
+    @media (min-width: @screen-sm-min) {
+      &.photo-block-right-video {
+        margin: 1% 0% 1% 1%;
+        width: 100%;
+      }
+    }
+
+    // Right-aligned video blocks medium
+    @media (min-width: @screen-md-min) {
+      &.photo-block-right-video {
+        margin: 1% 10% 1% 5%;
+        width: 50%;
+      }
+    }
     // Right-aligned photo vertical
     &.photo-block-right-vertical {
       @media (min-width:  @screen-sm-min) {
@@ -111,11 +134,11 @@ article {
     }
 
   }
-  // Full-width photos/videos that are mixed into the text stream, not topping
-  // a section
-  > p + .photo-block {
-    margin-top: @line-height-computed;
-  }
+    // Full-width photos/videos that are mixed into the text stream, not topping
+    // a section
+    > p + .photo-block {
+      margin-top: @line-height-computed;
+    }
 
   // Charts
   > .chart {
