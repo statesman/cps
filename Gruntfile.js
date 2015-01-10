@@ -208,7 +208,7 @@ module.exports = function(grunt) {
           templates: 'layouts',
           templateExt: 'hbs',
           helpers: require('./helpers'),
-          base: 'http://projects.statesman.com/cps-missed-signs/',
+          base: 'http://projects.statesman.com/news/cps-missed-signs/',
           nav: [
             {
               title: "Introduction",
