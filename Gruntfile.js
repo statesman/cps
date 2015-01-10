@@ -88,33 +88,30 @@ module.exports = function(grunt) {
     // Use Uglify to bundle up a pym file for the home page
     uglify: {
       options: {
-        sourceMap: true
+        preserveComments: false,
+        compress: true,
+        mangle: {
+          except: ['jQuery']
+        }
       },
       prod: {
-        files: {
-          'public/dist/scripts.js': [
-            // Pre-processed Handlebars templates
-            'build/templates.js',
-            // Charts (Backbone views)
-            'src/js/charts/staff-costs.js',
-            'src/js/charts/turnover-rate.js',
-            'src/js/charts/caseloads.js',
-            'src/js/charts/total-staff.js',
-            // A few misc. standalone modules
-            'src/js/call-time.js',
-          ]
-        }
+        files: [{
+          expand: true,
+          cwd: 'build',
+          src: '**/*.js',
+          dest: 'public/dist'
+        }]
       }
     },
 
     // Use Watchify to smartly compile JS
     browserify: {
       options: {
-        debug: true
+        debug: false
       },
       docs: {
         src: './src/js/docs.js',
-        dest: 'public/dist/docs.js'
+        dest: 'build/docs.js'
       },
       storycommon: {
         options: {
@@ -127,7 +124,7 @@ module.exports = function(grunt) {
       },
       storyplain: {
         src: './src/js/bundles/story.js',
-        dest: 'public/dist/story-plain.js'
+        dest: 'build/story-plain.js'
       },
       stories: {
         options: {
@@ -136,16 +133,16 @@ module.exports = function(grunt) {
           ]
         },
         files: {
-          'public/dist/main.js': './src/js/main.js',
-          'public/dist/missteps.js': './src/js/missteps.js',
-          'public/dist/undercounting.js': './src/js/undercounting.js',
+          'build/main.js': './src/js/main.js',
+          'build/missteps.js': './src/js/missteps.js',
+          'build/undercounting.js': './src/js/undercounting.js',
           // Part 2
-          'public/dist/no-arrest.js': './src/js/no-arrest.js',
-          'public/dist/explorer.js': './src/js/explorer.js',
+          'build/no-arrest.js': './src/js/no-arrest.js',
+          'build/explorer.js': './src/js/explorer.js',
           // Part 3
-          'public/dist/turnover.js': './src/js/turnover.js',
+          'build/turnover.js': './src/js/turnover.js',
           // Overview
-          'public/dist/index.js': './src/js/index.js'
+          'build/index.js': './src/js/index.js'
         }
       }
     },
@@ -235,12 +232,12 @@ module.exports = function(grunt) {
                 },
                 {
                   title: "Abuse repeatedly ruled out",
-                  subtitle: "CPS called 23 times before teen's death",
+                  subtitle: "CPS called 23 times before teen’s death",
                   file: "brandon-white"
                 },
                 {
                   title: "Repeated contact",
-                  subtitle: "Families already on state's radar",
+                  subtitle: "Families already on state’s radar",
                   file: "missteps"
                 }
               ]
@@ -261,7 +258,7 @@ module.exports = function(grunt) {
                   file: "missing-families"
                 },
                 {
-                  title: "Parents' 'paramours'",
+                  title: "Parents’ ‘paramours’",
                   subtitle: "Unmarried partners are red flags",
                   file: "paramours"
                 }
@@ -283,13 +280,13 @@ module.exports = function(grunt) {
                   file: "previous-removals"
                 },
                 {
-                  title: "In harm's way",
+                  title: "In harm’s way",
                   subtitle: "Caseworkers face violence",
                   file: "caseworker-violence"
                 },
                 {
                   title: "High turnover",
-                  subtitle: "Many leave amid job's stress",
+                  subtitle: "Many leave amid job’s stress",
                   file: "turnover"
                 },
                 {
@@ -345,7 +342,7 @@ module.exports = function(grunt) {
   // Assorted build tasks
   grunt.registerTask('build:html', ['clean:pages', 'generator']);
   grunt.registerTask('build:css', ['clean:css', 'clean:fonts', 'copy', 'less']);
-  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint', 'browserify']);
+  grunt.registerTask('build:js', ['clean:js', 'handlebars', 'jshint', 'browserify', 'uglify']);
   grunt.registerTask('build', ['build:html', 'build:css', 'build:js']);
 
   // Publishing tasks
