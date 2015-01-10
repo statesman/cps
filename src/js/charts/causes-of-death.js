@@ -54,6 +54,10 @@ new (Backbone.View.extend({
       legend: {
         enabled: false
       },
+      tooltip: {
+        headerFormat: '<b>{point.key}</b><br />',
+        pointFormat: '{point.y} deaths'
+      },
       xAxis: {
         categories: cats
       },

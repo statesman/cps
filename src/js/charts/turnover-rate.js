@@ -25,6 +25,8 @@ $(function() {
       enabled: false
     },
     tooltip: {
+      headerFormat: 'Turnover rate<br />',
+      pointFormat: '<b>{point.y}</b>',
       valueSuffix: '%'
     },
     series: [{

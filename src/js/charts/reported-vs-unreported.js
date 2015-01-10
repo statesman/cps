@@ -14,7 +14,9 @@ $(function() {
     },
     tooltip: {
       crosshairs: true,
-      shared: true
+      shared: true,
+      headerFormat: '',
+      pointFormat: '{series.name}: <b>{point.y}</b><br />'
     },
     plotOptions: {
       area: {
