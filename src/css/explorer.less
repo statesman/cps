@@ -1,5 +1,33 @@
 @import 'dc';
 
+table#data-table {
+  .dc-table-head {
+    display: none;
+  }
+  tr.dc-table-row {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: block;
+    border-bottom: 1px solid @table-border-color;
+
+    > td {
+      display: block;
+      border-top: none;
+      padding: 0 8px;
+      font-size: 13px;
+
+      a {
+        font-size: 12px;
+      }
+
+      &.dc-table-column._1 {
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 .explorer {
   .navbar-thin {
     position: relative;
@@ -213,18 +241,20 @@ a.filter-clear{
     }
   }
 @media (max-width: @screen-xs-max) {
+  #grid-wrapper {
+    height: 265px;
+  }
+
   .explorer-slices > div {
-    min-height: 215px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid @gray-lighter;
+    border-right: none;
+    min-height: 0;
 
-    &:nth-child(even) {
-      border-right: none;
-    }
-    &:nth-child(5),
-    &:nth-child(6) {
+    &:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
   }
 }

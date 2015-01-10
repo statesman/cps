@@ -39,13 +39,13 @@ function Charts(cb) {
     }
     // Extra small
     if(width < 768) {
-      self.prevRem.width(280);
+      self.prevRem.width(250);
       self.prevRem.height(180);
-      self.prevInv.width(280);
-      self.cod.width(280);
+      self.prevInv.width(250);
+      self.cod.width(250);
       self.cod.height(250);
-      self.dod.width(280);
-      self.age.width(280);
+      self.dod.width(250);
+      self.age.width(250);
     }
 
     self.dc.renderAll();
