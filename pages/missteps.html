@@ -4,7 +4,6 @@
   "description": "CPS struggles with missed deadlines, mounting paperwork, shortage of experienced caseworkers",
   "thumbnail": "assets/social-part1.jpg",
   "hero": "p1",
-  "sublimeVideo": true,
   "deaconslider": {
     "images": [{
       "url": "assets/missteps-deacon4.jpg",
@@ -67,15 +66,25 @@
 
   <p class="author">By <a href="mailto:edexheimer@statesman.com">Eric Dexheimer</a> and <a href="mailto:aball@statesman.com">Andrea Ball</a> / Published January 11, 2015</p>
 
-  {{> video-block-right-brightcove page.video}}
-
-  <video id="dc0lMyHq8Jc" poster="http://localhost:8000/assets/missteps-deacon8.jpg" width="1280" height="720" style="display:none" data-uid="dc0lMyHq8Jc" data-youtube-id="dc0lMyHq8Jc" data-autoresize="fit" preload="none">
-  </video>
+  {{/markdown}}
   <div class="photo-block photo-block-right-video pull-right">
-    <a href="#dc0lMyHq8Jc" class="sublime" data-quality="hd" data-youtube-id="dc0lMyHq8Jc" data-autoresize="fit">
-      <img class="img-responsive" src="http://localhost:8000/assets/missteps-deacon8.jpg" width="640" height="400" />
-    </a>
+    <div class="embed-responsive embed-responsive-16by9">
+      <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+      <object id="myExperience3980581007001" class="BrightcoveExperience embed-responsive-item">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="750" />
+        <param name="height" value="422" />
+        <param name="playerID" value="2305729465001" />
+        <param name="playerKey" value="AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        <param name="@videoPlayer" value="3980581007001" />
+      </object>
+      <script type="text/javascript">brightcove.createExperiences();</script>
+    </div>
   </div>
+  {{#markdown}}
 
   Two-year-old {{#child-link "40259454-34"}}Deacon Garay{{/child-link}} first told a Child Protective Services investigator that “Bully” hurt his head in July 2011.
 

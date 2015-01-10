@@ -7,7 +7,7 @@ body.overview {
   #overview-text {
     margin-top: @line-height-computed;
     @media (min-width: @screen-sm-min) {
-      margin-top: 70px;
+      margin-top: 50px;
     }
 
     @media (max-width: @screen-xs-max) {
@@ -53,6 +53,20 @@ body.overview {
     text-align: center;
     margin: 0;
     margin-top: 20px;
+
+    .image-pack {
+      margin: 40px auto;
+      > img {
+        width: 32%;
+      }
+      @media (max-width: @screen-sm-max) {
+        margin: 30px -15px;
+      }
+      @media (min-width: @screen-md-min) {
+        width: 55%;
+      }
+    }
+
     @media (min-width: @screen-md-min) {
       margin-top: 40px;
     }
@@ -72,19 +86,17 @@ body.overview {
       }
     }
     h2 {
+      line-height: 145%;
       @media (min-width: @screen-sm-min) {
         font-size: 18px;
-        line-height: 28px;
         width: 75%;
         margin-left: 12.5%;
       }
       @media (min-width: @screen-md-min) {
         font-size: 24px;
-        line-height: 36px;
       }
       @media (min-width: @screen-lg-min) {
         font-size: 28px;
-        line-height: 40px;
       }
     }
     hr {
