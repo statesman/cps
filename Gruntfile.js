@@ -214,8 +214,8 @@ module.exports = function(grunt) {
           base: 'http://projects.statesman.com/missed-signs/',
           nav: [
             {
-              title: "Overview",
-              subtitle: "Explaining it",
+              title: "Introduction",
+              subtitle: "Missed signs",
               file: "index",
             },
             {
@@ -300,8 +300,8 @@ module.exports = function(grunt) {
               ]
             },
             {
-              title: "Database",
-              subtitle: "Database subhed",
+              title: "Interactive",
+              subtitle: "Explore the data",
               file: "explorer"
             }
           ]
