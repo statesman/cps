@@ -57,6 +57,32 @@ chartSetup(function(charts) {
   charts.age.on("filtered", onFilter);
   charts.dod.on("filtered", onFilter);
 
+  // Bind to all chart pre- and post-render events
+  charts.prevRem.on("preRedraw", redrawStart);
+  charts.cod.on("preRedraw", redrawStart);
+  charts.prevInv.on("preRedraw", redrawStart);
+  charts.age.on("preRedraw", redrawStart);
+  charts.dod.on("preRedraw", redrawStart);
+
+  charts.prevRem.on("postRedraw", redrawStop);
+  charts.cod.on("postRedraw", redrawStop);
+  charts.prevInv.on("postRedraw", redrawStop);
+  charts.age.on("postRedraw", redrawStop);
+  charts.dod.on("postRedraw", redrawStop);
+
+  var redrawing = 0;
+  function redrawStart() {
+    redrawing ++;
+    spinner.spin();
+  }
+  function redrawStop() {
+    redrawing --;
+    if (redrawing === 0) {
+      spinner.stop();
+    }
+  }
+
+  // Setup routes
   finch.route("/", function() {
     $('body').removeClass('explorer-filtered explorer-sliced');
 
