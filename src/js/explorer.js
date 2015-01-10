@@ -77,7 +77,7 @@ chartSetup(function(charts) {
     ignoreFilter = true;
     charts.dc.filterAll();
     ignoreFilter = true;
-    charts.prevInv.filter(charts.dc.filters.RangedFilter(1, Infinity));
+    charts.prevInv.filter(charts.dc.filters.RangedFilter(1, 10.5));
     charts.dc.redrawAll();
   });
 
@@ -87,7 +87,7 @@ chartSetup(function(charts) {
     ignoreFilter = true;
     charts.dc.filterAll();
     ignoreFilter = true;
-    charts.prevInv.filter(charts.dc.filters.RangedFilter(3, Infinity));
+    charts.prevInv.filter(charts.dc.filters.RangedFilter(3, 10.5));
     charts.dc.redrawAll();
   });
 
