@@ -79,7 +79,6 @@ var ChloroMap = function(el, geojson, options) {
       var text = '';
       if(props) {
         text += '<h4>' + props.name + '</h4>';
-        text += '<b>Per capita:</b> ' + numeral(props.perCapita).format('0.00') + '<br />';
         text += '<b>Total deaths:</b> ' + props.count + '<br />';
         text += '<b>Under 18 population:</b> ' + numeral(props.under18).format('0,0');
       }
