@@ -11,6 +11,7 @@
     "chroma-js": "^0.6.3",
     "crossfilter": "^1.3.11",
     "d3": "^3.5.3",
+    "d3-tip": "^0.6.7",
     "dc": "^2.0.0-alpha.5",
     "grunt-browserify": "^3.2.1",
     "grunt-concurrent": "^1.0.0",

@@ -1,7 +1,9 @@
 var $ = require('jquery'),
     d3 = require('d3'),
     _ = require('underscore'),
-    crossfilter = require('crossfilter');
+    crossfilter = require('crossfilter')
+
+require('d3-tip')(d3);
 
 function Charts(cb) {
 
@@ -148,7 +150,13 @@ function Charts(cb) {
     /********/
     /* Grid */
     /********/
-
+    // Initialize child tooltip
+    var childTip = d3.tip()
+      .attr('class', 'd3-tip')
+      .html(function(d) {
+        return d;
+      });
+    // Setup datagrid
     this.grid
       .dimension(dateDimension)
       .group(function (d) {
@@ -159,8 +167,13 @@ function Charts(cb) {
       })
       .html(function(d) {
         return '<i class="fa fa-child overview-item active gender-' + d.gender + '"></i>';
+      })
+      .renderlet(function(chart){
+        chart.select('#grid').call(childTip);
+        chart.selectAll(".dc-grid-item")
+          .on('mouseover', childTip.show)
+          .on('mouseout', childTip.hide);
       });
-
 
     /********************/
     /* Gender pie chart */
@@ -320,6 +333,7 @@ function Charts(cb) {
         some: countText,
         all: countText
       });
+
 
     /* Render the charts and bind to the window resizer */
     var debouncedRender = _.debounce(renderCharts, 500, this);
