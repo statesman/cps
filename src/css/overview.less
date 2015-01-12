@@ -193,4 +193,23 @@ body.overview {
     }
   }
 
+  // Special overrides for embedded FB post
+  .sider.sider-social {
+    z-index: 5;
+    position: relative;
+    ul li {
+      margin-bottom: 0;
+    }
+    @media (max-width: @screen-xs-max) {
+      margin-left: -2.14285714em;
+    }
+    @media (min-width: @screen-sm-min) {
+      margin-right: -7%;
+      width: 60%;
+    }
+    @media (min-width: @screen-md-min) {
+      margin-right: -8%;
+      width: 36%;
+    }
+  }
 }
