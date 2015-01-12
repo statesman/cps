@@ -11,7 +11,9 @@ module.exports = function(text, context) {
     return 'https://twitter.com/intent/tweet' +
       '?text=' + encodeURIComponent(t) +
       '&url=' + encodeURIComponent(u) +
-      '&related=@statesman';
+      '&hashtags=cpsmissedsigns' +
+      '&via=aas_investigates' +
+      '&related=statesman';
   }
 
   var pageUrl = context.data.root.options.base + context.data.root.name + '.html';

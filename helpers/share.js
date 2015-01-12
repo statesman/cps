@@ -22,6 +22,9 @@ module.exports = function(network) {
     return;
   }
 
+  // Get the page's frontmatter so we can use it to build tweets later
+  var pageMeta = _.findWhere(this.pages, {name: this.name});
+
   // Generate a URL to the current page
   var url = this.options.base;
   if(this.name !== 'index') {
@@ -37,7 +40,7 @@ module.exports = function(network) {
     },
     twitter: {
       url: function() {
-        return 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&related=@statesman';
+        return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(pageMeta.title) + '&url=' + encodeURIComponent(url) + '&via=aas_investigates&hashtags=cpsmissedsigns&related=statesman';
       },
       icon: '<i class="fa fa-twitter"></i>'
     },
