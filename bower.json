@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "animate.less": "*",
-    "finchjs": "~0.5.14"
+    "finchjs": "~0.5.14",
+    "opentip": "~2.4.6"
   }
 }

@@ -1,9 +1,8 @@
 var $ = require('jquery'),
     d3 = require('d3'),
     _ = require('underscore'),
-    crossfilter = require('crossfilter')
-
-require('d3-tip')(d3);
+    Opentip = require('../../../bower_components/opentip/downloads/opentip-native'),
+    crossfilter = require('crossfilter');
 
 function Charts(cb) {
 
@@ -82,10 +81,19 @@ function Charts(cb) {
     /* Setup crossfilters */
     /**********************/
     var dateFormat = d3.time.format("%Y-%m-%dT%H:%M:%S");
+    var dateToString = d3.time.format("%b %_d, %Y");
+
     data.forEach(function (d) {
       d.dod = dateFormat.parse(d.dod);
       d.month = d.dod.getMonth();
       d.age_years = Math.floor(d.age_days / 365);
+
+      // Calculate the tooltip text once here so it doesn't have to be rebuilt
+      // each time the datagrid is rendered
+      d.popup = "<p><strong>Age: </strong>" + d.age + "</p>" +
+        "<p><strong>Date of death: </strong> " + dateToString(d.dod) + "</p>" +
+        "<p><strong>Cause of death: </strong> " + d.cod + "</p>" +
+        '<p><a href="docs.html?doc=' + d.dc_id + '" target="_blank"><i class="fa fa-file-text"></i> Read report</a></p>';
     });
 
     var ndx = crossfilter(data);
@@ -150,12 +158,27 @@ function Charts(cb) {
     /********/
     /* Grid */
     /********/
-    // Initialize child tooltip
-    var childTip = d3.tip()
-      .attr('class', 'd3-tip')
-      .html(function(d) {
-        return d;
-      });
+    // Configure tooltips to match Bootstrap popups on story pages
+    Opentip.styles.child = {
+      stem: true,
+      hideDelay: 0,
+      fixed: true,
+      className: "popover popover-child",
+      showOn: "click",
+      hideOn: "click",
+      removeElementsOnHide: true,
+      showEffectDuration: 0,
+      hideEffectDuration: 0,
+      group: 'children',
+      background: "#ffffff",
+      borderRadius: 6,
+      borderColor: '#cccccc',
+      shadow: true,
+      shadowBlur: 10,
+      shadowOffset: [0, 5],
+      shadowColor: 'rgba(0,0,0,0.2)'
+    };
+
     // Setup datagrid
     this.grid
       .dimension(dateDimension)
@@ -169,10 +192,9 @@ function Charts(cb) {
         return '<i class="fa fa-child overview-item active gender-' + d.gender + '"></i>';
       })
       .renderlet(function(chart){
-        chart.select('#grid').call(childTip);
-        chart.selectAll(".dc-grid-item")
-          .on('mouseover', childTip.show)
-          .on('mouseout', childTip.hide);
+        chart.selectAll('.dc-grid-item').each(function(d) {
+          new Opentip(this, d.popup, d.name, {style: 'child'});
+        });
       });
 
     /********************/

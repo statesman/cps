@@ -129,7 +129,6 @@ body.loading {
     color: @gray-lighter;
     margin-right: 1px;
     float: left;
-    cursor: pointer;
 
     @media (max-width: @screen-xs-max) {
       font-size: 10px;
@@ -142,6 +141,8 @@ body.loading {
     }
 
     &.active {
+      cursor: pointer;
+      
       &.gender-M {
         color: @male-color;
       }
