@@ -89,7 +89,7 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         preserveComments: false,
-        compress: true,
+        compress: {},
         mangle: {
           except: ['jQuery']
         }

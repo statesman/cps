@@ -1,0 +1,31 @@
+<div class="photo-block photo-block-right-video pull-right">
+    <div id="{{anvatoInstance}}"></div>
+
+    <script>
+        var anvp = {};
+        anvp.{{anvatoInstance}} = {};
+        anvp.{{anvatoInstance}}.onReady = function(playerInstance) {
+        var _cbv = window._cbv || (window._cbv = []);
+        _cbv.push(playerInstance);
+        }
+        anvp.{{anvatoInstance}}.config = {
+            accessKey: "XvEgwyJR0vj8Kh8JMNTbWhW8mOmy8Mbo",
+            secret: "9rK1W2wdNoxrRfwlvehvpFedDZDYG0Nd",
+            token: " ",
+            autoplay: false, {{!-- boolean --}}
+            volume: 1, {{!-- volume 1, 0 or decimal e.g. 0.5 --}}
+            recom: false, {{!-- recommendation end slate boolean --}}
+            plugins: {
+                {{ video-ad anvatoAd }}
+                comscore: {
+                    clientId: 6035944
+                }
+            },
+            profile: "cox",
+        };
+        
+    </script>
+    <script data-anvp='{"width":"100%", "height": "56.25%" ,"mcp":"ANV", "{{anvatoType}}": "{{anvatoId}}", "pInstance":"{{anvatoInstance}}"}' src="//w3.cdn.anvato.net/player/prod/v3/scripts/anvload.js"></script>
+
+</div>
+
