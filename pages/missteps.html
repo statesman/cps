@@ -43,7 +43,12 @@
   },"video": {
     "playerID": "2305729465001",
     "playerKey": "AQ~~,AAAAAFSNjfU~,4oPitrNpKqxve-TuA7jvGHefnd3bNl1A",
-    "videoPlayer": "3980581007001"
+    "videoPlayer": "3980581007001",
+    "anvatoInstance": "p0",
+    "anvatoType": "video",
+    "anvatoId": "3928706",
+    "anvatoAd": "statesman"
+
   },
   "crispenhanson": {
     "url": "assets/missteps-crispen-hanson.jpg",
@@ -67,15 +72,9 @@
   <p class="author">By <a href="mailto:edexheimer@statesman.com">Eric Dexheimer</a> and <a href="mailto:aball@statesman.com">Andrea Ball</a> / Published January 11, 2015</p>
 
   {{/markdown}}
-  <div class="photo-block photo-block-right-video pull-right">
-    <div class="embed-responsive embed-responsive-16by9">
-      <div style="display: block; position: relative; max-width: 100%;"><div style="padding-top: 56.25%;"><iframe src="//players.brightcove.net/1418563061/S15Aq3t8_default/index.html?videoId=3980581007001" 
-      allowfullscreen 
-      webkitallowfullscreen 
-      mozallowfullscreen 
-      style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></iframe></div></div>
-    </div>
-  </div>
+
+  {{> video-block-right-anvato page.video}}
+
   {{#markdown}}
 
   Two-year-old {{#child-link "40259454-34"}}Deacon Garay{{/child-link}} first told a Child Protective Services investigator that “Bully” hurt his head in July 2011.
