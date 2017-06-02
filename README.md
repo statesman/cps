@@ -2,6 +2,8 @@
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
+> NOTE: Since we don't use the Sync grunt plugin anymore, you'll need to manually ftp any changes.
+
 This project is our go-to tool for generating multipage, off-platform immersive story presentations.
 
 A few key features:
@@ -169,6 +171,8 @@ Everything in the `src/js/` folder is passed through [JSHint](http://jshint.com/
 ### Deploying
 
 There are two ways you can deploy a project created with this template:
+
+> NOTE: Since we don't use grunt-sync anymore, we need to ftp contents manually.
 
 1) `git clone` the whole project and use the `.htaccess-sample` to create an `.htaccess` file in the repo's root that serves the app out of the `public/` directory.
 
