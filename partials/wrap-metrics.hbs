@@ -63,13 +63,13 @@
 
     DDO.siteData = {
         siteID: 'statesman',
-        siteDomain: 'statesman.com',
+        siteDomain: 'projects.statesman.com',
         siteVersion: 'responsive site',
         siteFormat: 'newspaper',
         siteMetro: 'tx: austin',
         siteMedium: 'newspaper',
         siteType: 'main: free',
-        siteCMS: 'methode'
+        siteCMS: 'external vendor'
     };
     // PAGE DATA
     var isDwp = false;
@@ -148,17 +148,7 @@
 
     // CONTENT DATA (contentViewType is set in access meter metrics)
     DDO.contentData = DDO.contentData || {};
-    var contentTopics ='';
-
-      contentTopics += false ? 'local news' : 'local news' + ',';
-
-      contentTopics += false ? 'statesman' : 'statesman' + ',';
-
-      contentTopics += false ? 'Courts' : 'Courts' + ',';
-
-      contentTopics += false ? 'Police' : 'Police' + ',';
-
-      contentTopics += true ? 'investigates' : 'investigates' + ',';
+    var contentTopics ='statesman,local news,Texas,cps';
 
     DDO.contentData.contentTopics = contentTopics;
     var contentByline = '';
@@ -202,20 +192,19 @@
     return value;
   };
 
+
   var defaultPathname = location.pathname;
   DDO.pageData.pageName = (defaultPathname == '/') ? location.host : defaultPathname; // if this is a pathed-url (not domain root) then the path is used as the value.  If it's the domain root (index) then the value is the hostname (e.g. 'doctors.ajc.com')
 
-  DDO.pageData.pageContentType = getMetaContentByName('cmg:contentType') || getMetaContentByName('og:type', 'property') || '[some default value]'; // see the list of possible values for pageContentType
+  DDO.pageData.pageContentType = 'flat page';
 
   DDO.pageData.pageTitle = getMetaContentByName('og:title', 'property') || document.title;
-
-  DDO.contentData.contentByline = getMetaContentByName('cmg:byline') || getMetaContentByName('author') || getMetaContentByName('og:author', 'property') || '[some default value]';
 
   DDO.siteData.siteCMS = 'external vendor'; // static value
 
   DDO.contentData.contentOriginatingCMS = 'external vendor'; // static value
 
-  DDO.contentData.contentVendor = '[some static value]'; // e.g. "shorthand", "cap10k", "projects server"
+  DDO.contentData.contentVendor = 'projects server'; // e.g. "shorthand", "cap10k", "projects server"
                 <!-- end metrics_elements_override block -->
 
   DDO.init = function(pubsub, dependentEvents) {

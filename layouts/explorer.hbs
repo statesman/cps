@@ -26,6 +26,18 @@
 
   <script src="dist/story-plain.js"></script>
   <script src="dist/explorer.js"></script>
+  <script type="text/javascript">
+  function getCPSByline() {
+    var elByline = document.querySelectorAll('.author')[0];
+    return elByline.innerText
+             .split(' /')[0]
+             .replace('By ', '')
+             .replace(', ', ',').replace(', ', ',')
+             .replace(' and ', ',').toLowerCase();
+  }
+
+  DDO.contentData.contentByline = getCPSByline() || '';
+  </script>
 
   {{> cmg-footer-scripts}}
 

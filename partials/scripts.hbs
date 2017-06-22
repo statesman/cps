@@ -1,2 +1,15 @@
 <script src="dist/story-common.js"></script>
+<script type="text/javascript">
+function getCPSByline() {
+  var elByline = document.querySelectorAll('.author')[0];
+  return elByline.innerText
+           .split(' /')[0]
+           .replace('By ', '')
+           .replace(', ', ',')
+           .replace(' and ', ',').toLowerCase();
+}
+
+DDO.contentData.contentByline = getCPSByline() || '';
+
+</script>
 {{condScript name}}
