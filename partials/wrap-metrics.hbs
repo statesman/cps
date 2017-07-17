@@ -279,6 +279,9 @@ DDO.connextActive = function(){
 
     }
 
+    DDO.pageData.pageTitle = document.title;
+    DDO.pageData.pageName = location.host + location.pathname;
+
     // CONTENT DATA (contentViewType is set in access meter metrics)
     DDO.contentData = DDO.contentData || {};
     var contentTopics ='statesman,local news,Texas,cps';
