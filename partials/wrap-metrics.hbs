@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="//dev.mystatesman.com/r/PortalConfig/np-paid/assets/css/minimalist.min.css"/>
-<link rel="stylesheet" type="text/css" href="//dev.mystatesman.com/r/PortalConfig/np-paid/assets/mystatesman/css/site.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.mystatesman.com/r/PortalConfig/np-paid/assets/css/core.min.css">
+<link rel="stylesheet" type="text/css" href="https://www.mystatesman.com/r//PortalConfig/np-paid/assets/mystatesman/css/site.min.css">
 
 
 <!-- begin metrics_config_complete_override block -->
@@ -47,7 +47,7 @@ if(typeof(pubsub)=="undefined"){
 window.pubsub = pubsub;
 </script>
 
-<script src='//assets.adobedtm.com/20d5deb47c9e7fe47a9f969db01578a739d7179d/satelliteLib-3bdb96ce8c62153cdc81a8a72fc964fe2ffa1652-staging.js'></script>
+<script src='//assets.adobedtm.com/20d5deb47c9e7fe47a9f969db01578a739d7179d/satelliteLib-3bdb96ce8c62153cdc81a8a72fc964fe2ffa1652.js'></script>
 
 
 
@@ -172,7 +172,7 @@ window.pubsub = pubsub;
 var DDO = DDO || {};
 
 <!-- begin metrics_dtm_library_override block -->
-    DDO.DTMLibraryURL = '//assets.adobedtm.com/20d5deb47c9e7fe47a9f969db01578a739d7179d/satelliteLib-3bdb96ce8c62153cdc81a8a72fc964fe2ffa1652-staging.js';
+    DDO.DTMLibraryURL = '//assets.adobedtm.com/20d5deb47c9e7fe47a9f969db01578a739d7179d/satelliteLib-3bdb96ce8c62153cdc81a8a72fc964fe2ffa1652.js';
 <!-- end metrics_dtm_library_override block -->
 
 
@@ -186,9 +186,19 @@ DDO.hasLocalStorage = function(){
     return isDefined && canRetrieve;
 
 }
+
+DDO.connextActive = function(){
+    var connextMetaTag = document.querySelector('meta[name="cmg:connext:config"]');
+    if(connextMetaTag){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 </script>
 
-<script src="//dev.mystatesman.com/r//PortalConfig/np-paid/metrics/js/dtm-ddo-utilities.js"></script>
+<script src="//www.mystatesman.com/r//PortalConfig/np-paid/metrics/js/dtm-ddo-utilities.js"></script>
 
 
 
@@ -278,11 +288,12 @@ DDO.hasLocalStorage = function(){
 
     DDO.contentData.contentByline = contentByline;
 
-    DDO.contentData.contentOriginatingSite =  'myajc';
-    DDO.contentData.contentID = 'dc4eef8a-3591-11e7-80f6-cc9ba65fe331';
-    DDO.contentData.contentVendor = 'projects server';
+    DDO.contentData.contentOriginatingSite =  'mystatesman';
+    DDO.contentData.contentID = 'd9494b2c-bbc1-11e6-8ba9-07c44dc9ed3c';
+    DDO.contentData.contentVendor = '';
     DDO.contentData.contentViewType = DDO.contentData.contentViewType || '';
-    DDO.contentData.contentPublishDate = '20170510150600';
+    DDO.contentData.contentPublishDate = '';
+    DDO.contentData.contentUpdatedDate = '';
     DDO.contentData.blogName = '';
     DDO.contentData.galleryName = '';
     var pageSubContentType = '';
