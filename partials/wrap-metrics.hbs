@@ -1,6 +1,11 @@
-<!-- begin metrics_config_complete_override block -->
-                <!-- begin metrics_common_override block -->
-                <script>localStorage.setItem("sdsat_debug", true);</script>
+<!-- begin metrics_common_override block -->
+
+
+
+
+
+
+<script>localStorage.setItem("sdsat_debug", true);</script>
 
 
 
@@ -16,22 +21,12 @@
 if(typeof(pubsub)=="undefined"){
     pubsub={
             subscribe:function(){
-                if(window.pubsubcutioner || window.amplify|| window.pubsub || DDO.pubsub){
-                    var pubsubProxy = window.pubsubcutioner || window.amplify || window.pubsub || DDO.pubsub;
-                    pubsubProxy.subscribe.apply(pubsubProxy, arguments);
-                    return;
-                }
                 if(typeof(DDO.deferredSubscribe) == "undefined"){
                     DDO.deferredSubscribe = [];
                 }
                 DDO.deferredSubscribe.push(arguments);
             },
             publish:function(){
-                if(window.pubsubcutioner || window.amplify|| window.pubsub || DDO.pubsub){
-                    var pubsubProxy = window.pubsubcutioner || window.amplify || window.pubsub || DDO.pubsub;
-                    pubsubProxy.publish.apply(pubsubProxy, arguments);
-                    return;
-                }
                 if(typeof(DDO.deferredPublish) == "undefined"){
                     DDO.deferredPublish = [];
                 }
@@ -210,16 +205,16 @@ DDO.connextActive = function(){
         siteFormat: 'newspaper',
         siteMetro: 'tx: austin',
         siteMedium: 'newspaper',
-        siteType: 'main: free',
+        siteType: 'main: premium',
         siteCMS: 'external vendor'
     };
     // PAGE DATA
     var isDwp = false;
     console.log("isDwp: ", isDwp);
     var isHome = isDwp && false;
-    console.log("page Title:" + 'TEST:  Flatpage for Big J wraps ');
-    var trimPageNameUrl = removeExtracharFromUrl('/flatpage-for-bigj-wraps/');
-    console.log("Primary Category: " + '/News');
+    console.log("page Title:" + '');
+    var trimPageNameUrl = removeExtracharFromUrl('/bigj-metro-state-flatpage/');
+    console.log("Primary Category: " + '/News/Local');
 
     DDO.pageData = {
         pageFlow : "",
@@ -229,51 +224,15 @@ DDO.connextActive = function(){
     };
     if(isDwp) {
         DDO.pageData.pageContentType = (isHome) ? 'homepage' : 'section front';
-        DDO.pageData.pageMainSection = (isHome) ? '/'+'homepage' : '/flatpage-for-bigj-wraps/';
-        DDO.pageData.pageName = (isHome) ? '/' + 'homepage' + '/' : '/flatpage-for-bigj-wraps/';
+        DDO.pageData.pageMainSection = (isHome) ? '/'+'homepage' : '/bigj-metro-state-flatpage/';
+        DDO.pageData.pageName = (isHome) ? '/' + 'homepage' + '/' : '/bigj-metro-state-flatpage/';
     } else {
-        DDO.pageData.pageContentType = 'flat page';
+        DDO.pageData.pageContentType = 'article';
         DDO.pageData.pageMainSection ='/';
         DDO.pageData.pageName = trimPageNameUrl;
     }
 
-    DDO.pageData.pageTitle = 'TEST:  Flatpage for Big J wraps ';
     DDO.pageData.pageSiteSection = (isHome) ? 'home' : 'News';
-
-    if (DDO.pageData.pageContentType == '') {
-        var pageName = DDO.pageData.pageName;
-        var pageNameSplit = pageName.split('/');
-        DDO.pageData.pageContentType = pageNameSplit[1];
-    }
-
-    DDO.pageData.pageCategory = '';
-    if (DDO.pageData.pageCategory == 'Error') {
-        DDO.pageData.pageContentType = "Page not found";
-    }
-    DDO.pageData.pageSubCategory = '';
-
-    if(DDO.pageData.pageContentType =='404'){
-        DDO.pageData.pageType="errorpage";
-        DDO.pageData.pageTitle="page not found";
-        DDO.pageData.pageContentType = "404 page";
-        URLArray = window.location.href.split('/');
-        DDO.pageData.pageName = '/404_page/'+URLArray[URLArray.length-1];
-    }
-
-    if(DDO.pageData.pageContentType == 'weather'){
-        DDO.pageData.pageCategory = 'weather';
-        DDO.pageData.pageTitle = 'weather';
-    }
-
-    if(DDO.pageData.pageContentType == 'searchresults'){
-        var aMetricsSiteSearchType, aMetricsSearchTerms, aMetricsNumResults;
-        DDO.pageData.pageName = "/search-results/";
-        DDO.pageData.pageTitle = "search results";
-        DDO.pageData.pageMainSection = "/search";
-        DDO.pageData.pageContentType = "search";
-        DDO.pageData.pageSiteSection = "search";
-
-    }
 
     DDO.pageData.pageTitle = document.title;
     DDO.pageData.pageName = location.host + location.pathname;
@@ -286,25 +245,24 @@ DDO.connextActive = function(){
     var contentByline = '';
 
     DDO.contentData.contentByline = contentByline;
-
     DDO.contentData.contentOriginatingSite =  'mystatesman';
-    DDO.contentData.contentID = 'd9494b2c-bbc1-11e6-8ba9-07c44dc9ed3c';
+    DDO.contentData.contentID = '9eaaf9b4-6b31-11e7-830e-a5e8bea39109';
     DDO.contentData.contentVendor = 'projects server';
     DDO.contentData.contentViewType = DDO.contentData.contentViewType || '';
-    DDO.contentData.contentPublishDate = '';
+    DDO.contentData.contentPublishDate = '20170717205000';
     DDO.contentData.contentUpdatedDate = '';
     DDO.contentData.blogName = '';
     DDO.contentData.galleryName = '';
     var pageSubContentType = '';
     if(pageSubContentType == 'Post') {
-        DDO.contentData.blogName = 'TEST:  Flatpage for Big J wraps ';
+        DDO.contentData.blogName = '';
     }else if(DDO.pageData.pageContentType == 'gallery') {
-        DDO.contentData.galleryName = 'TEST:  Flatpage for Big J wraps ';
+        DDO.contentData.galleryName = '';
     }
 
     //We need to set this one only for imported stories.
     DDO.contentData.contentOriginatingCMS='external vendor';
-    DDO.contentData.contentOriginatingID='dc4eef8a-3591-11e7-80f6-cc9ba65fe331';
+    DDO.contentData.contentOriginatingID='9eaaf9b4-6b31-11e7-830e-a5e8bea39109';
     DDO.contentData.melvilID='';
 
     //SEARCH DATA PAGE CONTENT
@@ -445,12 +403,44 @@ DDO.authn = {
     init: function(pubsub, $){
         var triggerReturnUser = false;
         var autoLogin = true;
+        var connextDataSet = false;
+        var connextData = {};
         var hasLocalStorage = DDO.hasLocalStorage();
+        var connextActive = DDO.connextActive();
         DDO.userData = DDO.userData || {};
+        pubsub.subscribe("connext-updated", function(event, data){
+            connextData = data;
+            connextDataSet = true;
+            pubsub.publish("authn-connext-ready", data);
+
+        })
+        function useConnext(action){
+            if(connextDataSet){
+                useConnextData(connextData, action);
+                connextDataSet = false;
+            }else{
+                pubsub.subscribe("authn-connext-ready", function(event, connextData){
+                    useConnextData(connextData, action);
+                    connextDataSet = false;
+                })
+            }
+        }
+        function useConnextData(data, action){
+            console.log("SATELLITE: used connext data");
+            DDO.userData.userActive = data.isAuthenticated ?'logged-in':'not logged-in';
+            DDO.userData.userType = data.isAuthorized ? "premium":(data.isAuthenticated ? "standard":"anonymous");
+            DDO.dependentEventCheck("authn");
+            if(typeof(action) != "undefined"){
+                DDO.action(action);
+            }
+
+        }
         if(hasLocalStorage){
             DDO.userData.userStatus = localStorage.getItem("metricsUserStatus")||"";
-            DDO.userData.userActive = localStorage.getItem("metricsUserActive")||"";
-            DDO.userData.userType = localStorage.getItem("metricsUserType")||"";
+            if(!connextActive){
+                DDO.userData.userActive = localStorage.getItem("metricsUserActive")||"";
+                DDO.userData.userType = localStorage.getItem("metricsUserType")||"";
+            }
             if(localStorage.getItem("janrainCaptureReturnExperienceData")){
                 DDO.userData.userProfileID = JSON.parse(localStorage.getItem("janrainCaptureReturnExperienceData"))["uuid"] ||"";
             }
@@ -460,27 +450,39 @@ DDO.authn = {
                 pubsub.publish("session-found");
             }
             DDO.userData.userStatus = 'registered';
-            DDO.userData.userActive = 'logged-in';
-            DDO.userData.userType = 'standard';
-            if(hasLocalStorage){
+            if(!connextActive){
+                DDO.userData.userActive = 'logged-in';
+                DDO.userData.userType = 'standard';
+            }else{
+                useConnext();
+            }
+            if(hasLocalStorage && !connextActive){
                 localStorage.setItem("metricsUserStatus", DDO.userData.userStatus);
                 localStorage.setItem("metricsUserActive", DDO.userData.userActive);
                 localStorage.setItem("metricsUserType", DDO.userData.userType);
             }
             DDO.userData.userProfileID = data.uuid;
-            DDO.dependentEventCheck('authn');
+            if(!connextActive){
+                DDO.dependentEventCheck('authn');
+            }
         });
         pubsub.subscribe("authn-anonymous", function(event, data){
             DDO.userData.userStatus = 'not registered';
-            DDO.userData.userActive = 'not logged-in';
-            DDO.userData.userType = 'anonymous';
+            if(!connextActive){
+                DDO.userData.userActive = 'not logged-in';
+                DDO.userData.userType = 'anonymous';
+            }else{
+                useConnext();
+            }
             delete DDO.userData.userProfileID;
             if(hasLocalStorage){
                 localStorage.setItem("metricsUserStatus", DDO.userData.userStatus);
                 localStorage.setItem("metricsUserActive", DDO.userData.userActive);
                 localStorage.setItem("metricsUserType", DDO.userData.userType);
             }
-            DDO.dependentEventCheck('authn');
+            if(!connextActive){
+                DDO.dependentEventCheck('authn');
+            }
             DDO.dependentEventCheck('authz');
         });
         pubsub.subscribe("authn-modal-open", function(event, data){
@@ -492,12 +494,20 @@ DDO.authn = {
                 }
                 DDO.loginEventClickNumber = window.janrainClickTracker;
             }
-            DDO.action('loginEvent_start');
+            if(connextActive){
+                useConnext('loginEvent_start');
+            }else{
+                DDO.action('loginEvent_start');
+            }
             autoLogin = false;
         });
         pubsub.subscribe("login-complete", function(event, data){
             if(!autoLogin){
-                DDO.action('loginEvent_complete');
+                if(connextActive){
+                    useConnext('loginEvent_complete');
+                }else{
+                    DDO.action('loginEvent_complete');
+                }
             }
         });
         pubsub.subscribe("authn-logout", function(event, data){
@@ -535,7 +545,11 @@ DDO.authn = {
         // When user is auto-logged in.
         pubsub.subscribe("authn-login-return", function(event, data) {
             if(triggerReturnUser){
-                DDO.action('loginEvent_return-user');
+                if(connextActive){
+                    useConnext('loginEvent_return-user');
+                }else{
+                    DDO.action('loginEvent_return-user');
+                }
             }
              DDO.dependentEventCheck("authz");
         });
@@ -706,7 +720,9 @@ DDO.videoMetrics = {
 </script><!-- end metrics_video_override block -->
                 <!-- end metrics_config_complete_override block -->
 
-<!-- begin connext_meta_override block -->
+                <!-- begin connext_meta_override block -->
+
+
 
 
 
@@ -765,6 +781,9 @@ DDO.videoMetrics = {
 
 
 
+
+
+
         <!-- begin cmg_product_metatag_override block -->
 
     <meta name="cmg:product" content="www.mystatesman.com">
@@ -773,11 +792,86 @@ DDO.videoMetrics = {
 
 
 
+
         <!-- begin cmg_connext_config_metatag_override block -->
 
     <meta name="cmg:connext:config" content="mystatesman_default">
 
         <!-- end cmg_connext_config_metatag_override block -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- begin cmg_site_section_metatag_override block -->
+
+
+        <meta name="cmg:siteSection" content="News">
+
+            <!-- end cmg_site_section_metatag_override block -->
+
+
+
+
+            <!-- begin cmg_main_section_metatag_override block -->
+
+
+
+
+
+
+
+                <meta name="cmg:mainSection" content="/metro-state">
+
+
+
+            <!-- end cmg_main_section_metatag_override block -->
+
+
+
+
+            <!-- begin cmg_primary_category_metatag_override block -->
+
+        <meta name="cmg:primaryCategory" content="/News/Local">
+
+            <!-- end cmg_primary_category_metatag_override block -->
+
+
+
+
+            <!-- begin cmg_categories_metatag_override block -->
+
+        <meta name="cmg:categories" content="/News/Local">
+
+            <!-- end cmg_categories_metatag_override block -->
+
+
+
+
+            <!-- begin cmg_topics_metatag_override block -->
+
+        <meta name="cmg:topics" content="">
+
+            <!-- end cmg_topics_metatag_override block -->
+
+
 
 
 
@@ -801,6 +895,16 @@ DDO.videoMetrics = {
     <meta name="cmg:meter" content="true">
 
         <!-- end cmg_meter_metatag_override block -->
+
+
+
+
+        <!-- begin cmg_max_meter_temporary_metatag_override block -->
+
+
+    <meta name="cmg:maxMeterTemporary" content="5">
+
+        <!-- end cmg_max_meter_temporary_metatag_override block -->
 
 
 
